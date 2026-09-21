@@ -14,7 +14,7 @@ SitecoreAI’s built-in [Analyze](https://doc.sitecore.com/xmc/en/users/xm-cloud
 
 But the integrating with tools such as Google Analytics are still in place for views such as SEO management, pag campaigns and cross-channel funnels.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
 ## Execution
 For most content teams their top priorities are visibility into how their pages perform, which content resonates, and where users are dropping off. The gap between authoring and analysis creates delays. A marketer may launch a campaign but won’t know until the next meeting whether page views or user engagement are moving in the right direction. Editors who simply want to know “is this feature page getting traction?” often have to rely on someone else to pull reports.

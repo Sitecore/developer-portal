@@ -7,11 +7,11 @@ cdpTags: ['xm-cloud']
 
 <Alert status="warning">
   <AlertIcon />
-    The current recommendations for XM Cloud have been moved to <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a>.
+    The current recommendations for SitecoreAI have been moved to <a href="../../accelerate/sitecoreai/index.md">Sitecore Accelerate for SitecoreAI</a>.
 </Alert>
 
 <Row columns={3}>
-  <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
+  <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
   <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
   <Link title="Development Workflow: GitHub Codespaces" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/dev-workflow-codespaces" />
   <Link title="Multisite Architecture" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/multisite" />

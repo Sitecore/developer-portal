@@ -8,9 +8,9 @@ lastUpdated: '2025-09-26'
 ---
 Sample template.module.json for Sitecore Content Serialization below - an example is also available for [xmcloud-starter.js](https://github.com/Sitecore/xmcloud-starter-js/blob/main/xmcloud.build.json).
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
-> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
+<Alert type="info"><AlertIcon />XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.</Alert>
 
 ```json
 {

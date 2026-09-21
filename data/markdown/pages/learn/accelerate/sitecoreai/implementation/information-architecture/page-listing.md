@@ -12,7 +12,7 @@ audience: ['Architect','Technical Implementers','Solution Architects']
 ## Context
 Some implementation require page listings where a list of child items, such as navigation components are listing a set number of links of the list. Performance is a considerations that is required, as every time a new page is created, the website has to be republish which might impact productivity of authors. 
 
-> Consider that this is limited for the use cases discussed here, for full search experiences with faceting and filtering, consider [Sitecore Search](https://developers.sitecore.com/learn/accelerate/xm-cloud/implementation/sitecore-search/integrating-sitecore-search).
+<Alert type="info"><AlertIcon />Consider that this is limited for the use cases discussed here, for full search experiences with faceting and filtering, consider [Sitecore Search](https://developers.sitecore.com/learn/accelerate/xm-cloud/implementation/sitecore-search/integrating-sitecore-search).</Alert>
 
 
 ## Execution

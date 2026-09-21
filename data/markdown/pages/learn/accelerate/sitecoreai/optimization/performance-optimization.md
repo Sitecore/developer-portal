@@ -14,7 +14,7 @@ Many web applications suffer from poor performance due to suboptimal implementat
 
 This recipe provides targeted optimization strategies for Next.js applications to address these issues.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
 ## Execution
 To improve the performance of your web application and deliver a faster, more responsive user experience, review the following guidance. Using Next.JS? Review how to How to [Optimize Next.js + Sitecore JSS](https://vercel.com/guides/how-to-optimize-next.js-sitecore-jss).

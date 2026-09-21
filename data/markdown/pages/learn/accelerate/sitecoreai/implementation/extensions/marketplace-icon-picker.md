@@ -12,7 +12,7 @@ audience: ['Architect','Technical Implementer','Product Owner']
 ## Context
 In content authoring, the hardest balance is giving editors enough freedom to be effective without letting them run wild and break design consistency. Governed flexibility is the sweet spot: editors can make meaningful choices, like selecting an icon, background color, or layout option, from a curated, predefined set.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
 ## Execution
 Sitecore Marketplace allows you to [extend your fields](https://doc.sitecore.com/mp/en/developers/marketplace/extension-points.html#page-builder-custom-field) and creating a model when the user locates a custom field that has been created.

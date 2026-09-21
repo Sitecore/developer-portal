@@ -298,6 +298,6 @@ For Web Application developers to work effectively in an XM Cloud project, they 
 
 ## Related Recipes
 <Row columns={2}>
-    <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
+    <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
     <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-considerations/branching-strategy" />
 </Row>

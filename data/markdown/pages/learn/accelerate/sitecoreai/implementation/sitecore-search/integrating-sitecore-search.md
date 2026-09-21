@@ -16,7 +16,7 @@ Majority of web application require a search tool to achieve content search - cu
 
 This article discusses how to integration Sitecore Search with SitecoreAI. If you need to integrate a different Search provider, you will need to read these techniques and see how they can be applied to your scenario.
 
-> The SitecoreAI embedded Solr service is only for internal use of SitecoreAI's UI. This cannot be customized or modified, for search features, search tools such as Sitecore Search should be used.
+<Alert type="info"><AlertIcon />The SitecoreAI embedded Solr service is only for internal use of SitecoreAI's UI. This cannot be customized or modified, for search features, search tools such as Sitecore Search should be used.</Alert>
 
 ## Execution
 

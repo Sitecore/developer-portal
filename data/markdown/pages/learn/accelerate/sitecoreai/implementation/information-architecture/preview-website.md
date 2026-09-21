@@ -12,7 +12,7 @@ audience: ['Architect','Technical Implementer']
 ## Context
 A separate preview environment allows SitecoreAI stakeholders who may not have access to see how their content will look and function before it goes live. This helps prevent errors, enhances collaboration, and encourages experimentation while ensuring high-quality, polished content.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
 
 ## Execution

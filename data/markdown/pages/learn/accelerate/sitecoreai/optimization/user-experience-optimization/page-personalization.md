@@ -12,7 +12,7 @@ audience: ['Product Owner', 'User']
 ## Context
 Using personalization in SitecoreAI offers significant benefits for businesses aiming to optimize their digital experiences for their site users. [Personalization](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) helps businesses tailor content to specific audiences based on user data and behavior, leading to higher engagement and uptakes in call to actions.
 
-> An [analytics idenfier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html) is required for your site to personalize and track analytics; make sure that this has been enabled.
+<Alert type="info"><AlertIcon />An [analytics idenfier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html) is required for your site to personalize and track analytics; make sure that this has been enabled.</Alert>
 
 ## Execution
 A business might use personalization in SitecoreAI to highlight specific next actions to take based on a user's previous page browsing history or linked to a UTM they entered the site with. This helps create a more dynamic and effective user experience, ultimately boosting customer satisfaction and overall business outcomes.

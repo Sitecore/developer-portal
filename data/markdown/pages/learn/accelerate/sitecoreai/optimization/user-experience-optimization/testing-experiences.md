@@ -12,7 +12,7 @@ audience: ['Product Owner', 'User']
 ## Context
 You want to maximize user experience and conversions but don't know what version of a page or component performs best. [A/B/n testing](https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-testing.html) allows you to make decisions based on user behavior instead of internal speculation. This is particularly helpful post-launch, during optimization sprints, or in preparation for rollouts across many sites or geographies.
 
-> To use A/B/n testing, you need to make sure you are on JSS 22.1 or later and the [features enabled](https://doc.sitecore.com/xmc/en/developers/jss/22/jss-xmc/page-personalization-and-component-a-b-n-testing.html).
+<Alert type="info"><AlertIcon />To use A/B/n testing, you need to make sure you are on JSS 22.1 or later and the [features enabled](https://doc.sitecore.com/xmc/en/developers/jss/22/jss-xmc/page-personalization-and-component-a-b-n-testing.html).</Alert>
 
 ## Execution
 A/B/n testing is used to compare different versions of a pages components or content such as a call-to-action buttons, to see which one drives more click through rates. This helps create a more dynamic and effective user experience, ultimately boosting satisfaction and overall business outcomes.

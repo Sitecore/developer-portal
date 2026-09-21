@@ -9,7 +9,7 @@ lastUpdated: '2023-12-15'
 
 **Only Export Components that are used by content authors**
 
-> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
+<Alert type="info"><AlertIcon />XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.</Alert>
 
 ```typescript
 import React from 'react';

@@ -17,9 +17,7 @@ You need to resolve dynamic Next.js routes to specific items in the content tree
 
 The solution is to use a Wildcard item in the content tree and then consume that in the Next.js application. The following steps will enable a route in the head application to use the wildcard item to provide the layout data for the page. Then the components or the page can handle getting the content to display on the page/components.
 
-> For the purposes of this recipe, we will be giving the example of getting blogs stored in an external datasource. The principles used here can be transferred to getting other content types, for example: Products from Order Cloud etc…
->
-> In our example, the blog content will be stored in Content Hub and accessed via a GraphQL call to Experience Edge for Content Hub.
+<Alert type="info"><AlertIcon />For the purposes of this recipe, we will be giving the example of getting blogs stored in an external datasource. The principles used here can be transferred to getting other content types, for example: Products from Order Cloud etc. In our example, the blog content will be stored in Content Hub and accessed via a GraphQL call to Experience Edge for Content Hub.</Alert>
 
 ### Create the Wildcard Item
 

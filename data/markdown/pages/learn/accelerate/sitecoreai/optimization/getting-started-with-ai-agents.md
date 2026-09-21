@@ -12,7 +12,7 @@ audience: ['Architect','Product Owner','Project Manager','Technical Implementer'
 ## Context
 AI Agents in Sitecore are designed to automate repetitive tasks and accelerate content operations. They’re embedded in the product and can handle actions like content generation, translation, and SEO optimisation with an aim to help teams reduce bottlenecks and free up time for strategic work. 
 
-> To use Agentic studio and all its features, ensure AI is enabled in the Sitecore Cloud Portal and that you have been added as a user. Reach out to your Sitecore Account team for issues relating to setup.
+<Alert type="info"><AlertIcon />To use Agentic studio and all its features, ensure AI is enabled in the Sitecore Cloud Portal and that you have been added as a user. Reach out to your Sitecore Account team for issues relating to setup.</Alert>
 
 ## Execution
 In addition to the [AI capabilities in SitecoreAI](https://doc.sitecore.com/sai/en/users/sitecoreai/ai-capabilities-in-sitecoreai.html), a number of build-in agents that support common marketing tasks have been made available.
@@ -22,7 +22,7 @@ An agent is a specialised AI-powered system that acts autonomously to complete t
 
 [Agentic studio](https://doc.sitecore.com/sai/en/users/sitecoreai/working-with-agentic-studio.html) includes several built-in agents that support common marketing tasks, including the following.
 
-> The following prompts are provided as guided examples and should be tailored to your requirements and setup. Please ensure thorough testing is conducted to validate its usability.
+<Alert type="info"><AlertIcon />The following prompts are provided as guided examples and should be tailored to your requirements and setup. Please ensure thorough testing is conducted to validate its usability.</Alert>
 
 ### AEO/SEO researcher
 This agent audits your key pages, keywords, and competitor list, then generates a structured report on technical SEO (Search Engine Optimisation) and AI-readiness for generative search engines. To get started copy the prompt below and adapt it:
@@ -35,7 +35,7 @@ Make sure that as part of your prompt, or files provided, you provide:
 
 To get started copy the prompt below and adapt it:
 
-> **Audit the provided URLs (including any URL files) for SEO and AI search readiness. Highlight technical issues, content gaps, and featured snippet opportunities. Incorporate brand keywords and glossaries, note competitor names if comparison is required, review prior SEO/AEO audits, and factor in context such as tone of voice, brand alignment, and compliance requirements.**
+<Alert type="info"><AlertIcon />Audit the provided URLs (including any URL files) for SEO and AI search readiness. Highlight technical issues, content gaps, and featured snippet opportunities. Incorporate brand keywords and glossaries, note competitor names if comparison is required, review prior SEO/AEO audits, and factor in context such as tone of voice, brand alignment, and compliance requirements.</Alert>
 
 
 Agents can also be [configured for flexibility](https://doc.sitecore.com/sai/en/users/sitecoreai/aeo-seo-researcher.html) - setup your recurring keyworks from your brand or preferred consistent output format.
@@ -51,7 +51,7 @@ Make sure that as part of your prompt, or files provided, you provide:
 
 To get started copy the prompt below and adapt it:
 
-> **Generate content variants for our spring campaign that focused on the fashion-conscious shopper and the trend enthusiast. Content is for Email, Social including LinkedIn and Instagram. Keep tone consistent and on-brand (aspirational, trustworthy, customer-focused) and use the attached brand guidelines and approved messaging pillars.**
+<Alert type="info"><AlertIcon />Generate content variants for our spring campaign that focused on the fashion-conscious shopper and the trend enthusiast. Content is for Email, Social including LinkedIn and Instagram. Keep tone consistent and on-brand (aspirational, trustworthy, customer-focused) and use the attached brand guidelines and approved messaging pillars.</Alert>
 
 
 Agents can also be [configured for flexibility](https://doc.sitecore.com/sai/en/users/sitecoreai/bulk-content-generator.html) - setup your recurring audience segmentation with tone variations based on persona, pre-set channels including email, social, blog or preferred outputs.
@@ -67,7 +67,7 @@ Make sure that as part of your prompt, or files provided, you provide:
 
 To get started copy the prompt below and adapt it:
 
-> **Translate the attached product launch email into French, German, and Spanish. Maintain our brand tone (premium, trusted, customer-centric) and use the approved glossary for key terms. Localise currency, date formats, and any region-specific compliance language.**
+<Alert type="info"><AlertIcon />Translate the attached product launch email into French, German, and Spanish. Maintain our brand tone (premium, trusted, customer-centric) and use the approved glossary for key terms. Localise currency, date formats, and any region-specific compliance language.<Alert>
 
 
 Agents can also be [configured for flexibility](https://doc.sitecore.com/sai/en/users/sitecoreai/translator.html) - setup your predefined target locales that are used consistently, tone of voice and company wide glossary to provide consistent guidance for company-specific terms.
@@ -83,7 +83,7 @@ Make sure that as part of your prompt, or files provided, you provide:
 
 To get started copy the prompt below and adapt it:
 
-> **Research the latest trends in digital customer engagement for the luxury retail industry in EMEA. Summarise key findings, cite sources, and highlight 3 actionable insights for our team. Focus on 2025-2026 projects and recent innovations around AI-driven strategies. Compare at least two competitors, Burberry and Harrods. Use sources from industry reports, analyst briefing and recent news articles. Factory in our tone of voice (premium, trusted, customer-centric), and our attached compliance requirements.**
+<Alert type="info"><AlertIcon />Research the latest trends in digital customer engagement for the luxury retail industry in EMEA. Summarise key findings, cite sources, and highlight 3 actionable insights for our team. Focus on 2025-2026 projects and recent innovations around AI-driven strategies. Compare at least two competitors, Burberry and Harrods. Use sources from industry reports, analyst briefing and recent news articles. Factory in our tone of voice (premium, trusted, customer-centric), and our attached compliance requirements.<Alert>
 
 
 Agents can also be [configured for flexibility](https://doc.sitecore.com/sai/en/users/sitecoreai/researcher.html) - setup your focus keywords that are relevant for each require and scope structure to provide always the same templated output.

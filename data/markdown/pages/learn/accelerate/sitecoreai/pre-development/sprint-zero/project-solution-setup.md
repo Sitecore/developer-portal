@@ -95,7 +95,7 @@ For a client project, create an empty site - follow the [Creating a Site](/learn
         xmcloud.build.json file includes configuration for rendering host. Next.js is configured by default. 
       </TabPanel>
       <TabPanel>
-        Sitecore SitecoreAI currently does not support the automatic deployment of the editing host for ASP.NET Core Head applications. As a result, after deployment, Page Builder will display an error such as "unable to connect to the remote server". It is currently required to [deploy an external editing host](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-an-external-editing-host.html) to support this.
+        SitecoreAI currently does not support the automatic deployment of the editing host for ASP.NET Core Head applications. As a result, after deployment, Page Builder will display an error such as "unable to connect to the remote server". It is currently required to [deploy an external editing host](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-an-external-editing-host.html) to support this.
       </TabPanel>
       <TabPanel>
         xmcloud.build.json file includes configuration for rendering host. Next.js is configured by default. Thus, Angular needs to be configured instead of Next.js. You can do it by changing “enabled” setting.

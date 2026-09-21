@@ -14,9 +14,10 @@ Content distribution is the process of making content available to different del
 
 For content authors, this means being able to select and embed assets from their DAM directly into their content. Content Hub is being used in this case but the same approach can be used for other DAMs.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
-> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
+
+<Alert type="info"><AlertIcon />XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.</Alert>
 
 ## Execution
 [Sitecore Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) penables every Cloud Portal organization to build and use applications that add new capabilities to Sitecore. The [SitecoreAI Page builder custom field](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html) extension point lets you extend the data template of a content item or a page by adding your own custom field to it. SitecoreAI users can then populate that field with the data you provide in your Marketplace app.

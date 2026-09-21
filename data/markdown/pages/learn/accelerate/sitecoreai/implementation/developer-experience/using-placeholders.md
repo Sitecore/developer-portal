@@ -16,7 +16,7 @@ Using placeholders is beneficial because they offer flexibility, reusability, an
 
 This recipe will detail out what Placeholders we have available, how have they been used in the [Starter Kit](https://github.com/Sitecore/xmcloud-starter-js/) and how to create custom Placeholders while adhering to best practice.
 
-> When migrating Sitecore XM/XP projects that include SXA‑ or JSS‑based sites into SitecoreAI, the classic JSS dynamic placeholder format `(placeholderkey-{GUID}-N)` is not supported. SitecoreAI’s headless rendering engine only supports the SXA‑style numeric placeholder format, and any cases where legacy keys appear to work are incidental and not guaranteed.
+<Alert type="info"><AlertIcon />When migrating Sitecore XM/XP projects that include SXA‑ or JSS‑based sites into SitecoreAI, the classic JSS dynamic placeholder format `(placeholderkey-{GUID}-N)` is not supported. SitecoreAI’s headless rendering engine only supports the SXA‑style numeric placeholder format, and any cases where legacy keys appear to work are incidental and not guaranteed.</Alert>
 
 ## Execution
 

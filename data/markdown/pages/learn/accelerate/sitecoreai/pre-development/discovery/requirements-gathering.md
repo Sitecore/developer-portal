@@ -88,7 +88,7 @@ Further information can be found on our [Retrieving Data from 3rd Party Integrat
 
 #### Customizations
 
-- Are you moving from XM/XP? What are the customizations that have been put on the setup - from Content Resolvers to Event Handlers - these should be documented and an approach provided. Further information can be found on our [Transition from XM/XP to SitecoreAI recipe](/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc).
+- Are you moving from XM/XP? What are the customizations that have been put on the setup - from Content Resolvers to Event Handlers - these should be documented and an approach provided. Further information can be found on our [Transition from XM/XP to SitecoreAI recipe](../discovery/xm-xp-to-xmc).
 - You might be moving from other CMS, which might have been customized for previous editorial journeys - evaluate these customizations and see what is actually required from an editor view point.
 - Do you expect to build custom backend functionality such as custom pipelines, jobs, or services? Alternatives must be explored using Edge Functions, Headless architecture, or external services.
 - Do you require scheduled background processing? Consider external schedulers, serverless functions, or Edge Middleware.
@@ -99,7 +99,7 @@ Further information can be found on our [Retrieving Data from 3rd Party Integrat
 - Do we have specific mobile styling rules for these layouts or are the OOTB mobile styling rules from the SXA starter kit enough?
 - Are we able to split their pages with proper page and partial designs?  If we are doing multiple site, what is shared across websites?
 - What are the different components for both site specific and global?
-- If you are coming from XP/XM, what are your Rendering and data source templates? Will they need to be refactored for the new site structure? Take into consideration that there is a streamlined process [we recommend in creating components](/learn/accelerate/xm-cloud/pre-development/developer-experience/component-design-best-practices).
+- If you are coming from XP/XM, what are your Rendering and data source templates? Will they need to be refactored for the new site structure? Take into consideration that there is a streamlined process [we recommend in creating components](../developer-considerations/component-design-best-practices).
 - Does their site have redirects and how many? Will these be editable by the content team, or can we be moved to the head application? Will there be an effort to purge current redirects before bringing them into SitecoreAI?
 What is the plan for hosting the head application? Review the [Hosting Head Application](/learn/accelerate/xm-cloud/pre-development/hosting-applications) recipes for more informaiton.
 

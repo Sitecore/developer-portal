@@ -14,7 +14,7 @@ On-page SEO covers optimizing webpage content for search engines and visitors. W
 
 Tools and SEO checkers can report issues detected on the website, but cannot analyze whether the root cause is code or content. For this reason it’s necessary to review the implementation from the inside as well as from what is finally rendered to the client.
 
->There are many guides online which cover general SEO best-practice, so in this recipe we relate the topics within the context of SitecoreAI. Please cross-reference with SEO authorities for deep-dives and the latest on SEO best practice. 
+<Alert type="info"><AlertIcon />There are many guides online which cover general SEO best-practice, so in this recipe we relate the topics within the context of SitecoreAI. Please cross-reference with SEO authorities for deep-dives and the latest on SEO best practice.</Alert>
 
 ## Execution
 In the sections below, we cover SitecoreAI SEO best practices, relating to common in-page SEO best practice and components concepts SEO best. Before deep diving in this, make sure you have reviewed the [Search engine optimization (SEO)](https://doc.sitecore.com/xmc/en/developers/xm-cloud/search-engine-optimization--seo-.html) documentation.

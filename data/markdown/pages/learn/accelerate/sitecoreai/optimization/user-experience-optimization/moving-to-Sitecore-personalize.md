@@ -1,6 +1,6 @@
 ---
 title: 'Moving to Sitecore Personalize'
-description: 'This recipe provides a for organizations moving from Sitecore SitecoreAI’s OOTB personalization features to the more advanced Sitecore Personalize platform.'
+description: 'This recipe provides a for organizations moving from SitecoreAI’s OOTB personalization features to the more advanced Sitecore Personalize platform.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']

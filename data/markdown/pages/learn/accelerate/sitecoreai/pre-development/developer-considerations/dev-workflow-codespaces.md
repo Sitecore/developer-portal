@@ -13,7 +13,7 @@ audience: ['Architect','Technical Implementer']
 
 The development team needs to be able to develop both the CMS and the Website application (Head Next.js application), but it is not possible to use Docker for local development.
 
-> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
+<Alert type="info"><AlertIcon />XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.</Alert>
 
 ## Execution
 

@@ -13,7 +13,7 @@ audience: ['Architect','Technical Implementer']
 The ability to publish content at specific times is a common requirement that Sitecore supports with multiple solutions. In the simplest case, starting the process at a scheduled time is sufficient. 
 
 
->The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
 
 

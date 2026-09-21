@@ -68,14 +68,14 @@ The following topics are all considerations when moving to SitecoreAI -  when pl
 ### Transition from Sitecore XM/XP to SitecoreAI
 If you are moving from Sitecore XM/XP, this requires careful planning because they are fundamentally different products. For example, search functionality in XP relies heavily on Solr, whereas SitecoreAI lacks a web database, necessitating alternative approaches. Consider using composable solutions or custom implementations to address feature approach.
 
-Read more on the [Transition from XM/XP to SitecoreAI recipe](/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc).
+Read more on the [Transition from XM/XP to SitecoreAI recipe](xm-xp-to-xmc).
 
 ### Content Strategy: Do you need to migrate everything?
 When migrating content to SitecoreAI, evaluate whether all your existing content is necessary. This is a good time to revisit your SEO, marketing, and content strategies to ensure they align with the new platform's capabilities.
 
 Migrating everything might seem like the easiest option, but it’s rarely the most effective. Instead, selective content migration is often more efficient and aligned with long-term goals.
 
-Read more on the [Content Audit](/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit) recipe.
+Read more on the [Content Audit](/learn/accelerate/sitecoreai/pre-development/information-architecture/content-audit) recipe.
 
 ### Single Site vs. Multisite
 Choosing between a single site and multisite is not just a technical — it's strategic. It starts with your strategy and your audience: if you need discrete experiences for different markets or products, multisite is often the way to go. If you're hosting a single brand with shared messaging, a single site can be more efficient.
@@ -130,7 +130,7 @@ Hosting in SitecoreAI involves platforms to contain decoupled Rendering Host suc
 
 Unnecessary presentation details in MVC-based implementations may need to be rethought in the new headless environment.
 
-Read more on the [Web Application Hosting ](/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application) recipe.  
+Read more on the [Web Application Hosting ](../hosting-applications/hosting-web-application) recipe.  
 
 ### Publishing
 In SaaS, publishing looks very different. Publishing to Content Delivery (CD) and Sitecore Edge differ significantly in architecture and purpose. CD follows a traditional model where content is published from the Content Management environment to CD servers that host the live site and render pages directly to users. In contrast, publishing to Sitecore Edge involves pushing content to a globally distributed Content Delivery Network (CDN) optimized for speed and scalability. 

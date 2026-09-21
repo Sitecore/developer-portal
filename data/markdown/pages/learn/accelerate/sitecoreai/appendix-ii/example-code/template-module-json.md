@@ -13,9 +13,10 @@ Below is an example Sitecore Content Serialization (SCS) file that can be used w
 
 If you haven't already, refer to the guide on setting up Content Serialization and Creating a Site to learn more about where to find the values for `<SITE_COLLECTION_NAME>` and `<SITE_NAME>` used in the example below. It's important to note, that this template will require customization, especially if you have more than one site under a single site collection. Details on how to extend for multisite under a collection are detailed further below in the detailed breakdown section.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
-> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
+
+<Alert type="info"><AlertIcon />XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.</Alert>
 
 ```json
 {

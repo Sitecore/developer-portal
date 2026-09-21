@@ -15,7 +15,7 @@ Content surfaced on sites might not always necessarily exist in your CMS. Produc
 
 By integrating your DAM such as Sitecore Content Hub with your search provider such as Sitecore Search, we can ensure these types of assets are indexed and discoverable without relying on conventional crawling methods.
 
-> The following scenario will focus on Sitecore products, but similar approaches can be utilized with other products. Other approaches of integrating data into your website are available, that are detailed in [Custom Editing UX for 3rd Party Integrations](/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations) recipe.
+<Alert type="info"><AlertIcon />The following scenario will focus on Sitecore products, but similar approaches can be utilized with other products. Other approaches of integrating data into your website are available, that are detailed in [Custom Editing UX for 3rd Party Integrations](/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations) recipe.</Alert>
 
 A reference connector can be found on GitHub - [Content Hub to Sitecore Search Connector](https://github.com/Sitecore/accelerate-content-hub/tree/main/integrations/Sitecore.ContentHub.Integration.SearchConnector). The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 

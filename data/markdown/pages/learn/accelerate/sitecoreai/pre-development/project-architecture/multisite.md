@@ -15,7 +15,7 @@ Implementations often require efficiently hosting multiple website properties us
 
 The Next.js or ASP.NET Core application(s) should be architected to align with this approach, determining whether a single application can handle all sites or if multiple applications are needed. This structure should also seamlessly integrate localization to support diverse audiences.
 
-> The following details out the architecture in the case of Next.JS & .NET Core - other frameworks are available, but consider any differences between frameworks and SDKs.
+<Alert type="info"><AlertIcon />The following details out the architecture in the case of Next.JS & .NET Core - other frameworks are available, but consider any differences between frameworks and SDKs.</Alert>
 
 ## Execution
 
