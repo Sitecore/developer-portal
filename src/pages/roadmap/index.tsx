@@ -57,33 +57,34 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
               <div className="flex-col gap-8 md:flex-col">
                 <h2 className="lg:text-4xl font-semibold mb-8 font-sans">Four phases, one route</h2>
 
-                <p className="lg:text-lg text-muted-foreground my-8">This section provides a comprehensive view of the development progress for each of our products, structured into four distinct phases</p>
+                <p className="lg:text-lg text-muted-foreground my-8">The timeframe tells you our current plan:</p>
                 <div className="max-w-full grid grid-cols-2 lg:grid-cols-4 gap-4">
                   <Card className="flex-1 gap-8 bg-neutral-bg rounded-2xl p-8 items-center">
-                    <CardContent className="p-0!">
-                      <CardTitle className="text-xl font-sans">Done</CardTitle>
-                      <CardDescription className="text-md">Presenting completed features and updates</CardDescription>
+                    <CardContent className="p-0! w-full">
+                      <CardTitle className="text-xl font-sans">Now</CardTitle>
+                      <CardDescription className="text-md">available today</CardDescription>
                     </CardContent>
                   </Card>
                   <Card className="flex-1 gap-8 bg-success-bg rounded-2xl p-8 items-center">
-                    <CardContent className="p-0!">
-                      <CardTitle className="text-xl font-sans">Now</CardTitle>
-                      <CardDescription className="text-md">Outlining current initiatives which we expect to ship this quarter</CardDescription>
+                    <CardContent className="p-0! w-full">
+                      <CardTitle className="text-xl font-sans">This quarter</CardTitle>
+                      <CardDescription className="text-md">committed for release this quarter</CardDescription>
                     </CardContent>
                   </Card>
                   <Card className="flex-1 gap-8 bg-warning-bg rounded-2xl p-8 items-center">
-                    <CardContent className="p-0!">
+                    <CardContent className="p-0! w-full">
                       <CardTitle className="text-xl font-sans">Next</CardTitle>
-                      <CardDescription className="text-md">Detailing plans for the upcoming two quarters</CardDescription>
+                      <CardDescription className="text-md">direction we're headed; not yet committed</CardDescription>
                     </CardContent>
                   </Card>
                   <Card className="flex-1 gap-8 bg-neutral-bg-active rounded-2xl p-8 items-center">
-                    <CardContent className="p-0!">
+                    <CardContent className="p-0! w-full">
                       <CardTitle className="text-xl font-sans">Future</CardTitle>
-                      <CardDescription className="text-md">Offering a glimpse into long-term developments beyond nine months.</CardDescription>
+                      <CardDescription className="text-md">ideas we're exploring; timeline to be determined</CardDescription>
                     </CardContent>
                   </Card>
                 </div>
+                <p className="lg:text-lg text-muted-foreground my-8">Plans change. This reflects our current thinking and may shift as we learn from customers. Each feature links to more detail.</p>
               </div>
             </div>
 
