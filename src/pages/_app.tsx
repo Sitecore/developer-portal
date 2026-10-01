@@ -123,10 +123,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
             <EngageTrackerProvider>
               <PreviewProvider hostname={hostname}>
                 {progress && <TopBarProgress />}
-                <TopNav searchEnabled={IsSearchEnabled()} />
-                {/* <Navbar searchEnabled={IsSearchEnabled()} /> */}
-                <Component {...pageProps} ref={contentInnerRef} />
-                <Footer />
+                <div className="min-h-screen flex flex-col">
+                  <TopNav searchEnabled={IsSearchEnabled()} />
+                  {/* <Navbar searchEnabled={IsSearchEnabled()} /> */}
+                  <div className="flex-1">
+                    <Component {...pageProps} ref={contentInnerRef} />
+                  </div>
+                  <Footer />
+                </div>
               </PreviewProvider>
             </EngageTrackerProvider>
           </SessionProvider>

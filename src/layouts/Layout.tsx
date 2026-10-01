@@ -32,7 +32,7 @@ const Layout = ({
   const { isPreview } = usePreview();
 
   return (
-    <main className={cn("bg-subtle-bg", className)}>
+    <main className={cn("bg-subtle-bg flex-1", className)}>
       <Meta
         title={title}
         description={description}

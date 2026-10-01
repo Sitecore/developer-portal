@@ -1,8 +1,8 @@
-import { Button } from "@src/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardTitle } from "@src/components/ui/card";
-import { signIn, useSession } from "next-auth/react";
-import Image from "next/image";
-import Link from "next/link";
+import { Button } from '@src/components/ui/button';
+import { Card, CardAction, CardContent, CardDescription, CardTitle } from '@src/components/ui/card';
+import { signIn, useSession } from 'next-auth/react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export type RestrictedContentProps = {
   children?: React.ReactNode | Array<React.ReactNode>;
@@ -20,29 +20,15 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
     return (
       <Card className="border py-4 px-2">
         <div className="flex items-start gap-4">
-          <Image
-            width={48}
-            height={48}
-            src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-lock"
-            alt="lock"
-            className="mx-8"
-          />
+          <Image width={48} height={48} src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-lock" alt="lock" className="mx-8" />
           <div className="flex flex-col gap-2">
             <h3 className="text-lg font-heading">Restricted</h3>
             <p>
-              The account you&apos;re using is <strong>not</strong> currently
-              linked to an organization or you are using an{" "}
-              <strong>Sitecore ID</strong> account.
+              The account you&apos;re using is <strong>not</strong> currently linked to an organization or you are using an <strong>Sitecore ID</strong> account.
             </p>
-            <p>
-              This content is available exclusively to customers and partners
-              with a Sitecore Cloud Portal account linked to their organization.
-            </p>
+            <p>This content is available exclusively to customers and partners with a Sitecore Cloud Portal account linked to their organization.</p>
             <div className="flex">
-              <Link
-                href="/login?redirect=/roadmap"
-                className="text-primary hover:underline"
-              >
+              <Link href="/login?redirect=/roadmap" className="text-primary hover:underline">
                 Logout or switch credentials
               </Link>
             </div>
@@ -53,32 +39,21 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
   }
 
   return (
-    <Card className="border py-4 px-2" elevation="xs" style='outline'>
+    <Card className="border py-4 px-2 max-w-lg self-center" style="outline">
       <div className="flex gap-4 object-center">
-        <Image
-          width={48}
-          height={48}
-          src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-lock"
-          alt="lock"
-          className="mx-8"
-        />
-        <CardContent className='space-y-4'>
+        <Image width={48} height={48} src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-lock" alt="lock" className="mx-8" />
+        <CardContent className="space-y-4">
           <CardTitle>Restricted</CardTitle>
-          <CardDescription className='space-y-2'>
-          <p>You don&apos;t have permission to access this content.</p>
-          <p>
-            This content is available exclusively to customers and partners with
-            a <strong>Sitecore Cloud Portal</strong> account linked to their
-            organization. Please log in with your{" "}
-            <strong>Sitecore Cloud Portal</strong> credentials.
-          </p>
+          <CardDescription className="space-y-2 text-sm/6">
+            <p>You don&apos;t have permission to access this content.</p>
+            <p>
+              This content is available exclusively to customers and partners with a <strong>Sitecore Cloud Portal</strong> account linked to their organization. Please log in with your <strong>Sitecore Cloud Portal</strong> credentials.
+            </p>
           </CardDescription>
-          <CardAction className='flex justify-start'>
-          
-            <Button variant="default" onClick={() => signIn("sitecore")}>
+          <CardAction className="flex w-full">
+            <Button variant="default" onClick={() => signIn('sitecore')}>
               Login
             </Button>
-          
           </CardAction>
         </CardContent>
       </div>
