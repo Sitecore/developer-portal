@@ -1,11 +1,11 @@
 // Global
 
-import { cn } from '@/src/lib/util';
-import ScrollToTop from '@src/components/navigation/ScrollToTop';
-import { Alert, AlertTitle } from '@src/components/ui/alert';
-import { usePreview } from '@src/context/PreviewContext';
-import type React from 'react';
-import Meta from './Meta';
+import ScrollToTop from "@src/components/navigation/ScrollToTop";
+import { Alert, AlertTitle } from "@src/components/ui/alert";
+import { usePreview } from "@src/context/PreviewContext";
+import type React from "react";
+import { cn } from "@/src/lib/util";
+import Meta from "./Meta";
 
 type LayoutProps = {
   title: string;
@@ -19,12 +19,26 @@ type LayoutProps = {
   className?: string;
 };
 
-const Layout = ({ title, description = '', openGraphImage, baseTitle, section, children, className }: LayoutProps) => {
+const Layout = ({
+  title,
+  description = "",
+  openGraphImage,
+  baseTitle,
+  section,
+  children,
+  className,
+}: LayoutProps) => {
   const { isPreview } = usePreview();
 
   return (
-    <main className={cn('bg-subtle-bg flex-1', className)}>
-      <Meta title={title} description={description} baseTitle={baseTitle} section={section} openGraphImageUrl={openGraphImage} />
+    <main className={cn("bg-subtle-bg flex-1", className)}>
+      <Meta
+        title={title}
+        description={description}
+        baseTitle={baseTitle}
+        section={section}
+        openGraphImageUrl={openGraphImage}
+      />
 
       <div className="sr-only">
         <a href="#main-content">Skip to main content</a>
