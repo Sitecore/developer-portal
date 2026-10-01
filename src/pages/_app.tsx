@@ -1,46 +1,37 @@
-import {
-  PageController,
-  trackEntityPageViewEvent,
-  WidgetsProvider,
-} from "@sitecore-search/react";
-import { EngageTrackerProvider } from "@src/components/integrations";
-import { Footer } from "@src/components/navigation/Footer";
-import TopNav from "@src/components/navigation/topNav";
-import { PreviewProvider } from "@src/context/PreviewContext";
-import { IsSearchEnabled, SEARCH_CONFIG } from "@src/lib/search";
-import type { AppProps } from "next/app";
-import { DM_Sans } from "next/font/google";
-import { Router } from "next/router";
-import { SessionProvider } from "next-auth/react";
-import { ThemeProvider } from "next-themes";
-import { useCallback, useEffect, useRef, useState } from "react";
-import TagManager from "react-gtm-module";
-import TopBarProgress from "react-topbar-progress-indicator";
-import "../styles/global.css";
+import { PageController, trackEntityPageViewEvent, WidgetsProvider } from '@sitecore-search/react';
+import { EngageTrackerProvider } from '@src/components/integrations';
+import { Footer } from '@src/components/navigation/Footer';
+import TopNav from '@src/components/navigation/topNav';
+import { PreviewProvider } from '@src/context/PreviewContext';
+import { IsSearchEnabled, SEARCH_CONFIG } from '@src/lib/search';
+import { SessionProvider } from 'next-auth/react';
+import { ThemeProvider } from 'next-themes';
+import type { AppProps } from 'next/app';
+import { DM_Sans } from 'next/font/google';
+import { Router } from 'next/router';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import TagManager from 'react-gtm-module';
+import TopBarProgress from 'react-topbar-progress-indicator';
+import '../styles/global.css';
 
 const scHeadFont = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
   preload: true,
 });
 
-const SearchWrapper = ({ children }: any) =>
-  IsSearchEnabled() ? (
-    <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider>
-  ) : (
-    children
-  );
+const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [progress, setProgress] = useState(false);
-  const [hostname, setHostname] = useState("");
+  const [hostname, setHostname] = useState('');
 
   TopBarProgress.config({
     barColors: {
-      "0": "#fca5a5",
-      "0.5": "#b91c1c",
-      "1.0": "#450a0a",
+      '0': '#fca5a5',
+      '0.5': '#b91c1c',
+      '1.0': '#450a0a',
     },
     shadowBlur: 2,
   });
@@ -50,35 +41,30 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const onScroll = useCallback(() => {
     if (contentInnerRef.current) {
       const { clientHeight, offsetTop } = contentInnerRef.current;
-      const contentAllViewed =
-        window.scrollY + window.innerHeight >= offsetTop + clientHeight;
+      const contentAllViewed = window.scrollY + window.innerHeight >= offsetTop + clientHeight;
       const params = new URLSearchParams(window.location.search);
-      const fromSearch = params.get("fromSearch");
+      const fromSearch = params.get('fromSearch');
 
       if (contentAllViewed && fromSearch && !conversionTriggered) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
         conversionTriggered = true;
-        trackEntityPageViewEvent("content", {
+        trackEntityPageViewEvent('content', {
           items: [
             {
-              id:
-                process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX +
-                document.location.pathname
-                  .replace(/[/:.]/g, "_")
-                  .replace(/_+$/, ""),
+              id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, ''),
             },
           ],
-          actionSubtype: "conversion",
+          actionSubtype: 'conversion',
         });
       }
     }
   }, [conversionTriggered]);
 
-  Router.events.on("routeChangeStart", () => {
+  Router.events.on('routeChangeStart', () => {
     setProgress(true);
   });
 
-  Router.events.on("routeChangeComplete", () => {
+  Router.events.on('routeChangeComplete', () => {
     setProgress(false);
   });
   // useEffect for basic page views tracking via router/gtag.
@@ -92,26 +78,22 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     TagManager.initialize(tagManagerArgs);
 
     if (IsSearchEnabled()) {
-      PageController.getContext().setLocaleLanguage("en");
-      PageController.getContext().setLocale({ country: "us", language: "en" });
-      trackEntityPageViewEvent("content", {
+      PageController.getContext().setLocaleLanguage('en');
+      PageController.getContext().setLocale({ country: 'us', language: 'en' });
+      trackEntityPageViewEvent('content', {
         items: [
           {
-            id:
-              process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX +
-              document.location.pathname
-                .replace(/[/:.]/g, "_")
-                .replace(/_+$/, ""),
+            id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, ''),
           },
         ],
       });
     }
 
     setHostname(window.location.host);
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener('scroll', onScroll);
     };
   }, [onScroll]);
 
@@ -123,10 +105,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
             <EngageTrackerProvider>
               <PreviewProvider hostname={hostname}>
                 {progress && <TopBarProgress />}
-                <TopNav searchEnabled={IsSearchEnabled()} />
-                {/* <Navbar searchEnabled={IsSearchEnabled()} /> */}
-                <Component {...pageProps} ref={contentInnerRef} />
-                <Footer />
+                <div className="min-h-screen flex flex-col">
+                  <TopNav searchEnabled={IsSearchEnabled()} />
+                  {/* <Navbar searchEnabled={IsSearchEnabled()} /> */}
+                  <div className="flex-1">
+                    <Component {...pageProps} ref={contentInnerRef} />
+                  </div>
+                  <Footer />
+                </div>
               </PreviewProvider>
             </EngageTrackerProvider>
           </SessionProvider>

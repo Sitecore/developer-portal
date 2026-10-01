@@ -1,8 +1,6 @@
 import { LinkItem } from '@/src/components';
-import { HideForUsers } from '@/src/components/authentication/HideForUsers';
 import { RestrictedContent } from '@/src/components/authentication/RestrictedContent';
 import { Alert, AlertDescription, AlertTitle } from '@/src/components/ui/alert';
-import { Button } from '@/src/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/src/components/ui/card';
 import type { Option } from '@/src/components/ui/dropdown';
 import Layout from '@/src/layouts/Layout';
@@ -14,7 +12,6 @@ import type { RoadmapInformation } from '@src/lib/interfaces/jira';
 import type { PageInfo } from '@src/lib/interfaces/page-info';
 import { getPageInfo } from '@src/lib/page-info';
 import type { NextPage } from 'next';
-import { signIn } from 'next-auth/react';
 
 interface RoadmapPageProps {
   pageInfo: PageInfo;
@@ -39,7 +36,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
     <TrackPageView pageInfo={pageInfo}>
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} subTitle="Product Roadmap" image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
-        <HideForUsers>
+        {/* <HideForUsers>
           <VerticalGroup className="bg-white dark:bg-background py-6">
             <CenteredContent>
               <Alert>
@@ -50,7 +47,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
               </Alert>
             </CenteredContent>
           </VerticalGroup>
-        </HideForUsers>
+        </HideForUsers> */}
         <VerticalGroup className="bg-white dark:bg-background py-6">
           <CenteredContent>
             <div className="flex flex-col gap-16 md:flex-row">
@@ -74,13 +71,13 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                   <Card className="flex-1 gap-8 bg-warning-bg rounded-2xl p-8 items-center">
                     <CardContent className="p-0! w-full">
                       <CardTitle className="text-xl font-sans">Next</CardTitle>
-                      <CardDescription className="text-md">Direction we're headed; not yet committed</CardDescription>
+                      <CardDescription className="text-md">Direction we're headed; not yet committed.</CardDescription>
                     </CardContent>
                   </Card>
                   <Card className="flex-1 gap-8 bg-neutral-bg-active rounded-2xl p-8 items-center">
                     <CardContent className="p-0! w-full">
                       <CardTitle className="text-xl font-sans">Future</CardTitle>
-                      <CardDescription className="text-md">Ideas we're exploring; timeline to be determined</CardDescription>
+                      <CardDescription className="text-md">Ideas we're exploring; timeline to be determined.</CardDescription>
                     </CardContent>
                   </Card>
                 </div>
