@@ -41,7 +41,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} subTitle="Product Roadmap" image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
         <HideForUsers>
-          <VerticalGroup>
+          <VerticalGroup className="bg-white dark:bg-background py-6">
             <CenteredContent>
               <Alert>
                 <AlertDescription>To access the detailed roadmaps, please log in using your cloud portal credentials.</AlertDescription>
@@ -67,7 +67,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                     </TimelineSeparator>
                     <TimelineContent className="pr-4">
                       <TimelineTitle className="text-xl font-sans">Done</TimelineTitle>
-                      <TimelineDescription className="text-lg">Presenting completed features and updates</TimelineDescription>
+                      <TimelineDescription className="text-md">Presenting completed features and updates</TimelineDescription>
                     </TimelineContent>
                   </TimelineItem>
                   <TimelineItem className="flex-1 flex-col gap-4">
@@ -77,7 +77,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                     </TimelineSeparator>
                     <TimelineContent className="pr-4">
                       <TimelineTitle className="text-xl font-sans">Now</TimelineTitle>
-                      <TimelineDescription className="text-lg">Outlining current initiatives which we expect to ship this quarter</TimelineDescription>
+                      <TimelineDescription className="text-md">Outlining current initiatives which we expect to ship this quarter</TimelineDescription>
                     </TimelineContent>
                   </TimelineItem>
                   <TimelineItem className="flex-1 flex-col gap-4">
@@ -87,7 +87,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                     </TimelineSeparator>
                     <TimelineContent className="pr-4">
                       <TimelineTitle className="text-xl font-sans">Next</TimelineTitle>
-                      <TimelineDescription className="text-lg">Detailing plans for the upcoming two quarters</TimelineDescription>
+                      <TimelineDescription className="text-md">Detailing plans for the upcoming two quarters</TimelineDescription>
                     </TimelineContent>
                   </TimelineItem>
                   <TimelineItem className="flex-1 flex-col gap-4">
@@ -97,12 +97,13 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                     </TimelineSeparator>
                     <TimelineContent className="pr-4">
                       <TimelineTitle className="text-xl font-sans">Future</TimelineTitle>
-                      <TimelineDescription className="text-lg">Offering a glimpse into long-term developments beyond nine months.</TimelineDescription>
+                      <TimelineDescription className="text-md">Offering a glimpse into long-term developments beyond nine months.</TimelineDescription>
                     </TimelineContent>
                   </TimelineItem>
                 </TimelineRoot>
               </div>
             </div>
+
             <RestrictedContent>
               <Alert variant="warning">
                 <AlertDescription>
