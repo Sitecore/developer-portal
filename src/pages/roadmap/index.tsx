@@ -55,32 +55,32 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
           <CenteredContent>
             <div className="flex flex-col gap-16 md:flex-row">
               <div className="flex-col gap-8 md:flex-col">
-                <h2 className="lg:text-4xl font-semibold mb-8 font-sans">Four phases, one route</h2>
+                <h2 className="lg:text-4xl font-semibold mb-8 font-sans">Where each feature stands</h2>
 
-                <p className="lg:text-lg text-muted-foreground my-8">This section provides a comprehensive view of the development progress for each of our products, structured into four distinct phases</p>
+                <p className="lg:text-lg text-muted-foreground my-8">Every feature is tagged with one of four phases, so you know what's available now and what's still taking shape.</p>
                 <div className="max-w-full grid grid-cols-2 lg:grid-cols-4 gap-4">
                   <Card className="flex-1 gap-8 bg-neutral-bg rounded-2xl p-8 items-center">
-                    <CardContent className="p-0!">
+                    <CardContent className="p-0! w-full">
                       <CardTitle className="text-xl font-sans">Done</CardTitle>
-                      <CardDescription className="text-md">Presenting completed features and updates</CardDescription>
+                      <CardDescription className="text-md">Presenting completed features and updates available today.</CardDescription>
                     </CardContent>
                   </Card>
                   <Card className="flex-1 gap-8 bg-success-bg rounded-2xl p-8 items-center">
-                    <CardContent className="p-0!">
+                    <CardContent className="p-0! w-full">
                       <CardTitle className="text-xl font-sans">Now</CardTitle>
-                      <CardDescription className="text-md">Outlining current initiatives which we expect to ship this quarter</CardDescription>
+                      <CardDescription className="text-md">Outlining initiatives committed for release this quarter.</CardDescription>
                     </CardContent>
                   </Card>
                   <Card className="flex-1 gap-8 bg-warning-bg rounded-2xl p-8 items-center">
-                    <CardContent className="p-0!">
+                    <CardContent className="p-0! w-full">
                       <CardTitle className="text-xl font-sans">Next</CardTitle>
-                      <CardDescription className="text-md">Detailing plans for the upcoming two quarters</CardDescription>
+                      <CardDescription className="text-md">Direction we're headed; not yet committed</CardDescription>
                     </CardContent>
                   </Card>
                   <Card className="flex-1 gap-8 bg-neutral-bg-active rounded-2xl p-8 items-center">
-                    <CardContent className="p-0!">
+                    <CardContent className="p-0! w-full">
                       <CardTitle className="text-xl font-sans">Future</CardTitle>
-                      <CardDescription className="text-md">Offering a glimpse into long-term developments beyond nine months.</CardDescription>
+                      <CardDescription className="text-md">Ideas we're exploring; timeline to be determined</CardDescription>
                     </CardContent>
                   </Card>
                 </div>
