@@ -95,7 +95,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                 </AlertDescription>
               </Alert>
 
-              <Card style="filled">
+              <Card>
                 <CardHeader>
                   <CardTitle>Available Roadmaps</CardTitle>
                   <CardDescription>Pick a product area to see its detailed, phase-by-phase plan.</CardDescription>
