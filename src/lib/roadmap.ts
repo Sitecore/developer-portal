@@ -10,6 +10,7 @@ export interface IRoadmapItem {
   attachments: RoadmapAttachment[];
   status: string;
   changelogLink: string;
+  customerValue: string;
 }
 export interface RoadmapProduct {
   name: string;
@@ -39,7 +40,7 @@ export function extractFirstThreeJiraListItems(content: string): string {
 
   // When content does not meet the headings
   if (matches.length === 0) {
-    return 'Warning: The content does not contain the expected headings. Please ensure that the content includes the following headings: "Why Now", "What Changes", and "Business Outcome".';
+    return '<h3>Warning: The content does not contain the expected headings.</h3> Please ensure that the content includes the following headings: "Why Now", "What Changes", and "Business Outcome".';
   }
 
   const selectedSections: string[] = [];
@@ -105,5 +106,6 @@ export function parseJiraIssue(issue: Issue) {
     attachments,
     status,
     changelogLink: issue.fields.customfield_21960,
+    customerValue: issue.fields.customfield_22745,
   } as IRoadmapItem;
 }

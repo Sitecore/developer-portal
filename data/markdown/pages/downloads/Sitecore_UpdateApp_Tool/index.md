@@ -4,6 +4,7 @@ description: 'This tool updates the Core, Master, and Web databases of Sitecore 
 origin: https://dev.sitecore.net/Downloads/Sitecore_UpdateApp_Tool.aspx
 ---
 ### Sitecore UpdateApp Tool 1.x
+[Sitecore UpdateApp Tool 1.5.2](/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_152)\
 [Sitecore UpdateApp Tool 1.4.1](/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_141)\
 [Sitecore UpdateApp Tool 1.3.1](/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_131)\
 [Sitecore UpdateApp Tool 1.2.0](/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_120)\

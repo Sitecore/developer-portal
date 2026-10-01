@@ -1,4 +1,6 @@
 import type { Option } from '@src/components/ui/dropdown';
+import { VariantProps } from 'class-variance-authority';
+import { badgeVariants } from '../components/ui/badge';
 import type { CustomField, Issue, IssueTypeSchema, JiraResponse, RoadmapInformation } from './interfaces/jira';
 import { parseJiraIssues } from './roadmap';
 
@@ -78,6 +80,7 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     'customfield_22392', // PMM Tier
     'customfield_22399', // PMM Target Persona
     'customfield_21960', // Documents (changelog link)
+    'customfield_22745', // Value to the customer
   ];
 
   const filters = [
@@ -166,33 +169,33 @@ export async function getProductsAsOptions(issues: Issue[]): Promise<Array<Optio
   return options;
 }
 
-export function getBadgeColor(status: string): string {
+export function getBadgeColor(status: string): VariantProps<typeof badgeVariants>['colorScheme'] {
   switch (status.toLowerCase()) {
     case 'done':
-      return 'green';
+      return 'success';
     case 'now':
       return 'primary';
     case 'next':
-      return 'orange';
+      return 'warning';
     case 'future':
-      return 'gray';
+      return 'neutral';
     default:
-      return 'gray';
+      return 'neutral';
   }
 }
 
-export function getStatusColor(status: string): string {
+export function getStatusColor(status: string): VariantProps<typeof badgeVariants>['colorScheme'] {
   switch (status.toLowerCase()) {
     case 'done':
-      return 'green';
+      return 'success';
     case 'new':
-      return 'primary';
-    case 'discovery':
       return 'yellow';
+    case 'discovery':
+      return 'blue';
     case 'delivery':
-      return 'teal';
+      return 'primary';
     default:
-      return 'gray';
+      return 'neutral';
   }
 }
 export async function getIssueTypeSchema(params: { projectKey: string; issueTypeId: string }): Promise<IssueTypeSchema> {

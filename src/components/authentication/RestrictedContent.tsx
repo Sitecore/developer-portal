@@ -1,8 +1,8 @@
 import { Button } from "@src/components/ui/button";
-import { Card } from "@src/components/ui/card";
+import { Card, CardAction, CardContent, CardDescription, CardTitle } from "@src/components/ui/card";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { signIn, useSession } from "next-auth/react";
 
 export type RestrictedContentProps = {
   children?: React.ReactNode | Array<React.ReactNode>;
@@ -53,8 +53,8 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
   }
 
   return (
-    <Card className="border py-4 px-2">
-      <div className="flex items-start gap-4">
+    <Card className="border py-4 px-2" elevation="xs" style='outline'>
+      <div className="flex gap-4 object-center">
         <Image
           width={48}
           height={48}
@@ -62,8 +62,9 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
           alt="lock"
           className="mx-8"
         />
-        <div className="flex flex-col gap-2">
-          <h3 className="text-lg font-heading">Restricted</h3>
+        <CardContent className='space-y-4'>
+          <CardTitle>Restricted</CardTitle>
+          <CardDescription className='space-y-2'>
           <p>You don&apos;t have permission to access this content.</p>
           <p>
             This content is available exclusively to customers and partners with
@@ -71,12 +72,15 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
             organization. Please log in with your{" "}
             <strong>Sitecore Cloud Portal</strong> credentials.
           </p>
-          <div className="flex">
-            <Button variant="link" onClick={() => signIn("sitecore")}>
+          </CardDescription>
+          <CardAction className='flex justify-start'>
+          
+            <Button variant="default" onClick={() => signIn("sitecore")}>
               Login
             </Button>
-          </div>
-        </div>
+          
+          </CardAction>
+        </CardContent>
       </div>
     </Card>
   );

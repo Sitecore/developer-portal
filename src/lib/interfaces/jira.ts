@@ -35,6 +35,7 @@ export interface Attachment {
 
 export interface Fields {
   summary: string;
+  customfield_22745: string; // Value to the customer
   customfield_22391: CustomField; // Roadmap Phase
   customfield_24688?: CustomField[]; // Product
   customfield_15555?: string; // Speaker notes
