@@ -20,7 +20,7 @@ function assertValidIssueTypeId(issueTypeId: string): void {
   }
 }
 
-export const includedProducts = ['SitecoreAI Agentic Studio', 'SitecoreAI CMS', 'SitecoreAI Conversion Optimization', 'SitecoreAI DAM', 'Content Operations', 'Marketplace', 'Scrunch', 'XM/XP', 'Commerce/OC', 'Common Platform'];
+export const includedProducts = ['SitecoreAI Agentic Studio', 'SitecoreAI CMS', 'SitecoreAI Conversion Optimization', 'SitecoreAI DAM', 'Content Operations', 'Marketplace', 'Scrunch', 'XM/XP', 'Commerce/OC', 'Platform'];
 
 export enum Phase {
   NOW = 'Now',
@@ -87,6 +87,7 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     { key: 'issuetype', value: 'Idea', operator: FilterOption.Equals },
     { key: 'cf[22518]', value: '1', operator: FilterOption.Equals },
     { key: 'cf[22392]', value: "('Tier 1 (Non-gated)', 'Tier 2', 'Tier 3')", operator: FilterOption.In },
+    { key: 'cf[24688]', value: "('SitecoreAI Agentic Studio', 'SitecoreAI CMS', 'SitecoreAI Conversion Optimization', 'SitecoreAI DAM', 'Content Operations', 'Marketplace', 'Scrunch', 'XM/XP', 'Common Platform')", operator: FilterOption.In },
   ];
 
   const jqlString = createJqlString(filters);
@@ -144,8 +145,12 @@ export async function getRoadmap(): Promise<RoadmapInformation> {
   return roadmapInformation;
 }
 
+export function normalizeProductName(productName: string): string {
+  return productName === 'Common Platform' ? 'Platform' : productName;
+}
+
 export async function getProducts(issues: any[]): Promise<string[]> {
-  const products = issues.flatMap((issue: Issue) => issue.fields.customfield_24688 || []).map((label: CustomField) => label.value);
+  const products = issues.flatMap((issue: Issue) => issue.fields.customfield_24688 || []).map((label: CustomField) => normalizeProductName(label.value));
 
   const uniqueProducts = [...new Set(products)];
   return uniqueProducts;
@@ -157,10 +162,10 @@ export async function getProductsAsOptions(issues: Issue[]): Promise<Array<Optio
   issues.forEach((issue: Issue) => {
     if (issue.fields.customfield_24688) {
       issue.fields.customfield_24688.forEach((field: CustomField) => {
+        const normalizedLabel = normalizeProductName(field.value);
+
         if (!options.some((existingOption) => existingOption.value === field.id)) {
-          if (includedProducts.includes(field.value)) {
-            options.push({ label: field.value, value: field.id });
-          }
+          options.push({ label: normalizedLabel, value: field.id });
         }
       });
     }

@@ -40,6 +40,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const product = getQueryArray(context?.params?.product);
+  console.log(product);
   const pageInfo = await getPageInfo('_roadmap');
   const roadmap = await getRoadmap();
 

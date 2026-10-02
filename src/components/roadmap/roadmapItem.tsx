@@ -8,6 +8,7 @@ import { LinkedHeading } from '@src/components/links/LinkedHeading';
 import { Badge } from '@src/components/ui/badge';
 import { Card, CardContent, CardFooter, CardHeader } from '@src/components/ui/card';
 import { ImageModal } from '@src/components/ui/imageModal';
+import { Label } from '@src/components/ui/label';
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle } from '@src/components/ui/sheet';
 import { getBadgeColor, getStatusColor } from '@src/lib/jira';
 import type { IRoadmapItem, RoadmapProduct } from '@src/lib/roadmap';
@@ -49,50 +50,27 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
 
   return (
     <>
-      <Card style="outline" elevation="xs" padding="sm" className="gap-2">
+      <Card style="outline" elevation="xs" padding="sm" className="gap-2" suppressHydrationWarning>
         <CardHeader>
           <button type="button" className="text-base font-semibold cursor-pointer hover:underline text-left w-full" onClick={handleClick}>
             {item.title}
           </button>
         </CardHeader>
         <CardContent className="hidden sm:block">
-          <span className="text-base text-muted-foreground">{item.customerValue}</span>
+          <div className="text-base text-muted-foreground">{item.customerValue}</div>
         </CardContent>
         <CardFooter className="gap-2">
-            
           <Badge variant="default" colorScheme={getStatusColor(item.status)}>
             {item.status}
           </Badge>
-        
           {/* {item.status.toLowerCase() == "done" && item.changelogLink && ( */}
           {item.changelogLink && (
-          <Badge asChild>
-            <Link href={item.changelogLink} className="text-primary hover:underline" target="_blank">
-              Release notes <ArrowRightIcon className="size-3" />
-            </Link>
-          </Badge>
+            <Badge asChild>
+              <Link href={item.changelogLink} className="text-primary hover:underline" target="_blank">
+                Release notes <ArrowRightIcon className="size-3" />
+              </Link>
+            </Badge>
           )}
-        
-        {/* {item.product?.map((label: RoadmapProduct) => (
-          <Badge key={label.id} variant="default">
-            {includedProducts.includes(label.name) ? (
-              label.name
-            ) : (
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Link href={`/roadmap/${slugify(label.name)}`} className="hover:underline">
-                      {label.name}
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Go to the roadmap page for {label.name}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            )}
-          </Badge>
-        ))} */}
         </CardFooter>
       </Card>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -106,27 +84,29 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
             <Card style="outline" elevation="xs" padding="sm" className="mx-4">
               <CardContent>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Roadmap Phase:</p>
-                  <Badge variant="default" colorScheme={getBadgeColor(item.roadmapPhase)}>
+                  <Label htmlFor="phase">Roadmap Phase:</Label>
+                  <Badge variant="default" colorScheme={getBadgeColor(item.roadmapPhase)} id="phase">
                     {item.roadmapPhase}
                   </Badge>
                 </div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Status:</p>
-                  <Badge variant="default" colorScheme={getStatusColor(item.status)}>
+                  <Label htmlFor="status">Status:</Label>
+                  <Badge variant="default" colorScheme={getStatusColor(item.status)} id="status">
                     {item.status}
                   </Badge>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Product(s):</p>
-                  {item.product?.map((label: RoadmapProduct) => (
-                    <Badge key={label.id} variant="default">
-                      <Link href={`/roadmap/${slugify(label.name)}`} className="hover:underline">
-                        {label.name}
-                      </Link>
-                    </Badge>
-                  ))}
+                  <Label htmlFor="products">Product(s):</Label>
+                  <div id="products" className="flex flex-wrap gap-2">
+                    {item.product?.map((label: RoadmapProduct) => (
+                      <Badge key={label.id} variant="default">
+                        <Link href={`/roadmap/${slugify(label.name)}`} className="hover:underline">
+                          {label.name}
+                        </Link>
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </CardContent>
             </Card>
