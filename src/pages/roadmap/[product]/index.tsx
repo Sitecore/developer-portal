@@ -94,18 +94,23 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct }) => {
             </Alert>
 
             <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-              <RoadmapPhase roadmap={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Next (next two quarters)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Future (9+ months)" color="info-bg" phase={Phase.FUTURE} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Done" description="Available today." color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Now" description="Committed for this quarter." color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Next" description="Direction we're headed; not yet committed." color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Future" description="Ideas we're exploring; timeline to be determined." color="info-bg" phase={Phase.FUTURE} isLoading={isLoading} />
             </div>
 
-            <Alert variant="warning">
+            <span className="text-sm text-muted-foreground">
+              This roadmap shows what we're building next and the outcomes it's built to deliver. Features are grouped by the three places brands either stay in control or start to drift: expanding your presence where buying decisions happen, running
+              marketing as one governed system, and turning intent into outcomes. This isn't everything in development, but it gives you a clear view of where we're investing and why. for SitecoreAI CMS
+            </span>
+
+            {/* <Alert variant="warning">
               <AlertDescription>
                 The product roadmap is for informational purposes only and subject to change at Sitecore&apos;s sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers
                 should not rely on it for purchasing or planning decisions.
               </AlertDescription>
-            </Alert>
+            </Alert> */}
           </CenteredContent>
         </VerticalGroup>
       </Layout>

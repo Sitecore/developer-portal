@@ -6,7 +6,7 @@ import type { RoadmapInformation } from '@src/lib/interfaces/jira';
 import type { Phase } from '@src/lib/jira';
 import { ChevronDown, X } from 'lucide-react';
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { RoadmapItem } from './roadmapItem';
 
 interface RoadmapPhaseProps {
@@ -14,17 +14,19 @@ interface RoadmapPhaseProps {
   phase: Phase;
   selectedProducts?: Option[];
   title: string;
+  description: string;
   color: string;
   isLoading: boolean;
 }
 
-export const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ roadmap, title, color, phase, isLoading }: RoadmapPhaseProps) => {
+export const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ roadmap, title, description, color, phase, isLoading }: RoadmapPhaseProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Card style="filled" className={`bg-${color}`} padding="sm">
       <CardHeader>
         <CardTitle className="">{title}</CardTitle>
+        <CardDescription className="text-sm text-muted-foreground">{description}</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-col gap-4 hidden md:flex">
