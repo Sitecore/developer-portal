@@ -1,4 +1,5 @@
 import type { Issue } from './interfaces/jira';
+import { normalizeProductName } from './jira';
 
 export interface IRoadmapItem {
   id: number;
@@ -78,7 +79,7 @@ export function parseJiraIssue(issue: Issue) {
   const roadmapPhase = issue.fields.customfield_22391?.value;
   const product: RoadmapProduct[] =
     issue.fields.customfield_24688?.map((label) => ({
-      name: label.value,
+      name: normalizeProductName(label.value),
       id: label.id,
     })) || [];
   const description = extractFirstThreeJiraListItems(replaceImageUrls(issue.renderedFields?.description || ''));
