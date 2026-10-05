@@ -1,5 +1,5 @@
 import type { Issue } from './interfaces/jira';
-import { normalizeProductName } from './jira';
+import { normalizeProductName, productsToShow } from './jira';
 
 export interface IRoadmapItem {
   id: number;
@@ -78,10 +78,12 @@ function replaceImageUrls(content: string): string {
 export function parseJiraIssue(issue: Issue) {
   const roadmapPhase = issue.fields.customfield_22391?.value;
   const product: RoadmapProduct[] =
-    issue.fields.customfield_24688?.map((label) => ({
-      name: normalizeProductName(label.value),
-      id: label.id,
-    })) || [];
+    issue.fields.customfield_24688
+      ?.filter((label) => productsToShow.includes(label.value))
+      .map((label) => ({
+        name: normalizeProductName(label.value),
+        id: label.id,
+      })) || [];
   const description = extractFirstThreeJiraListItems(replaceImageUrls(issue.renderedFields?.description || ''));
 
   const title = issue.fields.customfield_15423 || issue.fields.summary;

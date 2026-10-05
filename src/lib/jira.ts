@@ -14,7 +14,7 @@ const jiraBaseUrl = "https://sitecore.atlassian.net/rest/api/3";
 const JIRA_USERNAME = process.env.JIRA_USERNAME as string;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN as string;
 
-const productsToShow = [
+export const productsToShow = [
   "SitecoreAI Agentic Studio",
   "SitecoreAI CMS",
   "SitecoreAI Conversion Optimization",

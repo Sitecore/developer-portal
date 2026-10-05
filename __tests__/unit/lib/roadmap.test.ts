@@ -1,5 +1,37 @@
-import { extractFirstThreeJiraListItems } from '@/src/lib/roadmap';
+import type { Issue } from '@/src/lib/interfaces/jira';
+import { extractFirstThreeJiraListItems, parseJiraIssue } from '@/src/lib/roadmap';
 import { describe, expect, it } from 'vitest';
+
+describe('parseJiraIssue products', () => {
+  it.each([
+    {
+      products: [
+        { id: 'cms', value: 'SitecoreAI CMS' },
+        { id: 'commerce', value: 'Commerce/OC' },
+        { id: 'unknown', value: 'Unknown Product' },
+        { id: 'common-platform', value: 'Common Platform' },
+      ],
+      expected: [
+        { id: 'cms', name: 'SitecoreAI CMS' },
+        { id: 'common-platform', name: 'Platform' },
+      ],
+    },
+    { products: [{ id: 'commerce', value: 'Commerce/OC' }], expected: [] },
+    { products: undefined, expected: [] },
+  ])('only returns allowed products for $products', ({ products, expected }) => {
+    const issue = {
+      id: '1',
+      key: 'ROADMAP-1',
+      fields: {
+        customfield_24688: products,
+        attachment: [],
+        status: { name: 'Now' },
+      },
+    } as unknown as Issue;
+
+    expect(parseJiraIssue(issue).product).toEqual(expected);
+  });
+});
 
 describe('extractFirstThreeJiraListItems', () => {
   it('keeps only the required roadmap narrative sections and ignores the rest', () => {
