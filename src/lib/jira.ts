@@ -9,7 +9,6 @@ import type {
   RoadmapInformation,
 } from "./interfaces/jira";
 import { parseJiraIssues } from "./roadmap";
-import { slugify } from "./util";
 
 const jiraBaseUrl = "https://sitecore.atlassian.net/rest/api/3";
 const JIRA_USERNAME = process.env.JIRA_USERNAME as string;
@@ -215,7 +214,6 @@ export async function getProductsAsOptions(
           productsToShow.includes(field.value) &&
           !options.some((existingOption) => existingOption.value === field.id)
         ) {
-          console.log(slugify(normalizedLabel));
           options.push({ label: normalizedLabel, value: field.id });
         }
       });
