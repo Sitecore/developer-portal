@@ -16,7 +16,6 @@ import {
 } from "@/src/components/ui/card";
 import type { Option } from "@/src/components/ui/dropdown";
 import Layout from "@/src/layouts/Layout";
-import { getRoadmap } from "@/src/lib/jira";
 import { TrackPageView } from "@src/components/integrations/engage/TrackPageView";
 import {
   CenteredContent,
@@ -36,17 +35,15 @@ interface RoadmapPageProps {
 
 export async function getServerSideProps() {
   const pageInfo = await getPageInfo("_roadmap");
-  const roadmap = await getRoadmap();
 
   return {
     props: {
       pageInfo,
-      products: roadmap.products,
     },
   };
 }
 
-const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
+const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo }) => {
   return (
     <TrackPageView pageInfo={pageInfo}>
       <Layout
