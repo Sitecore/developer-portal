@@ -1,29 +1,30 @@
-"use client";
+'use client';
 
-import type { roadmapCategory } from "@/data/data-roadmap";
-import { mdiCircle } from "@mdi/js";
-import { Icon } from "../ui/icon";
-import { RoadmapProductArea } from "./RoadmapProductArea";
+import type { roadmapCategory } from '@/data/data-roadmap';
+import { cn } from '../lib/utils';
+import { RoadmapProductArea } from './RoadmapProductArea';
 
 interface RoadmapCategoryProps {
   category: roadmapCategory;
+  className?: string;
+  flex?: 'row' | 'column';
 }
 
-export const RoadmapCategory: React.FC<RoadmapCategoryProps> = ({
-  category,
-}: RoadmapCategoryProps) => {
-  return (
-    <div className="mb-8">
-      <h4 className="text-base font-semibold text-primary-fg font-heading uppercase mb-4 gap-2 flex items-center">
-        <Icon path={mdiCircle} className="size-3" />
-        {category.title}
-      </h4>
+export const RoadmapCategory: React.FC<RoadmapCategoryProps> = ({ category, className, flex = 'column' }: RoadmapCategoryProps) => {
+  const topLevelClassName = cn('border-t-2', 'border-t-primary-fg');
 
-      <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {category.items.map((item) => (
-          <RoadmapProductArea productArea={item} key={item.key} />
-        ))}
+  if (category.title) {
+    return (
+      <div className={cn(className, topLevelClassName, 'mb-8', 'px-0 py-4', category.items.length > 1 ? 'md:col-span-2 lg:col-span-1' : 'md:col-span-1 lg:col-span-1')}>
+        <h4 className="text-lg font-semibold font-heading mb-4 gap-2 flex items-center">{category.title}</h4>
+        <div className={cn('grid gap-4', category.items.length > 1 ? 'md:grid-cols-2 lg:grid-cols-1' : 'md:grid-cols-1')}>
+          {category.items.map((item) => (
+            <RoadmapProductArea productArea={item} key={item.key} />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  return category.items.map((item) => <RoadmapProductArea productArea={item} key={item.key} />);
 };
