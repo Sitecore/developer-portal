@@ -7,10 +7,9 @@ import { RoadmapProductArea } from './RoadmapProductArea';
 interface RoadmapCategoryProps {
   category: roadmapCategory;
   className?: string;
-  flex?: 'row' | 'column';
 }
 
-export const RoadmapCategory: React.FC<RoadmapCategoryProps> = ({ category, className, flex = 'column' }: RoadmapCategoryProps) => {
+export const RoadmapCategory: React.FC<RoadmapCategoryProps> = ({ category, className }: RoadmapCategoryProps) => {
   const topLevelClassName = cn('border-t-2', 'border-t-primary-fg');
 
   if (category.title) {
