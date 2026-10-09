@@ -90,6 +90,7 @@ This Cookbook provides a set of recipes to help implementing Content Hub through
 - [External component events](https://developers.sitecore.com/learn/accelerate/content-hub/optimization/reporting/external-component-events)
 - [Most searched assets](https://developers.sitecore.com/learn/accelerate/content-hub/optimization/reporting/most-searched-assets)
 - [Most applied facet filters](https://developers.sitecore.com/learn/accelerate/content-hub/optimization/reporting/most-applied-facet-filters)
+- [Assets Events to Power BI](https://developers.sitecore.com/learn/accelerate/content-hub/optimization/reporting/assets-events-to-power-bi)
 - [Content Hub Glossary](https://developers.sitecore.com/learn/accelerate/content-hub/appendix-i/content-hub-glossary)
 
 ## Accelerate Cookbook for SitecoreAI
@@ -189,7 +190,7 @@ This Cookbook provides a set of recipes to help implementing SitecoreAI through 
 
 ## Documentation
 
-- [Sitecore XM Cloud](https://doc.sitecore.com/xmc)
+- [SitecoreAI](https://doc.sitecore.com/sai)
 - [Sitecore Content Hub](https://doc.sitecore.com/ch)
 - [Sitecore Search](https://doc.sitecore.com/search)
 - [Content Hub ONE](https://doc.sitecore.com/ch-one)
