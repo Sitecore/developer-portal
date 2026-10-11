@@ -3,10 +3,12 @@ import {
   mdiAccountMultipleOutline,
   mdiCalendarOutline,
   mdiFinance,
+  mdiHeartOutline,
   mdiTagOutline,
 } from "@mdi/js";
 import { Badge } from "@src/components/ui/badge";
-import type { PageInfo } from "@src/lib/interfaces/page-info";
+import type { CreditEntry, PageInfo } from "@src/lib/interfaces/page-info";
+import Link from "next/link";
 
 // Placeholder for Sitecore icon - replace with actual icon path if needed
 const iconSitecore = "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5";
@@ -28,6 +30,7 @@ export const AccelerateMetaData = ({
     !pageInfo.audience &&
     !pageInfo.topics &&
     !pageInfo.level &&
+    !pageInfo.credit &&
     !pageInfo.lastUpdated
   ) {
     return;
@@ -92,6 +95,12 @@ export const AccelerateMetaData = ({
             icon={<Icon path={mdiCalendarOutline} size={1} />}
           />
         )}
+        {pageInfo.credit && (
+          <CreditField
+            credit={pageInfo.credit}
+            icon={<Icon path={mdiHeartOutline} size={1} />}
+          />
+        )}
       </div>
     </div>
   );
@@ -120,6 +129,48 @@ const MetaDataField = ({ label, field, icon }: MetaDataFieldProps) => {
             {audience}
           </Badge>
         ))}
+      </div>
+    </div>
+  );
+};
+
+type CreditFieldProps = {
+  credit: CreditEntry | Array<CreditEntry>;
+  icon?: JSX.Element;
+};
+
+const CreditField = ({ credit, icon }: CreditFieldProps) => {
+  const entries = (Array.isArray(credit) ? credit : [credit]).map((entry) =>
+    typeof entry === "string" ? { name: entry, url: undefined } : entry,
+  );
+
+  return (
+    <div className="flex items-start gap-2">
+      <div className="flex items-center gap-2 w-[65%]">
+        {icon}
+        <p className="text-sm uppercase tracking-wide text-muted-foreground">
+          Credit
+        </p>
+      </div>
+      <div className="flex flex-wrap gap-2 w-full">
+        {entries.map(({ name, url }) =>
+          url ? (
+            <Badge variant="default" key={name} asChild>
+              <Link
+                href={url}
+                target={url.startsWith("http") ? "_blank" : undefined}
+                rel={url.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="underline hover:no-underline"
+              >
+                {name}
+              </Link>
+            </Badge>
+          ) : (
+            <Badge variant="default" key={name}>
+              {name}
+            </Badge>
+          ),
+        )}
       </div>
     </div>
   );

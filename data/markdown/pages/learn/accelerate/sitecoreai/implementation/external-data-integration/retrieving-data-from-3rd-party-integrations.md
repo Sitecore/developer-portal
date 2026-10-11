@@ -10,18 +10,18 @@ audience: ['Architect','Product Owner','Technical Implementer']
 ---
 
 ## Context
-When planning a strategy for integration in XM Cloud, it's crucial to categorize each integration based on its fit within the new platform. Most of the time, data from other applications is required to be integrated in the website without actually pushing this data in XM Cloud. Instead this moves to the head-application .
+When planning a strategy for integration in SitecoreAI, it's crucial to categorize each integration based on its fit within the new platform. Most of the time, data from other applications is required to be integrated in the website without actually pushing this data in SitecoreAI. Instead this moves to the head-application .
 
 We might have a requirement where data is dynamically loaded from Salesforce - example a “members” listing page with details about their membership. This is reasonably frequently changing data but to call this from Salesforce in real-time would be expensive in terms of latency and not judicious with API limits.  So how should we approach this?
 
-Outlined with these approaches detailed below, there are numerous tools outside of the XM Cloud toolset, that can optimize your implementation when it comes to integration, with newer features being release. Updates such as Vercel's Data Caching can be explored to get the response from one of the endpoints and edge caching.
+Outlined with these approaches detailed below, there are numerous tools outside of the SitecoreAI toolset, that can optimize your implementation when it comes to integration, with newer features being release. Updates such as Vercel's Data Caching can be explored to get the response from one of the endpoints and edge caching.
 
 ## Execution
 Overall, we would look at the approach in the same way as we described in [Custom Editing UX for 3rd Party Integrations](/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations) recipe. But, different use cases might have different solutions, that require considerations before committing to your path. 
 
 ### Decouple Frontend and Backend Data Fetching
 
-With Sitecore XM Cloud and modern frameworks like Next.js, you can use [server-side rendering (SSR) or static site generation (SSG)](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html) to control how data is fetched and cached effectively. SSG also allows for [Incremental Static Regeneration (ISR)](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html#incremental-static-regeneration-isr) that allows us to fetch data at build time or periodically regenerate static pages for frequently changing data.
+With SitecoreAI and modern frameworks like Next.js, you can use [server-side rendering (SSR) or static site generation (SSG)](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html) to control how data is fetched and cached effectively. SSG also allows for [Incremental Static Regeneration (ISR)](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html#incremental-static-regeneration-isr) that allows us to fetch data at build time or periodically regenerate static pages for frequently changing data.
 
 This would be an approach to discuss for the Member list - where this content could regenerate every 24 hours (or whatever time period we want to setup). This would reduce API calls and improves performance as pages are served statically.
 
@@ -76,7 +76,7 @@ Caching layers store frequently accessed or precomputed data to reduce reliance 
 
 You can then choose the appropriate data-fetching approach based on your caching strategy. By combining these caching strategies with data-fetching methods, you can reduce latency and improve scalability.
 
-Outlined with these approaches, there are numerous tools outside of the XM Cloud toolset, that can optimize your implementation when it comes to integration, with newer features being release. Updates such as [Vercel's Data Caching](https://vercel.com/docs/infrastructure/data-cache) can be explored to get the response from one of the endpoints and edge caching.
+Outlined with these approaches, there are numerous tools outside of the SitecoreAI toolset, that can optimize your implementation when it comes to integration, with newer features being release. Updates such as [Vercel's Data Caching](https://vercel.com/docs/infrastructure/data-cache) can be explored to get the response from one of the endpoints and edge caching.
 
 ## Related Recipes
 

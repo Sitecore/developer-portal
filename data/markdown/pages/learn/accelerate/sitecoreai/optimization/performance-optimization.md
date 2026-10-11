@@ -4,7 +4,7 @@ description: 'Best practices aimed at optimizing web application performance.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-04-04'
+lastUpdated: '2026-10-08'
 created: '2025-03-31'
 audience: ['Architect','Technical Implementers','Solution Architects']
 ---
@@ -14,7 +14,7 @@ Many web applications suffer from poor performance due to suboptimal implementat
 
 This recipe provides targeted optimization strategies for Next.js applications to address these issues.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
 ## Execution
 To improve the performance of your web application and deliver a faster, more responsive user experience, review the following guidance. Using Next.JS? Review how to How to [Optimize Next.js + Sitecore JSS](https://vercel.com/guides/how-to-optimize-next.js-sitecore-jss).
@@ -160,6 +160,8 @@ Web fonts can cause significant performance issues if not properly optimized, in
         export default MyComponent;
         ```
         <br/><br/>
+        On Next.js 16 and Content SDK 2.0, allow remote image hosts with `remotePatterns` in `next.config`. The deprecated `images.domains` setting is replaced. Content SDK 2.0 also adds a `rewriteMediaUrls` option in `sitecore.config` that rewrites production Edge media URLs to a custom host. The import above is from JSS. In the Content SDK the package is `@sitecore-content-sdk/nextjs`.
+
         For more details on all available options and additional examples, refer to the complete documentation on configuring the [NextImage component](https://doc.sitecore.com/xmc/en/developers/jss/22/jss-xmc/the-jss-nextimage-component.html).
 
       </TabPanel>
@@ -275,6 +277,8 @@ const HorizontalImageScroller = ({ fields, params }) => {
 
 export default HorizontalImageScroller
 ```
+
+The sample uses the JSS `useSitecoreContext` hook. In the Content SDK, components use the `useSitecore` hook, which replaces the deprecated `withSitecore` higher-order component in 2.0. The `updatePage` function is renamed `setPage`. See the [upgrade guide](https://doc.sitecore.com/sai/en/developers/content-sdk/20/upgrade-content-sdk-1-5-1-next-js-apps-to-version-2-0.html) for the React 19 changes.
 
       </TabPanel>
       <TabPanel>

@@ -4,7 +4,7 @@ description: 'What are Placeholders and how to use them'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2026-07-01'
+lastUpdated: '2026-10-08'
 created: '2024-08-23'
 audience: ['Architect','Technical Implementer']
 features: ['Starter Kit','Docker']
@@ -16,7 +16,7 @@ Using placeholders is beneficial because they offer flexibility, reusability, an
 
 This recipe will detail out what Placeholders we have available, how have they been used in the [Starter Kit](https://github.com/Sitecore/xmcloud-starter-js/) and how to create custom Placeholders while adhering to best practice.
 
-> When migrating Sitecore XM/XP projects that include SXA‑ or JSS‑based sites into SitecoreAI, the classic JSS dynamic placeholder format `(placeholderkey-{GUID}-N)` is not supported. SitecoreAI’s headless rendering engine only supports the SXA‑style numeric placeholder format, and any cases where legacy keys appear to work are incidental and not guaranteed.
+<Alert type="info"><AlertIcon />When migrating Sitecore XM/XP projects that include SXA‑ or JSS‑based sites into SitecoreAI, the classic JSS dynamic placeholder format `(placeholderkey-{GUID}-N)` is not supported. SitecoreAI’s headless rendering engine only supports the SXA‑style numeric placeholder format, and any cases where legacy keys appear to work are incidental and not guaranteed.</Alert>
 
 ## Execution
 
@@ -193,6 +193,9 @@ export const Default = (props: ComponentProps): JSX.Element => {
 - Consistent Naming: Use clear and consistent naming conventions for your placeholders to avoid confusion.
 - Organize Placeholders: Keep your placeholders organized within the Placeholder Settings folder to make them easy to manage.
 - Test Thoroughly: Always test your placeholders to ensure they work as expected and render the correct components.
+
+### Using a different framework or no Sitecore SDK
+In an application without a Sitecore SDK, your code renders placeholders itself. Components can be nested inside other components, so your app must render the layout JSON recursively. See [Content rendering](https://doc.sitecore.com/sai/en/developers/sitecoreai/introduction-to-framework-agnostic-sitecore-development/content-rendering/content-rendering.html) for the steps.
 
 ## Related Recipes
 

@@ -1,6 +1,7 @@
 import { Alert, AlertDescription } from "@src/components/ui/alert";
-import dynamic from "next/dynamic";
 import { MDXRemote } from "next-mdx-remote";
+import dynamic from "next/dynamic";
+import { Children, cloneElement, isValidElement, type ReactElement } from "react";
 
 // Dynamically import react-syntax-highlighter to reduce initial bundle size
 const SyntaxHighlighter = dynamic(
@@ -13,6 +14,7 @@ const SyntaxHighlighter = dynamic(
   },
 );
 
+import { cn } from "@/src/lib/util";
 import {
   Article,
   Download,
@@ -45,7 +47,6 @@ import {
   TabsTrigger,
 } from "@src/components/ui/tabs";
 import { YouTube } from "@src/components/video";
-import { cn } from "@/src/lib/util";
 import styles from "./MarkdownContent.module.css"; /* eslint-disable react/no-unknown-property */
 import { MarkdownIntro } from "./MarkdownIntro";
 
@@ -135,7 +136,9 @@ function CustomMdx(children: string) {
             variant={status === "error" ? "destructive" : "default"}
             {...props}
           >
-            <AlertDescription>{children}</AlertDescription>
+            <AlertDescription>
+              <div>{children}</div>
+            </AlertDescription>
           </Alert>
         ),
         AlertIcon: () => null, // Handled by Alert component
@@ -164,17 +167,35 @@ function CustomMdx(children: string) {
         NewsletterStory,
         Introduction: MarkdownIntro,
 
-        Tabs: ({ children, ...props }: any) => (
-          <Tabs {...props}>{children}</Tabs>
+        Tabs: ({ children, defaultValue, ...props }: any) => (
+          <Tabs defaultValue={defaultValue ?? "tab-0"} {...props}>
+            {children}
+          </Tabs>
         ),
         TabList: ({ children, ...props }: any) => (
-          <TabsList {...props}>{children}</TabsList>
+          <TabsList {...props}>
+            {Children.toArray(children)
+              .filter(isValidElement)
+              .map((child, index) =>
+                cloneElement(child as ReactElement<any>, {
+                  value: (child as ReactElement<any>).props.value ?? `tab-${index}`,
+                }),
+              )}
+          </TabsList>
         ),
         Tab: ({ children, ...props }: any) => (
           <TabsTrigger {...props}>{children}</TabsTrigger>
         ),
         TabPanels: ({ children, ...props }: any) => (
-          <div {...props}>{children}</div>
+          <div {...props}>
+            {Children.toArray(children)
+              .filter(isValidElement)
+              .map((child, index) =>
+                cloneElement(child as ReactElement<any>, {
+                  value: (child as ReactElement<any>).props.value ?? `tab-${index}`,
+                }),
+              )}
+          </div>
         ),
         TabPanel: ({ children, ...props }: any) => (
           <TabsContent {...props}>{children}</TabsContent>

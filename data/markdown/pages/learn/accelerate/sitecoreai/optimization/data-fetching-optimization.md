@@ -1,6 +1,6 @@
 ---
 title: 'Data Fetching Optimization for Next.js Applications'
-description: 'Optimizing data fetching in Next.js applications within XM Cloud. '
+description: 'Optimizing data fetching in Next.js applications within SitecoreAI. '
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -10,10 +10,10 @@ audience: ['Architect','Technical Implementers','Solution Architects']
 ---
 
 ## Context
-In XM Cloud applications built with Next.js, performance can be impacted by the data fetching strategy utilized. Inappropriate data fetching methods can lead to slow page loads, excessive server load, and poor user experience. Many developers default to client-side fetching without considering the performance implications, or use server-side rendering when static generation would be more efficient.
+In SitecoreAI applications built with Next.js, performance can be impacted by the data fetching strategy utilized. Inappropriate data fetching methods can lead to slow page loads, excessive server load, and poor user experience. Many developers default to client-side fetching without considering the performance implications, or use server-side rendering when static generation would be more efficient.
 
 ## Execution
-Next.js offers multiple data fetching methods, each with distinct performance characteristics. Selecting the right method for your XM Cloud content is critical.
+Next.js offers multiple data fetching methods, each with distinct performance characteristics. Selecting the right method for your SitecoreAI content is critical.
 
 ### Static Site Generation (SSG) with Incremental Static Regeneration (ISR)
 SSG with Incremental Static Regeneration (ISR) is ideal for scenarios where content changes infrequently and can be pre-rendered at build time. It works well for marketing pages, product listings, and general content pages where the information remains largely static. Since these pages do not require real-time personalization and present the same content to all users, SSG ensures optimal performance and scalability. Additionally, for websites where SEO is a priority, pre-rendering pages ahead of time improves search engine indexing and ranking, making it a powerful approach for delivering fast, highly optimized experiences.
@@ -23,12 +23,12 @@ Setting this up has 2 clear impacts -
 | - | - |
 | <ul><li>Pages load instantly from CDN after initial generation</li><li>Better Core Web Vitals scores compared to SSR</li><li>Reduced server load through caching</li><li>Automatic background regeneration ensures content freshness</li></ul> | <ul><li>Delivers complete HTML to search engine crawlers</li><li>Provides fast Time to First Byte (TTFB), a positive SEO signal</li><li>Ensures consistent content for indexing</li><li>Maintains optimal Core Web Vitals scores, which directly affect search rankings</li></ul> |
 
-Incremental Static Regeneration(ISR) is enabled by default - This means your XM Cloud pages automatically benefit from:
+Incremental Static Regeneration(ISR) is enabled by default - This means your SitecoreAI pages automatically benefit from:
 - Static page generation at build time
 - Background revalidation every 5 seconds (configurable)
 - On-demand page generation for new routes
 
-You don't need to implement this yourself - it's already set up in the [XM Cloud Front End Application Starter Kits](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/headapps/nextjs-starter/src/pages/%5B%5B...path%5D%5D.tsx). The key configuration is in the `getStaticProps` function where `revalidate: 5` enables ISR.
+You don't need to implement this yourself - it's already set up in the [SitecoreAI Front End Application Starter Kits](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/headapps/nextjs-starter/src/pages/%5B%5B...path%5D%5D.tsx). The key configuration is in the `getStaticProps` function where `revalidate: 5` enables ISR.
 
 **Key Performance Optimizations**
 - Incremental Static Regeneration provides the page performance of static generation with the content freshness of server-side rendering. Teams will need to appropriate set this revalidate value.
@@ -39,7 +39,7 @@ You don't need to implement this yourself - it's already set up in the [XM Cloud
 
 ### Server-Side Rendering (SSR) When Needed
 
-Server-Side Rendering (SSR) in XM Cloud is best suited for scenarios that require user-specific content. It is essential for pages that rely on real-time data updates, ensuring users always see the latest information. SSR is also necessary when request-time details, such as cookies or headers, influence the page's content. Additionally, it provides access to the Sitecore Context, enabling session tracking and user-specific personalization capabilities. For protected content, authentication checks can be performed on each request, ensuring only authorized users can access sensitive information. This makes SSR a powerful approach for delivering dynamic, personalized, and secure experiences.
+Server-Side Rendering (SSR) in SitecoreAI is best suited for scenarios that require user-specific content. It is essential for pages that rely on real-time data updates, ensuring users always see the latest information. SSR is also necessary when request-time details, such as cookies or headers, influence the page's content. Additionally, it provides access to the Sitecore Context, enabling session tracking and user-specific personalization capabilities. For protected content, authentication checks can be performed on each request, ensuring only authorized users can access sensitive information. This makes SSR a powerful approach for delivering dynamic, personalized, and secure experiences.
 
 Setting this up has 2 clear impacts - 
 | Performance | SEO |

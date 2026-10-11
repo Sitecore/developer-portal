@@ -11,11 +11,11 @@ audience: ['Architect','Technical Implementer']
 
 ## Context
 
-Within XM Cloud sometimes your content authors will have a requirement to create multiple items which have a predefined consistent structure. Authors need to be able to create these items quickly and efficiently while maintaining this structure. As a developer how can you support this requirement.
+Within SitecoreAI sometimes your content authors will have a requirement to create multiple items which have a predefined consistent structure. Authors need to be able to create these items quickly and efficiently while maintaining this structure. As a developer how can you support this requirement.
 
 ## Execution
 
-This is where branch templates in XM Cloud come in to address these common challenges in content management and site development:
+This is where branch templates in SitecoreAI come in to address these common challenges in content management and site development:
 
 1. Consistency: When creating similar items (e.g., product pages, news articles, landing pages), branch templates ensure a consistent structure. Content authors can follow predefined guidelines, resulting in a cohesive user experience.
 2. Efficiency: Branch templates allow authors to start with a pre-configured structure, saving time and effort. Instead of manually setting up each item, they duplicate the template and customize specific details.

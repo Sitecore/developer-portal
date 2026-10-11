@@ -120,7 +120,11 @@ const ArticlePage = ({
           )}
           <PromoList data={promoBefore} />
 
-          <RenderContent content={processedContent} />
+          <AccelerateUpdatesContext.Provider
+            value={pageInfo.accelerateUpdates ?? []}
+          >
+            <RenderContent content={processedContent} />
+          </AccelerateUpdatesContext.Provider>
 
           {/* Child Navigation */}
           {children && children.length > 0 && (

@@ -1,84 +1,86 @@
 ---
 title: 'Testing experiences'
-description: 'XM Cloud provides A/B/n Testing to learn the best way content can be presented to customers.'
+description: 'Use A/B/n testing in SitecoreAI to learn which version of a component performs best, and decide between testing and personalization.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-06-16'
+lastUpdated: '2026-10-08'
 created: '2025-06-16'
 audience: ['Product Owner', 'User']
 ---
 
 ## Context
-You want to maximize user experience and conversions but don't know what version of a page or component performs best. [A/B/n testing](https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-testing.html) allows you to make decisions based on user behavior instead of internal speculation. This is particularly helpful post-launch, during optimization sprints, or in preparation for rollouts across many sites or geographies.
+You want to maximize conversions but do not know which version of a page or component performs best. [A/B/n testing](https://doc.sitecore.com/sai/en/users/sitecoreai/a-b-n-testing/a-b-n-testing.html) lets decisions rest on visitor behavior rather than internal speculation. It is particularly useful after launch, during optimization sprints, and ahead of rollouts across many sites or geographies.
 
-> To use A/B/n testing, you need to make sure you are on JSS 22.1 or later and the [features enabled](https://doc.sitecore.com/xmc/en/developers/jss/22/jss-xmc/page-personalization-and-component-a-b-n-testing.html).
+<Alert type="info"><AlertIcon />Your site needs to use Content SDK with the analytics, events, and personalize features set up so that test assignment and results work. See the [Content SDK initialization guide](https://doc.sitecore.com/sai/en/developers/content-sdk/20/initializing-tracking-events-and-personalization-in-the-content-sdk.html).</Alert>
 
 ## Execution
-A/B/n testing is used to compare different versions of a pages components or content such as a call-to-action buttons, to see which one drives more click through rates. This helps create a more dynamic and effective user experience, ultimately boosting satisfaction and overall business outcomes.
 
-### Strategy Planning
-Leveraging XM Cloud's A/B/n testing provides data-driven insights that refine and improve marketing efforts. This approach creates continuous improvement, boosts ROI, and strengthens customer loyalty in an increasingly competitive digital landscape.
+### Testing or personalization
+The two are confused often enough to separate clearly. Personalization delivers different content to specific user groups based on factors such as location, device, or how they arrived. A/B/n testing compares versions to see which performs best, without needing to identify the visitor. Use personalization when you know who you are speaking to. Use testing when you want to compare ideas across all visitors.
 
-When planning A/B/n testing there are important stages to consider when building your testing strategy.
+| | Personalization | A/B/n testing |
+| - | - | - |
+| Primary goal | Deliver the right experience to the right audience | Identify the best-performing variation |
+| Decision logic | Audience-based rules, conditions, affinity, behavior | Randomized traffic allocation for statistical validity |
+| Level of application | Page level through page variants, or component level through a decision table | Component level, single or multiple components |
+| Traffic handling | Routed deterministically by audience match | Split randomly across variants |
+| Typical use cases | Targeted messaging, tailored offers, contextual experiences | Headline tests, call to action tests, layout or design optimization |
 
-#### 1. Business objectives alignment
-Planning and building a strategy is important for effective A/B/n testing in Sitecore XM Cloud, as they ensure that tests are purposeful, focused, and aligned with the business objectives. A well-thought-out strategy helps define clear goals for the testing process, such as user engagement or content relevance. By carefully selecting the components/content to test, creating hypotheses and determining success metrics in advance, a business can avoid wasting time and resources on ineffective experiments.
+A page runs a test or a personalization, not both at once. You cannot create an A/B/n test on a page that has personalization configured. If you are unsure which experience will perform better, start with a test, then turn the winning version into a personalized variant.
 
-Additionally, planning helps prioritize tests based on their potential impact, ensuring that you focus on high-value testing first. With XM Cloud’s testing capabilities, a thought out approach leverages the platform’s insights to make informed decisions, iteratively improving the user experience and driving better outcomes over time.
+### Plan the test
+Two stages shape a testing strategy.
 
-#### 2. Test-and-learn cycle
-Using a test-and-learn cycle for A/B/n testing in XM Cloud is an important stage for continuously improving user experiences and optimizing site performance. By running tests, you can try different variations of content, design, or imagery and directly measure their impact on performance goals. The iterative nature of the test-and-learn approach enables a business to gather valuable insights over time, helping to understand what resonates best with their audience and which strategies lead to the desired outcomes.
+**Business objectives alignment.** Select the components and content to test, write hypotheses, and agree success metrics in advance. Prioritize by potential impact so the high-value work comes first. This keeps the team from spending time on experiments that cannot inform a decision.
 
-This continuous learning process allows for data-driven decisions, reducing guesswork and ensuring that each test results is backed by real user behavior. Ultimately, the test-and-learn cycle empowers businesses to refine their digital presence in real-time, ensuring a dynamic experience that adapts to user preferences as time goes on.
+**The test-and-learn cycle.** Run variations and measure their effect against performance goals. Over time you build a picture of what resonates, and each result rests on observed behavior rather than guesswork.
 
-### Steps to XM Cloud A/B/n Testing
+When you brainstorm tests:
 
-Review the [Get started with A/B/n testing](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-a-b-n-testing.html) for steps to walk through setting up A/B/n testing in XM Cloud.
+- Identify what you want to achieve: higher conversion, lower bounce, or better engagement.
+- Focus on the areas with the most influence on that goal, such as key landing pages, checkout steps, or calls to action.
+- Write a clear, testable hypothesis based on your goals and audience insight. For example, "Changing the color of the call to action button will increase click-through rate."
 
-When brainstorming A/B/n tests for your XM Cloud site, considering a few specific points are important to ensure your tests are effective and meaningful.
--  Identify what you want to achieve with your A/B tests - this could be increasing conversion rates, reducing bounce rates, or improving user engagement.
-- Focus on areas of your website that have the most significant impact on your goals - this could be key landing pages, checkout processes, or call-to-action buttons.
-- Develop clear, testable hypotheses based on your goals and audience insights. For example, "Changing the colour of the CTA button will increase click-through rates".
+### Steps to run a test
 
-Set up your test by configuring options such as the goal of your test, assigning traffic to variants, setting automated actions based on the test outcome, and editing advanced options like the percentage of visitor traffic to include in the test. The goal options for A/B/n testing iinvolve configuring a test goal that reflects what you aim to achieve and should always be considered from the beginning of a test. The metrics of this goal are used to calculate the required number of visits to declare a variant as the winner or to declare the test inconclusive.
+1. Define the business goal and pick the page or component with the most influence on it.
+2. Write the hypothesis.
+3. Create the test from the component in Page builder. A test supports up to six variants, and a page can run up to six tests at once, with extra tests queued.
+4. Set the goal. Its metrics are used to calculate the number of visits needed to declare a winner or call the test inconclusive.
+5. Assign traffic to variants, set automated actions for the outcome if you want them, and edit advanced options such as the percentage of visitor traffic in the test.
+6. Preview and start the test, then publish the page.
+7. Read the result against the original hypothesis. Apply the winner, set up personalization if the learning supports it, and plan the next test.
 
-After running your tests, analyze the results to see if your [hypothesis](https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-test-hypothesis-and-goal.html) was correct. Use these insights to make informed decisions, apply changes such as setting up personalization and plan future tests. Keep detailed records of your tests, including hypotheses, variations, results, and learnings. This documentation can help refine your testing strategy over time
+Keep a record of each test with its hypothesis, variants, result, and what you learned. A shared log or board is enough. It lets you refine the testing strategy over time.
 
-Review the [Best practices for A/B/n testing](https://doc.sitecore.com/xmc/en/users/xm-cloud/best-practices-for-a-b-n-testing.html) documentation for further guidlines.
+Review [Get started with A/B/n testing](https://doc.sitecore.com/sai/en/users/sitecoreai/a-b-n-testing/get-started-with-a-b-n-testing.html) for the in-product steps, and [Best practices for A/B/n testing](https://doc.sitecore.com/sai/en/users/sitecoreai/a-b-n-testing/best-practices-for-a-b-n-testing.html) for further guidelines.
 
 ## Insights
 
-When using A/B/n testing, there's are some key considerations to keep in mind:
-
 | Consideration | Detail |
 | - | - |
-| **Data-Driven decisions**|A/B/n testing relies on data to compare different versions of a webpage to see which performs better.|
-| **Hypothesis-Driven testing**|A/B/n testing should be hypothesis-driven. Clearly define what you are testing and what you expect to achieve with goals in mind from the beginning. This helps in measuring the success of your tests accurately.|
-| **Clear Goals and KPIs**|Define clear goals and key performance indicators (KPIs) for A/B/n testing to ensure that you can measure success and make informed decisions when reviewing and planning for future ideas.|
-| **Test one variable at a time**|In A/B/n testing, focus on testing one variable at a time to isolate its impact. This helps in understanding which specific change led to the observed results.
-| **Iterative approach**|A/B/n testing should be iterative with continuously analyse results, learning from them, and refine your strategies to improve user experience and achieve better outcomes.|
+| Data-driven decisions | A/B/n testing relies on data to compare versions and see which performs better. |
+| Hypothesis-driven testing | Define what you are testing and what you expect to achieve, with goals in mind from the start. This lets you measure success accurately. |
+| Clear goals and KPIs | Define goals and key performance indicators (KPIs) so you can measure success and make informed decisions about future ideas. |
+| Test one variable at a time | Isolate the impact of a single change so you know which one led to the result. |
+| Iterative approach | Analyze results, learn from them, and refine your strategy to improve the experience. |
 
-## Related Recipes
+When a test declares a winner, move the winning version into the component or personalization rules. Leaving a finished test running at 100/0 traffic is a workaround nobody governs.
 
-<Row columns={2}>
-  <Link title="Page personalization" link="/learn/accelerate/xm-cloud/optimization/user-experience-optimization/page-personalization" />
-  <Link title="Moving to Sitecore Personalize" link="/learn/accelerate/xm-cloud/optimization/user-experience-optimization/moving-to-Sitecore-personalize" />  
-</Row>
-
-## Related Documentation
+## Related recipes
 
 <Row columns={2}>
-  <Link title="A/B/n testing" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-testing.html" />
-  <Link title="Get started with A/B/n testing" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-a-b-n-testing.html" />
-  <Link title="A/B/n test hypothesis and goal" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-test-hypothesis-and-goal.html" />
-   <Link title="View performance analytics for an A/B/n test" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/view-performance-analytics-for-an-a-b-n-test.html" />
+  <Link title="Personalizing your content" link="/learn/accelerate/xm-cloud/optimization/user-experience-optimization/page-personalization" />
+  <Link title="Delivering components through Design Studio" link="/learn/accelerate/xm-cloud/optimization/user-experience-optimization/design-studio-component-variants" />
+  <Link title="Conversion optimization strategy" link="/learn/accelerate/xm-cloud/optimization/user-experience-optimization/conversion-optimization-strategy" />
 </Row>
 
+## Related documentation
 
-
-
-
-
-
-
+<Row columns={2}>
+  <Link title="A/B/n testing" link="https://doc.sitecore.com/sai/en/users/sitecoreai/a-b-n-testing/a-b-n-testing.html" />
+  <Link title="Get started with A/B/n testing" link="https://doc.sitecore.com/sai/en/users/sitecoreai/a-b-n-testing/get-started-with-a-b-n-testing.html" />
+  <Link title="A/B/n test hypothesis and goal" link="https://doc.sitecore.com/sai/en/users/sitecoreai/a-b-n-testing/a-b-n-test-hypothesis-and-goal.html" />
+  <Link title="A/B/n tests performance dashboard" link="https://doc.sitecore.com/sai/en/users/sitecoreai/get-performance-insights/a-b-n-tests-performance-dashboard.html" />
+</Row>
