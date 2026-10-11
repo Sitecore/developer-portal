@@ -4,7 +4,6 @@ import { type PromoCardProps, PromoList } from "@src/components/cards";
 import { TrackPageView } from "@src/components/integrations/engage/TrackPageView";
 import { SocialFeeds } from "@src/components/links";
 import GithubContributionNotice from "@src/components/markdown/contribute";
-import { RenderContent } from "@src/components/markdown/MarkdownContent";
 import { ArticlePaging } from "@src/components/navigation/ArticlePaging";
 import BreadcrumbNav from "@src/components/navigation/BreadcrumbNav";
 import InPageNav from "@src/components/navigation/InPageNav";
@@ -119,12 +118,6 @@ const ArticlePage = ({
             </p>
           )}
           <PromoList data={promoBefore} />
-
-          <AccelerateUpdatesContext.Provider
-            value={pageInfo.accelerateUpdates ?? []}
-          >
-            <RenderContent content={processedContent} />
-          </AccelerateUpdatesContext.Provider>
 
           {/* Child Navigation */}
           {children && children.length > 0 && (
