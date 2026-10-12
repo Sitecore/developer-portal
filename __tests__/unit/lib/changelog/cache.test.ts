@@ -55,7 +55,6 @@ describe("CacheManager", () => {
 
 	describe("Cache TTL", () => {
 		test("should expire entries after TTL", async () => {
-			const _originalNow = Date.now;
 			let mockNow = 1000000;
 
 			vi.spyOn(Date, "now").mockImplementation(() => mockNow);

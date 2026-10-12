@@ -89,7 +89,8 @@ export function ParseRawData(
     | SearchByProductsAndChangeTypesAndBreakingChangeQuery
     | SearchByTitleQuery
     | SearchByTitleAndDateQuery
-    | null,
+    | null
+    | undefined,
 ): ChangelogEntryList<Array<ChangelogEntry>> {
   // Handle different query result structures
   const changelogData: ChangelogQueryData =

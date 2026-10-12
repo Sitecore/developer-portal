@@ -18,6 +18,9 @@ import {
     SearchByProductDocument,
     type SearchByProductQuery,
     type SearchByProductQueryVariables,
+    SearchByChangeTypesDocument,
+    type SearchByChangeTypesQuery,
+    type SearchByChangeTypesQueryVariables,
     SearchByProductsAndChangeTypesAndBreakingChangeDocument,
     type SearchByProductsAndChangeTypesAndBreakingChangeQuery,
     type SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables,
@@ -415,44 +418,32 @@ describe("GraphQL Query Integration Tests", () => {
 		});
 
 		test("should filter by change type IDs", async () => {
-			const productsResult = await fetchGraphQL<
-				GetAllProductsQuery,
-				GetAllProductsQueryVariables
-			>(GetAllProductsDocument, credentials, preview);
 			const changeTypesResult = await fetchGraphQL<
 				GetAllChangetypesQuery,
 				GetAllChangetypesQueryVariables
 			>(GetAllChangetypesDocument, credentials, preview);
 
-			const products = productsResult.data.manySitecoreProduct?.results;
 			const changeTypes = changeTypesResult.data.manyChangetype?.results;
 
-			if (
-				!products ||
-				products.length === 0 ||
-				!changeTypes ||
-				changeTypes.length === 0
-			) {
-				test.skip("No products or change types available for testing");
+			if (!changeTypes || changeTypes.length === 0) {
+				test.skip("No change types available for testing");
 				return;
 			}
 
-			const productId = products[0]?.system.id;
 			const changeTypeId = changeTypes[0]?.system.id;
 
-			if (!productId || !changeTypeId) {
-				test.skip("Product ID or change type ID not available");
+			if (!changeTypeId) {
+				test.skip("Change type ID not available");
 				return;
 			}
 
 			const date = new Date();
 
 			const result = await fetchGraphQL<
-				SearchByProductQuery,
-				SearchByProductQueryVariables
-			>(SearchByProductDocument, credentials, preview, {
+				SearchByChangeTypesQuery,
+				SearchByChangeTypesQueryVariables
+			>(SearchByChangeTypesDocument, credentials, preview, {
 				date,
-				productId: [productId],
 				changeTypeIds: [changeTypeId],
 				first: 5,
 			});

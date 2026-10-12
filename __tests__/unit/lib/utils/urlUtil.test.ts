@@ -13,6 +13,7 @@ const dummyEntry: ChangelogEntry = {
   sitecoreProduct: [
     {
       id: '8OiTP5UKXE-RRpU17Vpq4A',
+      name: 'Content Hub',
       productName: 'Content Hub',
       productDescription: '',
       darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub-dark',
@@ -30,6 +31,7 @@ const dummyEntry: ChangelogEntry = {
   products: [
     {
       id: '8OiTP5UKXE-RRpU17Vpq4A',
+      name: 'Content Hub',
       productName: 'Content Hub',
       productDescription: '',
       darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub-dark',
