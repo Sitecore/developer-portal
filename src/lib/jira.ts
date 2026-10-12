@@ -86,7 +86,6 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
   ];
 
   const filters = [
-    { key: 'issuetype', value: 'Idea', operator: FilterOption.Equals },
     { key: 'cf[22518]', value: '1', operator: FilterOption.Equals },
     {
       key: 'cf[22392]',
