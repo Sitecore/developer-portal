@@ -60,7 +60,10 @@ export const getFileData = (directory: string, file: string): Matter => {
     filePath = path.join(directory, `${file}/index.mdx`);
   }
 
-  const fileMarkdown = fs.readFileSync(filePath, "utf-8");
+  const fileMarkdown = fs.readFileSync(
+    /*turbopackIgnore: true*/ filePath,
+    "utf-8",
+  );
 
   // @TODO: Handle failures
   const results = matter(fileMarkdown);
