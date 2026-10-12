@@ -10,7 +10,7 @@ import { Card, CardContent, CardFooter, CardHeader } from '@src/components/ui/ca
 import { ImageModal } from '@src/components/ui/imageModal';
 import { Label } from '@src/components/ui/label';
 import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle } from '@src/components/ui/sheet';
-import { getBadgeColor, getStatusColor } from '@src/lib/jira';
+import { getBadgeColor } from '@src/lib/jira';
 import type { IRoadmapItem, RoadmapProduct } from '@src/lib/roadmap';
 import { ArrowRightIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -60,9 +60,6 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
           <div className="text-base text-muted-foreground">{item.customerValue}</div>
         </CardContent>
         <CardFooter className="gap-2">
-          <Badge variant="default" colorScheme={getStatusColor(item.status)}>
-            {item.status}
-          </Badge>
           {/* {item.status.toLowerCase() == "done" && item.changelogLink && ( */}
           {item.changelogLink && (
             <Badge asChild>
@@ -89,12 +86,12 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
                     {item.roadmapPhase}
                   </Badge>
                 </div>
-                <div className="flex flex-wrap items-center gap-2 mb-2">
+                {/* <div className="flex flex-wrap items-center gap-2 mb-2">
                   <Label htmlFor="status">Status:</Label>
                   <Badge variant="default" colorScheme={getStatusColor(item.status)} id="status">
                     {item.status}
                   </Badge>
-                </div>
+                </div> */}
 
                 <div className="flex flex-wrap items-center gap-2">
                   <Label htmlFor="products">Product(s):</Label>
