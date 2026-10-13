@@ -35,7 +35,7 @@ export const operations: roadmapCategory = {
   items: [
     {
       key: 'sitecoreai-dam',
-      title: 'SitecoreAI DAM',
+      title: 'Digital Asset Management (DAM)',
       caption: 'End-to-end content operations, workflow automation, and governance. One governed system where content, data, approvals, and workflows are connected and every asset is structured for humans and AI.',
     },
   ],
@@ -46,7 +46,7 @@ export const outcomes: roadmapCategory = {
   items: [
     {
       key: 'sitecoreai-cms',
-      title: 'Sitecore AI Platform',
+      title: 'Content Management System (CMS)',
       caption: 'Create, manage, and publish digital experiences faster with a CMS designed for high-volume, multi-brand, multi-region, and omnichannel delivery.',
     },
     {
@@ -79,7 +79,7 @@ export const studio: roadmapCategory = {
 };
 
 export const across: roadmapCategory = {
-  title: 'Across Sitecore AI',
+  title: 'Across SitecoreAI',
   items: [
     {
       key: 'platform',
