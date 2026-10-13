@@ -19,17 +19,6 @@ export const presence: roadmapCategory = {
   ],
 };
 
-export const sitecoreai: roadmapCategory = {
-  title: '',
-  items: [
-    {
-      key: 'sitecoreai-cms',
-      title: 'Sitecore AI Platform',
-      caption: 'Create, manage, and publish digital experiences faster with a CMS designed for high-volume, multi-brand, multi-region, and omnichannel delivery.',
-    },
-  ],
-};
-
 export const operations: roadmapCategory = {
   title: 'Run your operations',
   items: [
