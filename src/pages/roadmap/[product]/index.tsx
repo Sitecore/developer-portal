@@ -1,3 +1,4 @@
+import { across, operations, outcomes, presence, studio, xmxp } from '@/data/data-roadmap';
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 import { RoadmapPhase } from '@/src/components/roadmap/roadmapPhase';
 import { Button } from '@/src/components/ui/button';
@@ -25,7 +26,10 @@ interface SearchPageProps {
   fallback: RoadmapInformation;
   products: Option[];
   currentProduct: Option;
+  productTitle: string;
 }
+
+const roadmapProductAreas = [presence, operations, outcomes, across, studio, xmxp].flatMap((category) => category.items);
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getServerSession(context.req, context.res, authOptions);
@@ -40,14 +44,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   const product = getQueryArray(context?.params?.product);
-  console.log(product);
+  const roadmapProduct = roadmapProductAreas.find((item) => item.key === product[0]);
   const pageInfo = await getPageInfo('_roadmap');
   const roadmap = await getRoadmap();
 
   const products = roadmap.products;
-  const currentProduct: Option | undefined = products.find((p) => slugify(p.label) === slugify(product[0]));
+  const currentProduct: Option | undefined = roadmapProduct && products.find((p) => slugify(p.label) === roadmapProduct.key);
 
-  if (currentProduct === undefined) {
+  if (roadmapProduct === undefined || currentProduct === undefined) {
     return {
       notFound: true,
     };
@@ -57,17 +61,18 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       currentProduct: currentProduct,
       pageInfo,
       products: roadmap.products,
+      productTitle: roadmapProduct.title,
     },
   };
 };
 
-const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct }) => {
+const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, productTitle }) => {
   const url: string = `../api/roadmap?product=${currentProduct.value}`;
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
 
-  const pageTitle = `${currentProduct.label} Roadmap`;
-  const description = `${pageInfo.description} for ${currentProduct.label}`;
+  const pageTitle = `${productTitle} Roadmap`;
+  const description = `${pageInfo.description}`;
 
   if (error) return 'An error has occurred.';
 
