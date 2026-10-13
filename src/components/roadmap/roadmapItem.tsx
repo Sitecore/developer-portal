@@ -52,7 +52,7 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
     <>
       <Card style="outline" elevation="xs" padding="sm" className="gap-2" suppressHydrationWarning>
         <CardHeader>
-          <button type="button" className="text-base font-semibold cursor-pointer hover:underline text-left w-full" onClick={handleClick} title={item.id.toString()}>
+          <button type="button" className="text-base font-semibold cursor-pointer hover:underline text-left w-full" onClick={handleClick} title={item.title}>
             {item.title}
           </button>
         </CardHeader>
