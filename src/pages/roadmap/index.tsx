@@ -51,7 +51,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo }) => {
               <div className="flex-col gap-8 md:flex-col">
                 <h2 className="lg:text-4xl font-semibold mb-8 font-sans">Sitecore Product Roadmap</h2>
 
-                <p className="lg:text-lg text-muted-foreground my-8">An overview of what we're building across the portfolio. Select a product to see its detailed roadmap: what's done, what's committed now, what's next, and what we're exploring.</p>
+                <p className="lg:text-lg text-foreground my-8">An overview of what we're building across the portfolio. Select a product to see its detailed roadmap: what's done, what's committed now, what's next, and what we're exploring.</p>
                 <div className="max-w-full grid grid-cols-2 lg:grid-cols-4 gap-4">
                   <Card className="flex-1 gap-8 bg-neutral-bg rounded-2xl p-8 items-center">
                     <CardContent className="p-0! w-full">
@@ -91,11 +91,11 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo }) => {
 
               <div className="mb-8">
                 <h3 className="text-3xl font-semibold mb-2">Available Roadmaps</h3>
-                <span className="text-md text-muted-foreground">Select a product area to see its detailed roadmap: what's done, what's committed now, what's next, and what we're exploring.</span>
+                <span className="text-md text-foreground">Select a product area to see its detailed roadmap: what's done, what's committed now, what's next, and what we're exploring.</span>
 
                 <div className="my-8">
-                  <h4 className="text-muted-foreground uppercase text-lg font-semibold tracking-wide">SitecoreAI Platform</h4>
-                  <span className="text-lg text-muted-foreground font-sans">Our AI-powered platform for marketing, organized around how brands expand reach, run operations, and drive outcomes.</span>
+                  <h4 className="text-foreground uppercase text-lg font-semibold tracking-wide">SitecoreAI Platform</h4>
+                  <span className="text-md text-foreground">Our AI-powered platform for marketing, organized around how brands expand reach, run operations, and drive outcomes.</span>
 
                   <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
                     <RoadmapCategory category={presence} />
@@ -104,17 +104,17 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo }) => {
                   </div>
 
                   <div className="my-4">
-                    <RoadmapCategory category={across} />
+                    <RoadmapCategory category={across} hideTopbar={true} />
                   </div>
 
-                  <h4 className="text-muted-foreground uppercase text-lg font-semibold tracking-wide">Sitecore Studio</h4>
-                  <span className="text-lg text-muted-foreground font-sans">Extend and customize SitecoreAI for your unique brand and workflows. Your IP, your differentiation, on our platform.</span>
+                  <h4 className="text-foreground uppercase text-lg font-semibold tracking-wide">Sitecore Studio</h4>
+                  <span className="text-md text-foreground">Extend and customize SitecoreAI for your unique brand and workflows. Your IP, your differentiation, on our platform.</span>
 
-                  <div className="grid grid-cols-2 gap-4 my-4">
+                  <div className="grid grid-cols-2 gap-4 mt-4 mb-8">
                     <RoadmapCategory category={studio} />
                   </div>
 
-                  <h4 className="text-muted-foreground uppercase text-lg font-semibold tracking-wide my-4">Platform DXP</h4>
+                  <h4 className="text-foreground uppercase text-lg font-semibold tracking-wide my-4 pt-8 border-t-2 border-t-primary-fg">Platform DXP</h4>
 
                   <RoadmapCategory category={xmxp} />
                 </div>
