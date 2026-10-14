@@ -15,6 +15,7 @@ This page tracks release history including features added and other pertinent re
 
 | Release | Description |
 | --- | --- |
+| 1.7.57 | Updated for 10.5 with UI alignment improvements, source and target language selection for translations, enhanced Content Assistant previews, and various stability and performance fixes. |
 | 1.7.26 | Added **Tree translation** (PREMIUM) feature - translate an entire content tree (a parent item and all its descendants) into a target language in a single operation. |
 | 1.6.78 | Added **Sitecore validation rules with AI** enhancement - enable Sitecore's existing field validation rules feature to guide AI-powered features. Specifically, field validation rules can now be applied to the AI prompting of the **Content generation** and **Media metadata extraction** features. |  
 | 1.5.89 | Added **Page translation** (PREMIUM) feature - translate an entire page with one operation.<br/>Added **User access control** feature - assign users access to specific Stream features. |
