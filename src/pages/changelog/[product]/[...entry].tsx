@@ -114,7 +114,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                   <CardContent className="py-0">
                     {changelogEntry.image.length > 0 && changelogEntry.image[0].fileUrl && (
                       <>
-                        <Image src={changelogEntry.image[0].fileUrl} alt={changelogEntry.title || ''} width={800} height={400} className="rounded-lg cursor-zoom-in mb-4 max-w-full" onClick={() => setIsOpen(true)} />
+                        <Image src={changelogEntry.image[0].fileUrl} alt={changelogEntry.title || ''} width={800} height={400} className="rounded-lg cursor-zoom-in mb-4 max-w-full" onClick={() => setIsOpen(true)} unoptimized />
 
                         <Dialog open={isOpen} onOpenChange={setIsOpen}>
                           <DialogContent className="max-w-6xl">
