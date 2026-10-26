@@ -31,7 +31,7 @@ export const ProductIcon = ({ product, width = '24px', height = '24px', alt = ''
 
   return (
     <div className="relative" style={{ width, height }}>
-      <Image src={url} alt={alt} fill {...rest} style={{ objectFit: 'contain' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" unoptimized />
+      <Image src={url} alt={alt} fill {...rest} style={{ objectFit: 'contain' }} unoptimized />
     </div>
   );
 };
