@@ -33,7 +33,7 @@ For each component, ensure the following key information is provided:
 1. **Page Title**: Should match the name of the component
 2. **Description**: Concisely explain the purpose and intended usage of the component. Include the fields the component will display, when and how the component should be used and any restrictions on where the component can be placed.
 3. **Rendering Parameters**: Detail out all rendering parameter options for the component, what options are available for each parameter and what effect it has on the component.
-4. **Insertion Guide**: Provide a step-by-step example demonstrating how to insert the component into an XM Cloud page. Include any specific requirements or considerations for proper placement.
+4. **Insertion Guide**: Provide a step-by-step example demonstrating how to insert the component into a SitecoreAI page. Include any specific requirements or considerations for proper placement.
 5. **Variants**: Add the component to the page showcasing each headless variant, include a description of the variant and its use case.
 
 <Alert status="info">

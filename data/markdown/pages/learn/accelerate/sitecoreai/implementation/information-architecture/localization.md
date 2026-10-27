@@ -1,10 +1,10 @@
 ---
 title: 'Multilingual content and localization'
-description: 'Setting up XM Cloud and the Next.JS head application for multilingual and regional use cases'
+description: 'Setting up SitecoreAI and the Next.JS head application for multilingual and regional use cases'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-07-07'
+lastUpdated: '2026-10-08'
 created: '2024-11-18'
 audience: ['Architect','Technical Implementer']
 ---
@@ -22,20 +22,20 @@ Localization refers to the set of features and overall process of making an appl
 
 ## Execution
 
-Keep in mind that with XM Cloud, for each of the above of features or configurations, localization happens across two platforms that must be kept in alignment for the correct end user experience:
+Keep in mind that with SitecoreAI, for each of the above of features or configurations, localization happens across two platforms that must be kept in alignment for the correct end user experience:
 
-- Configuration of the Sitecore XM Cloud instance
+- Configuration of the SitecoreAI instance
 - Configuration of the head application
 
-### Adding a language to XM Clouds
+### Adding a language to SitecoreAI
 
-Regardless of the feature being targeted, the XM Cloud instance must be setup so that the XM Cloud instance understands what is or is not a supported language.
+Regardless of the feature being targeted, the SitecoreAI instance must be setup so that the SitecoreAI instance understands what is or is not a supported language.
 
-To add a language to XM Cloud, open up the Content Editor and navigate to `/sitecore/system/Languages`.
+To add a language to SitecoreAI, open up the Content Editor and navigate to `/sitecore/system/Languages`.
 
-Right click the Languages item, choose Insert and then select Language. From there follow the wizard to add the desired language. [Alternatively, you can add a new language version directly in XM Cloud Portal Settings.](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-languages-and-locales.html#enable-a-language-for-the-environment) After adding the language, perform a full site publish - consider the best practices needed for publishing, including setting up workflow. Review the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe for more information.
+Right click the Languages item, choose Insert and then select Language. From there follow the wizard to add the desired language. [Alternatively, you can add a new language version directly in SitecoreAI Portal Settings.](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-languages-and-locales.html#enable-a-language-for-the-environment) After adding the language, perform a full site publish - consider the best practices needed for publishing, including setting up workflow. Review the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe for more information.
 
-### Adding language versions of Content in XM Cloud
+### Adding language versions of Content in SitecoreAI
 
 Once the desired language has been setup [you can add new language versions of existing content](https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-language-version-to-an-sxa-site.html). A feature of SXA is that you can use a built-in script to create a new language version of the entire website. All site items and field values are copied from the source language to the target language. Alternatively, you can create language versions of individual items manually. In both cases your alternate language versions of content will be subject to the same workflow as the default language (workflow should be set on standard values so that new items are subject to workflow on creation). Where auto publish is not part of the workflow [and items are subject to bulk publishing] it’s worth remembering that where multiple language versions are concerned, the publishing times for a full site publish could be much greater due to the additional language versions involved.
 
@@ -49,13 +49,13 @@ Language code slugs refer to the part of the URL that indicate the requested lan
 
 Localized page URL’s and page names refers to when a page or route can be requested with a different name that differs from its canonical name and further implies the target or desired language the page should be returned in.
 
-Using the following URL, www.mywebsite.com/about-us the canonical and implied language would be English. Following the steps below, you can configure both XM Cloud and the head application to resolve the following URL as the same page, but for the French language: www.mywebsite.com/qui-sommes-nous
+Using the following URL, www.mywebsite.com/about-us the canonical and implied language would be English. Following the steps below, you can configure both SitecoreAI and the head application to resolve the following URL as the same page, but for the French language: www.mywebsite.com/qui-sommes-nous
 
 Sitecore does not allow for different item names based off the language version, however we can achieve localized functionality by using the Display Namefield of each item and updating the URL managers to use the Display Name field instead of the item name itself.
 
-#### Patch Configuration for XM Cloud
+#### Patch Configuration for SitecoreAI
 
-The following patch configuration file should be added to the Visual Studio solution and deployed to XM Cloud. Be sure to check **/sitecore/admin/showconfig.aspx** to ensure the patch configuration has been appropriately applied:
+The following patch configuration file should be added to the Visual Studio solution and deployed to SitecoreAI. Be sure to check **/sitecore/admin/showconfig.aspx** to ensure the patch configuration has been appropriately applied:
 
 ```xml
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
@@ -88,7 +88,7 @@ After the patch configuration has been applied, perform a full site publish to r
   </TabList>
     <TabPanels>
       <TabPanel>
-          In the Next.JS application, the following configuration property needs to be updated to including ALL languages that were configured in XM Cloud. The following configuration properties are located in next.config.js – typically at the root of the repository.
+          In the Next.JS application, the following configuration property needs to be updated to including ALL languages that were configured in SitecoreAI. The following configuration properties are located in next.config.js – typically at the root of the repository.
 
           ```javascript
           i18n: {
@@ -101,11 +101,13 @@ After the patch configuration has been applied, perform a full site publish to r
           }
           ```
           <br/><br/>
-          This configuration step should be done AFTER configuring XM Cloud and publishing changes there. This configuration change to the next.config.js requires a redeployment.
+          This configuration step should be done AFTER configuring SitecoreAI and publishing changes there. This configuration change to the next.config.js requires a redeployment.
+
+          In Content SDK 2.0 on the App Router, the proxy chain starts with `LocaleProxy` (locale, multisite, redirects, personalize). The code above is the earlier `next.config.js` setup. See the [upgrade guide](https://doc.sitecore.com/sai/en/developers/content-sdk/20/upgrade-content-sdk-1-5-1-next-js-apps-to-version-2-0.html) for the 2.0 locale handling. Redirects also changed in 2.0: when the URL has no locale, a redirect now goes to a URL without the default locale. To keep the earlier behavior, enable the **Shall language be preserved upon redirect?** checkbox in the SitecoreAI redirect rules.
 
       </TabPanel>
       <TabPanel>
-        In the ASP.NET Core application, the following configuration property needs to be updated to including ALL languages that were configured in the XM Cloud environment. 
+        In the ASP.NET Core application, the following configuration property needs to be updated to including ALL languages that were configured in the SitecoreAI environment. 
 
         Those configuration properties are located in `Program.cs` – typically, at the root of the Head app folder, for example in `\headapps\aspnet-core-starter\Program.cs`.
 
@@ -132,7 +134,7 @@ After the patch configuration has been applied, perform a full site publish to r
     </TabPanels>
   </Tabs>
 
-After configuring both the XM Cloud environment and Head application, Experience Edge will resolve routes based off the display name of the item. You can continue to resolve routes based off explicit language parameters (language code URL slugs, for example) in combination with the canonical item name.
+After configuring both the SitecoreAI environment and Head application, Experience Edge will resolve routes based off the display name of the item. You can continue to resolve routes based off explicit language parameters (language code URL slugs, for example) in combination with the canonical item name.
 
 
 #### Multi-domain routing with Localization
@@ -239,11 +241,11 @@ This will ensure that the locale will be set according to the host name. At the 
 
 ### Language Fallback
 
-When requesting an item in a specific language, and the language version for that item or route is not found, XM Cloud (Experience Edge) will not resolve the item and return null or 404. You can configure XM Cloud to “fallback” to a default language when a requested language version is not found on for an item.
+When requesting an item in a specific language, and the language version for that item or route is not found, SitecoreAI (Experience Edge) will not resolve the item and return null or 404. You can configure SitecoreAI to “fallback” to a default language when a requested language version is not found on for an item.
 
 <Alert status="info">
   <AlertIcon />
-   Always use the site settings to configure language fallback in XM Cloud.
+   Always use the site settings to configure language fallback in SitecoreAI.
 </Alert>
 <br />
 Set the "Enable item language fallback" field on the Site Grouping item, locally in `/sitecore/content/$tenant/$site/Settings/Site Grouping/$siteGrouping`
@@ -376,10 +378,13 @@ namespace Sitecore.AspNetCore.Starter.ViewComponents
     </TabPanels>
   </Tabs>
 
+### Using a different framework or no Sitecore SDK
+This recipe shows localization with the Next.js and ASP.NET Core SDKs. In an application without a Sitecore SDK, your code resolves the language for each request and passes it to the layout query. The [Routing, localization, and multi-sites](https://doc.sitecore.com/sai/en/developers/sitecoreai/introduction-to-framework-agnostic-sitecore-development/routing-localization-and-multi-sites/routing-localization-and-multi-sites.html) page covers locale resolution.
+
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+  <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
 </Row>
 
 ## Related Documentation

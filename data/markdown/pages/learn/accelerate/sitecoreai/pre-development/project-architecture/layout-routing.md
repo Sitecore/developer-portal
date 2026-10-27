@@ -1,6 +1,6 @@
 ---
 title: 'Layout Routing'
-description: 'Setup layout routing in XM Cloud to reduce content complexity and improve performance'
+description: 'Setup layout routing in SitecoreAI to reduce content complexity and improve performance'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
@@ -15,11 +15,11 @@ When a page is published to Experience Edge, the publish connector generates a d
 
 This dependency graph can grow very large depending on your information architecture and this can cause performance issues when publishing the site.
 
->The following applies to Snapshot Publishing (v1), Edge Publishing (v2) will publish references to the datasource items, and the layout response will be composed at the edge on request. Review the [publishing pipeline documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#the-publishing-pipeline) for more information.
+<Alert type="info"><AlertIcon />The following applies to Snapshot Publishing (v1), Edge Publishing (v2) will publish references to the datasource items, and the layout response will be composed at the edge on request. Review the [publishing pipeline documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#the-publishing-pipeline) for more information.</Alert>
 
 ## Execution
 
-The following highlights a new approach to page composition in XM Cloud. It should be considered a starting point for your project, you should validate the approach and adjust it to fit the needs of your project.
+The following highlights a new approach to page composition in SitecoreAI. It should be considered a starting point for your project, you should validate the approach and adjust it to fit the needs of your project.
 
 We can solve this problem by changing how the layout for common page sections is composed. Instead of having a single layout for the page that includes the header and footer, we can create special routes for each common section and then use the web application to compose the page layout.
 

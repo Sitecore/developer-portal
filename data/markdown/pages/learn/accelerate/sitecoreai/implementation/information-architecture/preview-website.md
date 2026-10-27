@@ -1,22 +1,22 @@
 ---
 title: 'Preview website'
-description: 'Configuring an additional preview environment for XM Cloud stakeholders to review content outside of XM Cloud'
+description: 'Configuring an additional preview environment for SitecoreAI stakeholders to review content outside of SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-03-31'
+lastUpdated: '2026-10-08'
 created: '2025-03-31'
 audience: ['Architect','Technical Implementer']
 ---
 
 ## Context
-A separate preview environment allows XM Cloud stakeholders who may not have access to see how their content will look and function before it goes live. This helps prevent errors, enhances collaboration, and encourages experimentation while ensuring high-quality, polished content.
+A separate preview environment allows SitecoreAI stakeholders who may not have access to see how their content will look and function before it goes live. This helps prevent errors, enhances collaboration, and encourages experimentation while ensuring high-quality, polished content.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
 
 
 ## Execution
-Follow the steps in the documentation to create a new project in your rendering host (example [Vercel](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-your-front-end-application-to-vercel.html) or [Netlify](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-your-front-end-application-to-netlify.html)) and add your preview [environment variables](https://doc.sitecore.com/xmc/en/developers/xm-cloud/get-the-environment-variables-for-a-site.html). If you are JSS 21.6+ this will just be the following which are available from Developer settings in the XM Cloud Deploy Portal:
+Follow the steps in the documentation to create a new project in your rendering host (example [Vercel](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-your-front-end-application-to-vercel.html) or [Netlify](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-your-front-end-application-to-netlify.html)) and add your preview [environment variables](https://doc.sitecore.com/xmc/en/developers/xm-cloud/get-the-environment-variables-for-a-site.html). If you are JSS 21.6+ this will just be the following which are available from Developer settings in the SitecoreAI Deploy Portal:
 - `SITECORE_EDGE_CONTEXT_ID`
 - `SITECORE_SITE_NAME`
 - `JSS_EDITING_SECRET` - not needed as this is only a preview environment.
@@ -84,7 +84,9 @@ import { WrappedImage } from './WrappedImage';
 <WrappedImage field={props.fields.PromoIcon} />
 ```
 <br/><br/>
-When the new project has been created in your hosting provider and the changes applied in your solution, after being deployed your preview application will be running against the preview endpoint for XM Cloud.
+When the new project has been created in your hosting provider and the changes applied in your solution, after being deployed your preview application will be running against the preview endpoint for SitecoreAI.
+
+The wrapper changes the image URL to the CM host. If you render the image with the Next.js image component, that host must be allowed in the Next.js image configuration. On Next.js 16 use `remotePatterns`, which replaces the deprecated `images.domains`.
 
 ## Insights
 ### Media access
@@ -125,6 +127,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 ```
 
+### Using a different framework or no Sitecore SDK
+The preview setup in this recipe uses the Next.js Content SDK. In an application without an SDK, your code requests layout and content from the Preview GraphQL API for preview and from the Delivery GraphQL API for the live site. The [Content rendering](https://doc.sitecore.com/sai/en/developers/sitecoreai/introduction-to-framework-agnostic-sitecore-development/content-rendering/content-rendering.html) documentation describes both APIs, and [Visual editing](https://doc.sitecore.com/sai/en/developers/sitecoreai/introduction-to-framework-agnostic-sitecore-development/visual-editing/visual-editing.html) covers editing in Page builder.
+
 ## Related Recipies
 
 <Row columns={2}>
@@ -136,7 +141,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 <Row columns={2}>
   <Link title="Get the environment variables for a site" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/get-the-environment-variables-for-a-site.html" />
-  <Link title="Next.js for XM Cloud environment variables" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/next-js-for-xm-cloud-environment-variables.html" />
+  <Link title="Next.js for SitecoreAI environment variables" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/next-js-for-xm-cloud-environment-variables.html" />
   <Link title="Configure an external editing host" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-an-external-editing-host.html" />
   <Link title="Front-end hosting applications" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/front-end-hosting-applications.html" />
   <Link title="Optimize performance for metadata-based integration" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/optimize-performance-for-metadata-based-integration.html" />

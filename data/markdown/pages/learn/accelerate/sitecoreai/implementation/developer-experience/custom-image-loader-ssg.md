@@ -1,21 +1,21 @@
 ---
 title: 'Custom Next.js Image Loader for SSG'
-description: 'Implement a custom image loader for Next.js when using Static Site Generation (SSG), specifically for Sitecore XM Cloud projects'
+description: 'Implement a custom image loader for Next.js when using Static Site Generation (SSG), specifically for SitecoreAI projects'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-07-30'
+lastUpdated: '2026-10-08'
 created: '2025-07-30'
 audience: ['Technical Implementers','Architects', 'Product Owner']
 ---
 
 ## Context
-Static Site Generation (SSG) generates static HTML files at build time, and the default Next.js Image component (next/image) requires server-side functionality. For Sitecore XM Cloud projects, we need a custom solution that works with both development and production environments while maintaining image optimization capabilities.
+Static Site Generation (SSG) generates static HTML files at build time, and the default Next.js Image component (next/image) requires server-side functionality. For SitecoreAI projects, we need a custom solution that works with both development and production environments while maintaining image optimization capabilities.
 
 ## Execution
 This use case is designed for teams deploying static Next.js sites using `output: "export"` who still want the full benefits of the `<Image />` component like responsive loading, lazy loading, and automatic format conversion. It’s especially useful when images are hosted on Sitecore Edge (or another CDN) and need to be optimized at build time.
 
-If you’re using server-side rendering, a Node.js backend, or only local assets with no need for CDN support, stick with the default image loader for a simpler setup.
+If you’re using server-side rendering, a Node.js backend, or only local assets with no need for CDN support, stick with the default image loader for a simpler setup. With the default loader on Next.js 16, allow remote hosts such as Sitecore Edge with `remotePatterns`, which replaces the deprecated `images.domains`. If you serve media from a custom Edge hostname, Content SDK 2.0 adds the `NEXT_PUBLIC_SITECORE_EDGE_PLATFORM_HOSTNAME` environment variable (`SITECORE_EDGE_PLATFORM_HOSTNAME` outside Next.js) and a `rewriteMediaUrls` option in `sitecore.config`.
 
 ### Configure Next.js Image Setting
 First, create or update next.config.js (headapps\nextjs-starter\next.config.js)
@@ -128,7 +128,7 @@ Image optimization is critical to performance and custom image loader implementa
 - Lazy loading to reduce initial load time.
 - No layout shift with required width and height props.
 - Automatic image optimization for size and quality.
-- Fully compatible with `output: "export"` making it ideal for fully static XM Cloud websites.
+- Fully compatible with `output: "export"` making it ideal for fully static SitecoreAI websites.
 - Removes the need for a runtime image optimization service.
 - Simplifies deployment pipelines by generating all required assets at build time.
 
@@ -155,4 +155,3 @@ To get the most out of your image optimization setup, keep in mind the following
   <Link title="The JSS NextImage component" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/the-jss-nextimage-component.html" />
   <Link title="Configuring the JSS NextImage component" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/configuring-the-jss-nextimage-component.html#idp17480" />  
 </Row>
-

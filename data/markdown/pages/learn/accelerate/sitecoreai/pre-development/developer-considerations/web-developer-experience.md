@@ -4,13 +4,13 @@ description: 'Standardized workflows, code quality practices, and cross-function
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-03-31'
+lastUpdated: '2026-10-08'
 created: '2025-03-31'
 audience: ['Architect','Technical Implementers','Project Manager', 'Product Owners']
 ---
 
 ## Context
-Web Application developers working on XM Cloud projects face unique challenges when collaborating across team roles as introduced in the [Preparing for an XM Cloud project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project) recipe. They need specific support from their team members and well-defined practices to work efficiently in collaborative environments. Understanding these workflow requirements is essential for establishing effective quality standards.
+Web Application developers working on XM Cloud projects face unique challenges when collaborating across team roles as introduced in the [Preparing for a SitecoreAI project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project) recipe. They need specific support from their team members and well-defined practices to work efficiently in collaborative environments. Understanding these workflow requirements is essential for establishing effective quality standards.
 
 ## Execution
 Projects can face multiple challenges but it’s often common that issues start to arise when there are:
@@ -296,8 +296,11 @@ For Web Application developers to work effectively in an XM Cloud project, they 
 | CI/CD Pipeline Support | <ul><li>Well-documented build and deployment processes</li><li>Assistance with configuring website-specific pipeline steps</li><li>Support for implementing preview deployments</li><li>Automated testing integration in the pipeline</li></ul>|
 
 
+### Using a different framework or no Sitecore SDK
+The workflow, package management and linting guidance in this recipe is written for JavaScript head applications. If your team builds with another framework, keep the principles (a consistent workflow, controlled dependencies, automated formatting) and apply them with your framework's own tools. Sitecore's [framework-agnostic documentation](https://doc.sitecore.com/sai/en/developers/sitecoreai/introduction-to-framework-agnostic-sitecore-development.html) includes code examples in Astro and Go.
+
 ## Related Recipes
 <Row columns={2}>
-    <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+    <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
     <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-considerations/branching-strategy" />
 </Row>

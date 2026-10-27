@@ -1,10 +1,10 @@
 ---
 title: 'Wildcard Pages'
-description: 'Using wildcard pages for dynamic urls in XM Cloud'
+description: 'Using wildcard pages for dynamic urls in SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-07-11'
+lastUpdated: '2026-10-08'
 created: '2024-08-23'
 audience: ['Architect','Technical Implementer']
 ---
@@ -17,9 +17,7 @@ You need to resolve dynamic Next.js routes to specific items in the content tree
 
 The solution is to use a Wildcard item in the content tree and then consume that in the Next.js application. The following steps will enable a route in the head application to use the wildcard item to provide the layout data for the page. Then the components or the page can handle getting the content to display on the page/components.
 
-> For the purposes of this recipe, we will be giving the example of getting blogs stored in an external datasource. The principles used here can be transferred to getting other content types, for example: Products from Order Cloud etc…
->
-> In our example, the blog content will be stored in Content Hub and accessed via a GraphQL call to Experience Edge for Content Hub.
+<Alert type="info"><AlertIcon />For the purposes of this recipe, we will be giving the example of getting blogs stored in an external datasource. The principles used here can be transferred to getting other content types, for example: Products from Order Cloud etc. In our example, the blog content will be stored in Content Hub and accessed via a GraphQL call to Experience Edge for Content Hub.</Alert>
 
 ### Create the Wildcard Item
 
@@ -123,7 +121,7 @@ Things to note:
 2. When a wildcard item is published, it is given the name `,-w-,` as the path url.
 
 There are a couple of things that work to our advantage here:
--Every request to this route will get the same page item from XM Cloud, this means that we can cache the response of the sitecorePagePropsFactory.create call if we want to.
+-Every request to this route will get the same page item from SitecoreAI, this means that we can cache the response of the sitecorePagePropsFactory.create call if we want to.
 -Because each call is to the same page item, Experience Edge will cache the first request and then serve every other request from the cache until a publish happens. This will help prevent exceeding the 80 req/s rate limit.
 
 #### Multisite Middleware
@@ -132,7 +130,7 @@ There are a couple of things that work to our advantage here:
 
 When using the multisite application, we need to make sure that the middleware does not override the route, so the root path needs to be added to the `matcher` for the middleware config found in the root of the application. It is important to note, this will prevent _all_ middleware running on these paths, so if you need to add dynamic redirects later, a different solution will need to be found.
 
-**middleware.ts**
+**middleware.ts** (named `proxy.ts` on Next.js 16 and Content SDK 2.0)
 
 ```typescript
 export const config = {
@@ -151,7 +149,9 @@ export const config = {
 };
 ```
 <br/><br/>
-An alternative approach is to exclude specific paths within the multisite middleware itself, rather than preventing all middleware from running on these paths. To do this, remove the 'blogs/' entry from the matcher in <code>middleware.ts</code>. Then, navigate to <code>multisite.ts</code> in <code>nextjs-starter/src/lib/middleware/plugins/</code> and update the <code>excludeRoute</code> to include the required path.
+In Content SDK 2.0 the multisite middleware is the `MultisiteProxy` (`AppRouterMultisiteProxy` on the App Router), registered in `proxy.ts`. The code in this section uses the earlier middleware names. Check the generated `proxy.ts` and the [upgrade guide](https://doc.sitecore.com/sai/en/developers/content-sdk/20/upgrade-content-sdk-1-5-1-next-js-apps-to-version-2-0.html) for the matching option names before you port it.
+
+An alternative approach is to exclude specific paths within the multisite middleware itself, rather than preventing all middleware from running on these paths. To do this, remove the 'blogs/' entry from the matcher in <code>middleware.ts</code> (<code>proxy.ts</code> on Next.js 16 and Content SDK 2.0). Then, navigate to <code>multisite.ts</code> in <code>nextjs-starter/src/lib/middleware/plugins/</code> and update the <code>excludeRoute</code> to include the required path.
 
 ```typescript
   constructor() {
@@ -244,6 +244,9 @@ if (path !== undefined) {
 }
 ```
 
+### Using a different framework or no Sitecore SDK
+The route in this recipe is a Next.js catch-all route. In another framework, create the equivalent catch-all route in your application and retrieve the layout for the requested path with the GraphQL layout query. See [Content rendering](https://doc.sitecore.com/sai/en/developers/sitecoreai/introduction-to-framework-agnostic-sitecore-development/content-rendering/content-rendering.html) for how to retrieve and render layout and content without an SDK.
+
 ## Related Recipes
 
 <Row columns={2}>
@@ -259,6 +262,6 @@ if (path !== undefined) {
 ## Related Links
 
 <Row columns={2}>
-  <Link title="Using Wildcard Items In Sitecore XM Cloud With A Headless NextJs Front-end" link="https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud" />
+  <Link title="Using Wildcard Items In SitecoreAI With A Headless NextJs Front-end" link="https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud" />
   <Link title="Routing: Dynamic Routes" link="https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes" />
 </Row>

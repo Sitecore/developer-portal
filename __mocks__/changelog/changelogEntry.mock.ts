@@ -30,6 +30,7 @@ export const mockedChangelogEntry: ChangelogEntry = {
   products: [
     {
       id: '8OiTP5UKXE-RRpU17Vpq4A',
+      name: 'Content Hub',
       productName: 'Content Hub',
       productDescription: '',
       darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub-dark',
@@ -53,6 +54,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     sitecoreProduct: [
       {
         id: 'av_GqshF5U2kL8XMGjf-Xw',
+        name: 'XM Cloud',
         productName: 'XM Cloud',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',
@@ -70,6 +72,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     products: [
       {
         id: 'av_GqshF5U2kL8XMGjf-Xw',
+        name: 'XM Cloud',
         productName: 'XM Cloud',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',
@@ -91,6 +94,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     sitecoreProduct: [
       {
         id: 'av_GqshF5U2kL8XMGjf-Xw',
+        name: 'XM Cloud',
         productName: 'XM Cloud',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',
@@ -108,6 +112,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     products: [
       {
         id: 'av_GqshF5U2kL8XMGjf-Xw',
+        name: 'XM Cloud',
         productName: 'XM Cloud',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',
@@ -129,6 +134,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     sitecoreProduct: [
       {
         id: 'av_GqshF5U2kL8XMGjf-Xw',
+        name: 'XM Cloud',
         productName: 'XM Cloud',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',
@@ -149,6 +155,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     products: [
       {
         id: 'av_GqshF5U2kL8XMGjf-Xw',
+        name: 'XM Cloud',
         productName: 'XM Cloud',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',
@@ -169,6 +176,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     sitecoreProduct: [
       {
         id: '8OiTP5UKXE-RRpU17Vpq4A',
+        name: 'Content Hub',
         productName: 'Content Hub',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub-dark',
@@ -186,6 +194,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     products: [
       {
         id: '8OiTP5UKXE-RRpU17Vpq4A',
+        name: 'Content Hub',
         productName: 'Content Hub',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub-dark',
@@ -207,6 +216,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     sitecoreProduct: [
       {
         id: 'uAwJlln4BUqyOtpExq1O5g',
+        name: 'Personalize',
         productName: 'Personalize',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-personalize-dark',
@@ -214,6 +224,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
       },
       {
         id: 'av_GqshF5U2kL8XMGjf-Xw',
+        name: 'XM Cloud',
         productName: 'XM Cloud',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',
@@ -244,6 +255,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     products: [
       {
         id: 'uAwJlln4BUqyOtpExq1O5g',
+        name: 'Personalize',
         productName: 'Personalize',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-personalize-dark',
@@ -251,6 +263,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
       },
       {
         id: 'av_GqshF5U2kL8XMGjf-Xw',
+        name: 'XM Cloud',
         productName: 'XM Cloud',
         productDescription: '',
         darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',

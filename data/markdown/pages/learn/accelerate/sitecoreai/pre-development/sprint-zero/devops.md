@@ -11,7 +11,7 @@ audience: ['Architect','Technical Implementer', 'System Administrator']
 
 ## Context
 
-Users need to deploy their application to both production and non-production environments. Non production environments are used for development and testing before deploying to the live (production) environment. This will include any assets required to be deployed to the XMC infrastructure, as well as [deploying their “head” application](https://doc.sitecore.com/xmc/en/developers/xm-cloud/front-end-hosting-applications.html). This recipe will go through the different options available to customers to achieve this.
+Users need to deploy their application to both production and non-production environments. Non production environments are used for development and testing before deploying to the live (production) environment. This will include any assets required to be deployed to the SitecoreAI infrastructure, as well as [deploying their “head” application](https://doc.sitecore.com/xmc/en/developers/xm-cloud/front-end-hosting-applications.html). This recipe will go through the different options available to customers to achieve this.
 
 ## Execution
 
@@ -38,7 +38,7 @@ However, there are some scenarios where that might not be possible, some example
 
 ### Deploy Application GitOps
 
-The Deploy Application is used to provision Projects/Environments & Deployments. When a new project is created you can either use your own existing repository, or you can allow the Application to provision one for you based on one of the templates available. You can read more about how to create a new project using the Deploy Application in the [Deploy app](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html) documentation.
+The Deploy Application is used to provision Projects/Environments & Deployments. When a new project is created you can either use your own existing repository, or you can allow the Application to provision one for you based on one of the templates available. You can read more about how to create a new project using the Deploy Application in the [Deploy app](https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html) documentation.
 
 <Alert status="info">
   <AlertIcon />
@@ -148,7 +148,7 @@ This repository is a multi-site instance with five real-world live sites contain
 ### Related Documentation
 
 <Row columns={2}>
-  <Link title="Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+  <Link title="Deploy app" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html" />
   <Link title="Deploying" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html" />
   <Link title="The CLI cloud command" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-cloud-command.html" />
   <Link title="The CLI cloud command" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-cloud-command.html" />  

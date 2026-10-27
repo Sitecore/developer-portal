@@ -6,7 +6,6 @@ youtubeTitle: 'Latest "Discover Sitecore" videos'
 pageType: 'article'
 hasSubPageNav: true
 hasInPageNav: true
-
 ---
 
 ## SitecoreAI
@@ -15,7 +14,7 @@ Ready to explore Sitecore’s unified, cloud-native platform that connects all t
 <Row columns="2">
   <Article title="Introduction to SitecoreAI" description="SitecoreAI is the unified digital experience platform that brings together content, assets, data, and AI in one adaptive system." link="/sitecoreai/" maxWidth="sm" linktext="Read now"  />
   <Article title="SitecoreAI Navigation" description="Walk through the new navigation in SitecoreAI to access all capabilities available" link="/sitecoreai/navigation" maxWidth="sm" linktext="Read now"  />
-  <Article title="Sitecore Studio" description="Sitecore Studio is the engine that lets you tailor the SitecoreAI platform itself, safely, securely, and at scale." link="/sitecoreai/sitecore-studio" maxWidth="sm" linktext="Read now"  />
+  <Article title="Sitecore Accelerate for SitecoreAI" description="Sitecore Accelerate is a dedicated program to help Sitecore customers configure and optimize SitecoreAI. Browse the recipes, from pre-development through to optimization." link="/learn/accelerate/sitecoreai" maxWidth="sm" linktext="Read now"  />
   <Article title="Developer Getting Started" description="SitecoreAI includes a rich offering of developer tools for setting up including apps to manage deployments, integration frameworks and SDKs for development." link="/sitecoreai/dev-experience" maxWidth="sm" linktext="Read now"  />
 </Row>
 

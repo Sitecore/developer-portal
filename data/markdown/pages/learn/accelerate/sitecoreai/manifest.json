@@ -26,7 +26,7 @@
               "path": "moving-to-saas"
             },
             {
-              "title": "Transition from XM/XP to XM Cloud",
+              "title": "Transition from XM/XP to SitecoreAI",
               "path": "xm-xp-to-xmc"
             },
             {
@@ -49,8 +49,8 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Preparing for an XM Cloud Project",
-              "path": "preparing-for-an-xm-cloud-project"
+              "title": "Preparing for a SitecoreAI Project",
+              "path": "preparing-for-a-sitecoreai-project"
             },
             {
               "title": "Project Estimation",
@@ -210,6 +210,10 @@
               "path": "creating-new-components"
             },
             {
+              "title": "Creating Components with AI",
+              "path": "creating-components-with-ai"
+            },
+            {
               "title": "Creating Branch Templates",
               "path": "creating-branch-templates"
             },
@@ -337,6 +341,10 @@
             {
               "title": "Enhancing search with documents",
               "path": "document-search"
+            },
+            {
+              "title": "Power AI agents with Search",
+              "path": "search-ai-agents-and-rag"
             }
           ]
         }
@@ -395,21 +403,29 @@
           "path": "publishing-optimization"
         },
         {
-          "title": "User Experience Optimization",
+       "title": "User Experience Optimization",
           "path": "user-experience-optimization",
           "ignoreLink": false,
           "children": [
             {
-              "title": "Page personalization",
+              "title": "Conversion optimization strategy",
+              "path": "conversion-optimization-strategy"
+            },
+            {
+              "title": "Personalizing your content",
               "path": "page-personalization"
+            },
+            {
+              "title": "Using affinities in personalization",
+              "path": "affinities-for-personalization"
             },
             {
               "title": "Testing experiences",
               "path": "testing-experiences"
             },
             {
-              "title": "Moving to Sitecore Personalize",
-              "path": "moving-to-Sitecore-personalize"
+              "title": "Delivering components through Design Studio",
+              "path": "design-studio-variants"
             }
           ]
         }
@@ -421,7 +437,7 @@
       "ignoreLink": true,
       "children": [
         {
-          "title": "XM Cloud Glossary",
+          "title": "Glossary",
           "path": "xm-cloud-glossary"
         }
       ]

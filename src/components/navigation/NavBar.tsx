@@ -1,48 +1,26 @@
-"use client";
+'use client';
 
-import { cn } from "@/src/lib/util";
-import {
-  mainNavigation,
-  type NavItem,
-  sitecoreQuickLinks,
-} from "@data/data-navigation";
-import {
-  mdiChevronDown,
-  mdiChevronLeft,
-  mdiChevronRight,
-  mdiClose,
-  mdiMenu,
-} from "@mdi/js";
-import Icon from "@mdi/react";
-import UserAccount from "@src/components/authentication/UserAccount";
-import {
-  PreviewSearchInput,
-  SearchInput,
-} from "@src/components/integrations/sitecore-search";
-import { Button } from "@src/components/ui/button";
-import { ProductIcon } from "@src/components/ui/logos";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@src/components/ui/popover";
-import {
-  GetProductLogoByVariant,
-  Product,
-  Type,
-  Variant,
-} from "@src/lib/assets";
-import { ExternalLink } from "lucide-react";
-import { useSession } from "next-auth/react";
-import { useTheme } from "next-themes";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import type React from "react";
-import { useState } from "react";
-import { DarkModeSwitch } from "./DarkModeSwitch";
-import { QuickStartMenu } from "./QuickStartMenu";
-import { SearchButton } from "./SearchButton";
+import { cn } from '@/src/lib/util';
+import { mainNavigation, type NavItem, sitecoreQuickLinks } from '@data/data-navigation';
+import { mdiChevronDown, mdiChevronLeft, mdiChevronRight, mdiClose, mdiMenu } from '@mdi/js';
+import Icon from '@mdi/react';
+import UserAccount from '@src/components/authentication/UserAccount';
+import { PreviewSearchInput, SearchInput } from '@src/components/integrations/sitecore-search';
+import { Button } from '@src/components/ui/button';
+import { ProductIcon } from '@src/components/ui/logos';
+import { Popover, PopoverContent, PopoverTrigger } from '@src/components/ui/popover';
+import { GetProductLogoByVariant, Product, Type, Variant } from '@src/lib/assets';
+import { ExternalLink } from 'lucide-react';
+import { useSession } from 'next-auth/react';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import type React from 'react';
+import { useState } from 'react';
+import { DarkModeSwitch } from './DarkModeSwitch';
+import { QuickStartMenu } from './QuickStartMenu';
+import { SearchButton } from './SearchButton';
 
 export type NavigationChildData = {
   title: string;
@@ -67,25 +45,18 @@ export type NavBarProps = {
   searchEnabled?: boolean;
 };
 
-function getLogoByPath(
-  asPath: string,
-  theme: string | undefined,
-): string | undefined {
+function getLogoByPath(asPath: string, theme: string | undefined): string | undefined {
   // Default to developer logo
   let logo: Product = Product.SitecoreDevelopers;
 
   // Use the Sitecore logo for the roadmap pages
-  if (asPath.includes("/roadmap")) {
+  if (asPath.includes('/roadmap')) {
     logo = Product.Sitecore;
   }
-  return theme === "dark"
-    ? GetProductLogoByVariant(logo, Variant.Dark, Type.Full)
-    : GetProductLogoByVariant(logo, Variant.Light, Type.Full);
+  return theme === 'dark' ? GetProductLogoByVariant(logo, Variant.Dark, Type.Full) : GetProductLogoByVariant(logo, Variant.Light, Type.Full);
 }
 
-export default function Navbar({
-  searchEnabled,
-}: NavBarProps): React.ReactNode {
+export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode {
   const [isOpen, setIsOpen] = useState(false);
   const [focusedOnSearch, setFocusedOnSearch] = useState(false);
   const router = useRouter();
@@ -99,13 +70,7 @@ export default function Navbar({
           <div className="flex items-center flex-shrink-0">
             {/* Logo */}
             <Link href="/" className="w-auto md:w-[270px]">
-              <Image
-                src={getLogoByPath(router.asPath, theme) || ""}
-                alt="Go to the homepage"
-                width={270}
-                height={32}
-                className="p-1 h-8 w-auto"
-              />
+              <Image src={getLogoByPath(router.asPath, theme) || ''} alt="Go to the homepage" width={270} height={32} className="p-1 h-8 w-auto" unoptimized loading="eager" />
             </Link>
 
             {/* Desktop menu (hide under xl or lower) */}
@@ -127,10 +92,7 @@ export default function Navbar({
                   defaultItemsPerPage={6}
                   onFocus={() => setFocusedOnSearch(true)}
                   onBlur={() => setFocusedOnSearch(false)}
-                  className={cn(
-                    "flex transition-all duration-100 ease-in-out",
-                    focusedOnSearch ? "w-2xl" : "w-lg",
-                  )}
+                  className={cn('flex transition-all duration-100 ease-in-out', focusedOnSearch ? 'w-2xl' : 'w-lg')}
                 />
               </div>
 
@@ -140,18 +102,8 @@ export default function Navbar({
             </>
           )}
 
-          <Button
-            onClick={() => setIsOpen(!isOpen)}
-            variant="ghost"
-            size="sm"
-            aria-label="Toggle Navigation"
-            className="xl:hidden"
-          >
-            {isOpen ? (
-              <Icon path={mdiClose} size={1} />
-            ) : (
-              <Icon path={mdiMenu} size={1.25} />
-            )}
+          <Button onClick={() => setIsOpen(!isOpen)} variant="ghost" size="sm" aria-label="Toggle Navigation" className="xl:hidden">
+            {isOpen ? <Icon path={mdiClose} size={1} /> : <Icon path={mdiMenu} size={1.25} />}
           </Button>
           <DarkModeSwitch />
           <QuickStartMenu key={router.asPath} />
@@ -176,27 +128,13 @@ const DesktopNav = () => {
       {mainNavigation.map((navItem) => (
         <div key={navItem.url || navItem.title} className="mx-2">
           {navItem.url && !navItem.children ? (
-            <Button
-              key={navItem.url || navItem.title}
-              asChild
-              variant="ghost"
-              className={cn(
-                "relative",
-                router.asPath.includes(navItem.url) && "bg-accent",
-              )}
-            >
-              <Link href={navItem.url ?? "#"}>{navItem.title}</Link>
+            <Button key={navItem.url || navItem.title} asChild variant="ghost" className={cn('relative', router.asPath.includes(navItem.url) && 'bg-accent')}>
+              <Link href={navItem.url ?? '#'}>{navItem.title}</Link>
             </Button>
           ) : (
             <Popover>
               <PopoverTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className={cn(
-                    "relative",
-                    router.asPath === navItem.url && "bg-accent",
-                  )}
-                >
+                <Button variant="ghost" className={cn('relative', router.asPath === navItem.url && 'bg-accent')}>
                   {navItem.title}
                   <Icon path={mdiChevronDown} size={1} className="ml-1" />
                 </Button>
@@ -224,30 +162,16 @@ const navSection = ({ title, logo }: NavItem) => {
           <ProductIcon product={logo} height="20px" width="32px" />
         </div>
       )}
-      <span className="transition-all duration-300 ease-in-out font-medium text-foreground text-lg -mt-1 h-[26px]">
-        {title}
-      </span>
+      <span className="transition-all duration-300 ease-in-out font-medium text-foreground text-lg -mt-1 h-[26px]">{title}</span>
     </>
   );
 };
 
-const DesktopSubNav = ({
-  title,
-  url,
-  subTitle,
-  external,
-  children,
-  logo,
-}: NavItem) => {
+const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavItem) => {
   return (
     <div className="block p-2" key={title}>
       {url ? (
-        <Link
-          href={url ? url : "#"}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noopener noreferrer" : undefined}
-          className="flex gap-1 mb-2"
-        >
+        <Link href={url ? url : '#'} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined} className="flex gap-1 mb-2">
           {navSection({ title, logo })}
         </Link>
       ) : (
@@ -257,13 +181,7 @@ const DesktopSubNav = ({
       <p className="text-sm text-muted-foreground">{subTitle}</p>
 
       {children?.map((child) => (
-        <Link
-          href={child.url || "#"}
-          target={child.external ? "_blank" : undefined}
-          rel={child.external ? "noopener noreferrer" : undefined}
-          className="flex gap-1 py-2 text-muted-foreground"
-          key={child.url || child.title}
-        >
+        <Link href={child.url || '#'} target={child.external ? '_blank' : undefined} rel={child.external ? 'noopener noreferrer' : undefined} className="flex gap-1 py-2 text-muted-foreground" key={child.url || child.title}>
           {child.logo && (
             <div className="inline-block mr-2">
               <ProductIcon product={child.logo} width="24px" height="24px" />
@@ -287,11 +205,7 @@ const MobileNav = ({ onClose }: { onClose: () => void }) => {
       {mainNavigation.map((navItem) => (
         <MobileNavItem key={navItem.title} {...navItem} onClose={onClose} />
       ))}
-      <MobileNavItem
-        title={sitecoreQuickLinks.title}
-        key={sitecoreQuickLinks.title}
-        onClose={onClose}
-      >
+      <MobileNavItem title={sitecoreQuickLinks.title} key={sitecoreQuickLinks.title} onClose={onClose}>
         {sitecoreQuickLinks.children}
       </MobileNavItem>
     </div>
@@ -305,12 +219,7 @@ type MobileNavItemProps = {
   onClose: () => void;
 };
 
-const MobileNavItem = ({
-  title,
-  children,
-  url,
-  onClose: _onClose,
-}: MobileNavItemProps) => {
+const MobileNavItem = ({ title, children, url, onClose: _onClose }: MobileNavItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const currentPage = router.asPath;
@@ -319,47 +228,28 @@ const MobileNavItem = ({
     <div
       onClick={() => children && setIsOpen(!isOpen)}
       onKeyDown={(e) => {
-        if ((e.key === "Enter" || e.key === " ") && children) {
+        if ((e.key === 'Enter' || e.key === ' ') && children) {
           e.preventDefault();
           setIsOpen(!isOpen);
         }
       }}
-      role={children ? "button" : undefined}
+      role={children ? 'button' : undefined}
       tabIndex={children ? 0 : undefined}
     >
-      <a
-        href={url ?? "#"}
-        className="flex px-4 py-4 justify-between items-center hover:no-underline border-t border-border"
-      >
+      <a href={url ?? '#'} className="flex px-4 py-4 justify-between items-center hover:no-underline border-t border-border">
         <span className="font-semibold">{title}</span>
-        {children && (
-          <Icon
-            path={mdiChevronRight}
-            size={1.5}
-            className={cn(
-              "transition-all duration-250 ease-in-out",
-              isOpen && "rotate-180",
-            )}
-          />
-        )}
+        {children && <Icon path={mdiChevronRight} size={1.5} className={cn('transition-all duration-250 ease-in-out', isOpen && 'rotate-180')} />}
       </a>
 
       {isOpen && (
         <div className="fixed top-14 w-full bg-background h-screen">
-          <Button
-            onClick={() => setIsOpen(false)}
-            className="w-full rounded-none justify-start px-2 h-14 mb-4 shadow-lg"
-            variant="ghost"
-          >
+          <Button onClick={() => setIsOpen(false)} className="w-full rounded-none justify-start px-2 h-14 mb-4 shadow-lg" variant="ghost">
             <Icon path={mdiChevronLeft} size={1.5} className="mr-2" />
             Back
           </Button>
           <div className="mb-2 pl-4 border-l border-border flex flex-col items-start">
             {children?.map((child) => (
-              <div
-                key={child.url || child.title}
-                className="py-4 border-b border-border w-[95%]"
-              >
+              <div key={child.url || child.title} className="py-4 border-b border-border w-[95%]">
                 {child.url ? (
                   <a href={child.url} className="py-2 block">
                     <h2 className="text-lg font-heading mb-2">{child.title}</h2>
@@ -374,18 +264,13 @@ const MobileNavItem = ({
                   {child.children?.map((subchild) => (
                     <li className="py-2" key={subchild.url || subchild.title}>
                       <Link
-                        href={subchild.url || "#"}
-                        target={subchild.external ? "_blank" : undefined}
-                        rel={child.external ? "noopener noreferrer" : undefined}
-                        aria-current={
-                          currentPage === subchild.url ? "page" : undefined
-                        }
+                        href={subchild.url || '#'}
+                        target={subchild.external ? '_blank' : undefined}
+                        rel={child.external ? 'noopener noreferrer' : undefined}
+                        aria-current={currentPage === subchild.url ? 'page' : undefined}
                         className="text-foreground"
                       >
-                        {subchild.title}{" "}
-                        {subchild.external && (
-                          <ExternalLink className="inline h-4 w-4" />
-                        )}
+                        {subchild.title} {subchild.external && <ExternalLink className="inline h-4 w-4" />}
                       </Link>
                     </li>
                   ))}

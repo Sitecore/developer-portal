@@ -6,9 +6,13 @@ import type {
   StackExchangeQuestion,
   YouTubeVideo,
 } from "@src/components/integrations";
+import type { AccelerateRecipe } from "@src/lib/accelerate/types/recipe";
 import type { ChangelogEntry } from "@src/lib/changelog/types";
 
 import type { ContentHeading } from "./contentheading";
+
+/** A credit is a plain name, or a name with an optional link out. */
+export type CreditEntry = string | { name: string; url?: string };
 
 type PageInfoCore = {
   pageType?: string;
@@ -30,6 +34,7 @@ type PageInfoCore = {
   lastUpdated?: string;
   productLogo?: string;
   audience?: string;
+  credit?: CreditEntry | Array<CreditEntry>;
 };
 
 // Input for 3rd party integrations are just strings
@@ -39,6 +44,8 @@ export type MarkdownMeta = PageInfoCore & {
   youtube?: string;
   changelogProductId?: Array<string>;
   changelog?: string;
+  /** Accelerate folder to list latest recipes from, e.g. "sitecoreai" */
+  accelerateUpdatesProduct?: string;
   promoBefore?: Array<string>;
   promoAfter?: Array<string>;
   sitecoreCommunityBlog?: number | boolean;
@@ -65,6 +72,7 @@ export type PageInfo = PageInfoCore & {
   stackexchange: Array<StackExchangeQuestion>;
   changelogEntries: Array<ChangelogEntry>;
   changelogProductId?: Array<string>;
+  accelerateUpdates?: Array<AccelerateRecipe>;
   twitterHandle?: string;
   youtube: Array<YouTubeVideo>;
   youtubeTitle?: string;

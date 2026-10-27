@@ -40,7 +40,7 @@ Make sure that you have clearly defined KPI’s for your Performance test, for e
 - Run Load Testing using tools like [Blazemeter](https://www.blazemeter.com/) to simulate 10x expected traffic.
 - Simulate large-scale tests from multiple locations to test global distribution.
 - [Apache JMeter](https://jmeter.apache.org/): Widely used for load testing web applications and APIs.
-- Test your Sitecore XM Cloud API endpoints for concurrent requests.
+- Test your SitecoreAI API endpoints for concurrent requests.
 - Simulate high loads to test how the backend scales with increased traffic.
 - [New Relic](https://newrelic.com/), [AppDynamics](https://www.splunk.com/en_us/appdynamics-joins-splunk.html?301=appdynamics): APM tools to identify performance bottlenecks.
 - [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/overview): Assess frontend performance, render time, TTFB.
@@ -71,20 +71,20 @@ Different types of security testing focus on various points of vulnerability, fr
 
 ### 3. System Testing
 
-The primary purpose of system testing is to evaluate the system's compliance with the specified requirements. As XM Cloud is headless, the front end retrieves the content via APIs - this architecture separates content from presentation, so the website will consist of:
+The primary purpose of system testing is to evaluate the system's compliance with the specified requirements. As SitecoreAI is headless, the front end retrieves the content via APIs - this architecture separates content from presentation, so the website will consist of:
 
 - Headless front-end (e.g., Next.js app)
 - Sitecore back-end content management
 - APIs that serve content
 - Cloud-hosted infrastructure
 
-For example, when testing a corporate website for a global brand built in XM Cloud, we will want to verify that the entire system, from the CMS to the front-end to the cloud APIs, works as expected when integrated.
+For example, when testing a corporate website for a global brand built in SitecoreAI, we will want to verify that the entire system, from the CMS to the front-end to the cloud APIs, works as expected when integrated.
 
 #### Non-Functional testing
 
 | **Category**     | **Validation Points**                                                                 |
 |------------------|----------------------------------------------------------------------------------------|
-| **Performance**  | - Measure site load time across regions (since XM Cloud is global). <br/> - Test caching layers (e.g., Edge delivery or CDN). <br/> - Simulate high-traffic to see how well cloud infra scales. |
+| **Performance**  | - Measure site load time across regions (since SitecoreAI is global). <br/> - Test caching layers (e.g., Edge delivery or CDN). <br/> - Simulate high-traffic to see how well cloud infra scales. |
 | **Security**     | - Ensure content preview links are protected. <br/> - Test role-based access: editors shouldn't access admin APIs. <br/> - Check for misconfigured endpoints exposing backend logic. |
 | **Compatibility**| - Test across browsers (Chrome, Safari, Edge). <br/> - Ensure responsive design works across devices (mobile, tablet). |
 
@@ -158,7 +158,7 @@ While this isn’t a user experience, authoring is part of the system, the test 
 With this we’re testing full chain: **authoring** to **publishing** to **API delivery** to **frontend rendering**
 
 ### 6. Deployment and Environment Validation
-Since Sitecore XM Cloud involves CI/CD and cloud-hosted environments, system testing also includes:
+Since SitecoreAI involves CI/CD and cloud-hosted environments, system testing also includes:
 
 - Verifying environment-specific configs (e.g., staging vs production)
 - Ensuring content sync works across environments
@@ -169,7 +169,7 @@ Since Sitecore XM Cloud involves CI/CD and cloud-hosted environments, system tes
 | Scope         | Test case                                                                                   |
 |---------------|-----------------------------------------------------------------------------------------------|
 | **Preconditions** | Returning visitor, segment = "Tech Enthusiast"                                               |
-| **Steps**         | 1. Visit homepage<br/>2. XM Cloud identifies segment<br/>3. Load personalized banner            |
+| **Steps**         | 1. Visit homepage<br/>2. SitecoreAI identifies segment<br/>3. Load personalized banner            |
 | **Expected**      | Homepage displays tech-related promo from personalization rules                               |
 
 

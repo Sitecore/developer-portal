@@ -1,23 +1,23 @@
 ---
 title: 'Redirect'
-description: 'Recipe for handling redirects using XM Cloud.'
+description: 'Recipe for handling redirects using SitecoreAI.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-09-15'
+lastUpdated: '2026-10-08'
 created: '2024-11-18'
 audience: ['Architect','Technical Implementer']
 ---
 
 ## Context
 
-You need to create redirects for the new Next.js XM Cloud site. The redirects need to support both content authored redirects for creating vanity urls/moving pages, and application/platform redirects to make sure that old pages/urls are redirected when the new site goes live.
+You need to create redirects for the new Next.js SitecoreAI site. The redirects need to support both content authored redirects for creating vanity urls/moving pages, and application/platform redirects to make sure that old pages/urls are redirected when the new site goes live.
 
 ## Execution
 ### Content Authored Redirects
 
-The XM Cloud and Next.js app already have OOTB support for [Redirect Item](https://doc.sitecore.com/xmc/en/users/xm-cloud/redirect-a-url.html) and [Redirect Map](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-redirect-map.html).
-Both solutions allow a content author to create and maintain redirects in XM Cloud without requiring a code deployment
+The SitecoreAI and Next.js app already have OOTB support for [Redirect Item](https://doc.sitecore.com/xmc/en/users/xm-cloud/redirect-a-url.html) and [Redirect Map](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-redirect-map.html).
+Both solutions allow a content author to create and maintain redirects in SitecoreAI without requiring a code deployment
 
 Redirect items provide an easy way to map a single path to another path. Redirect maps will provide much better manageability by grouping redirects together and having regex support. From the maintenace and features perspective, using redirect map could be a better choice.
 
@@ -115,6 +115,8 @@ query RedirectsQuery($siteName: String!) {
 
 After receiving the redirects list, the jss redirect middleware will process it against the current request.
 
+In Content SDK 2.0 on Next.js 16 this is the `RedirectsProxy`, imported from `@sitecore-content-sdk/nextjs/proxy` and registered in `proxy.ts`. The default SXA redirect logic now follows Next.js locale practices: when the request URL has no locale, the redirect goes to a URL without the default locale. To keep the earlier behavior, enable the **Shall language be preserved upon redirect?** checkbox in the SitecoreAI redirect rules.
+
 ### Redirects are not updated
 
 After publishing the redirect map item, you need to publish the headless site item (your site as a single item). If you forget this step, the query above will return the outdated results.
@@ -125,12 +127,14 @@ If you are planning to use the redirect item or redirect map consider the follow
 
 - Whereever possible try to use Regex instead of creating multiple redirect entry.
 - Keep the number of SXA redirect as low as possible, as mentioned before the redirect middleware needs to process the list by hitting experience edge endpoint and it can cause performance issue.
-- Periodically check the number of redirects in the XM Cloud and if needed move them to the frontend app (see the next part).
+- Periodically check the number of redirects in the SitecoreAI and if needed move them to the frontend app (see the next part).
 
 ### Middleware based redirects for Next.js
 
 When your redirects count exceeds 1024 redirects you need to use a middleware. In the related documentation section you can find provided example using edge function.
 If you do not want to use edge config, you can still use a edge middleware with a simple json file that includes the redirect list.
+
+The sample below uses the middleware plugin pattern and JSS imports from earlier SDK versions. Next.js 16 renames `middleware.ts` to `proxy.ts`, and Content SDK 2.0 replaces the plugins with proxies defined through `defineProxy`. This sample has not been ported to 2.0. See the [upgrade guide](https://doc.sitecore.com/sai/en/developers/content-sdk/20/upgrade-content-sdk-1-5-1-next-js-apps-to-version-2-0.html) before you reuse it.
 
 This is an simplified example for `/site-redirects.json`:
 
@@ -266,6 +270,9 @@ keep in mind the example above is a simplified version and you need to consider 
 
 - If you are using a rewrite that points to a dynamic Next.js page, you must use Next.js rewrites. Next.js has no way of knowing what the rewritten page is when using Netlify rewrites, so the wrong page is likely to be rendered. Note that this only applies to rewrites, not redirects.
 - If you need Next.js-specific features, such as regex path or header matching, you must use Next.js rewrites.
+
+### Using a different framework or no Sitecore SDK
+The redirect options in this recipe are specific to Next.js, SXA redirects and Netlify. If your head application uses another framework with no SDK, you handle redirects in your own application. The [Routing, localization, and multi-sites](https://doc.sitecore.com/sai/en/developers/sitecoreai/introduction-to-framework-agnostic-sitecore-development/routing-localization-and-multi-sites/routing-localization-and-multi-sites.html) page describes how to handle redirects with Sitecore's APIs.
 
 ## Related Links
 

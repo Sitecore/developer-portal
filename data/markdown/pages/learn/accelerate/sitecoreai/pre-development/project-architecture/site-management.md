@@ -19,7 +19,7 @@ In this recipe, we will focus on a company requires a solution that allows for c
 
 ## Execution
 
-The solution is to implement a multi-site strategy with shared content using XM Cloud. This approach allows them to manage multiple regional websites efficiently while ensuring consistency in their brand messaging and content.
+The solution is to implement a multi-site strategy with shared content using SitecoreAI. This approach allows them to manage multiple regional websites efficiently while ensuring consistency in their brand messaging and content.
 
 ### Implementation
 
@@ -69,7 +69,7 @@ Centralized content management reduces duplication of effort and ensures that up
 
 ## Insights
 
-The following [site management](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-sxa-for-xm-cloud-development.html) features are available in XM Cloud to help you with rolling out and managing multiple sites.
+The following [site management](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-sxa-for-xm-cloud-development.html) features are available in SitecoreAI to help you with rolling out and managing multiple sites.
 
 ### Site templates and site duplication
 
@@ -79,19 +79,19 @@ See the [creating a site recipe](/learn/accelerate/xm-cloud/pre-development/spri
 
 ### Sites and site collections
 
-[Site collections](https://doc.sitecore.com/xmc/en/developers/xm-cloud/site-collections.html) are groups of related [sites](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sites.html) organized to facilitate management and content sharing. For example, a site collection might include multiple sites for different brands, languages, or regions under a single organization. Using XM Cloud, site collections ensure consistency in design and content standards while allowing for localization to enhance relevance for local audiences. They enable content reusability and centralized management, making it easier to update and distribute content across multiple sites. Overall, site collections provide scalability, efficiency, and flexibility, allowing organizations to manage and roll out sites quickly and effectively as they grow or expand into new markets.
+[Site collections](https://doc.sitecore.com/xmc/en/developers/xm-cloud/site-collections.html) are groups of related [sites](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sites.html) organized to facilitate management and content sharing. For example, a site collection might include multiple sites for different brands, languages, or regions under a single organization. Using SitecoreAI, site collections ensure consistency in design and content standards while allowing for localization to enhance relevance for local audiences. They enable content reusability and centralized management, making it easier to update and distribute content across multiple sites. Overall, site collections provide scalability, efficiency, and flexibility, allowing organizations to manage and roll out sites quickly and effectively as they grow or expand into new markets.
 
-### XM Cloud sites
+### SitecoreAI sites
 
-[XM Cloud Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html) serves as the primary hub for marketers and technologists to collaborate on experiences. In large-scale environments, you can easily locate sites using the search function. From this platform, you can create and manage your sites and directly navigate to the XM Cloud Pages Editor. Additionally, you can enable the shared site feature to start sharing content among sites within your site collection.
+[SitecoreAI Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html) serves as the primary hub for marketers and technologists to collaborate on experiences. In large-scale environments, you can easily locate sites using the search function. From this platform, you can create and manage your sites and directly navigate to the SitecoreAI Pages Editor. Additionally, you can enable the shared site feature to start sharing content among sites within your site collection.
 
-<img src="/images/learn/accelerate/xm-cloud/site-management-1.png" alt="XM Cloud Sites interface" />
+<img src="/images/learn/accelerate/xm-cloud/site-management-1.png" alt="SitecoreAI Sites interface" />
 
 ### Site configuration (sites and items)
 
-You can maintain and administer site configuration from XM Cloud Sites or Content Editor with access to the Hostname, Homepage, Rendering host, Language etc. More information on managing site configuration can be found [here](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
+You can maintain and administer site configuration from SitecoreAI Sites or Content Editor with access to the Hostname, Homepage, Rendering host, Language etc. More information on managing site configuration can be found [here](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
 
-<img src="/images/learn/accelerate/xm-cloud/site-management-2.png" alt="XM Cloud Site configuration" />
+<img src="/images/learn/accelerate/xm-cloud/site-management-2.png" alt="SitecoreAI Site configuration" />
 
 <br/>
 
@@ -105,9 +105,9 @@ See the [multisite recipe](/learn/accelerate/xm-cloud/pre-development/project-ar
 
 ### Shared sites
 
-You can create [shared content](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sharing-content.html) centrally for use across all regional sites, such as company history, product descriptions, technical specifications, and corporate news. This greatly simplifies content management, as changes made to the shared content are automatically applied wherever it is used. XM Cloud allows you to mark a site as shared, enabling the use of this content across different sites, ensuring consistency and efficiency in content management.
+You can create [shared content](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sharing-content.html) centrally for use across all regional sites, such as company history, product descriptions, technical specifications, and corporate news. This greatly simplifies content management, as changes made to the shared content are automatically applied wherever it is used. SitecoreAI allows you to mark a site as shared, enabling the use of this content across different sites, ensuring consistency and efficiency in content management.
 
-<img src="/images/learn/accelerate/xm-cloud/site-management-3.png" alt="XM Cloud Site configuration shared site" />
+<img src="/images/learn/accelerate/xm-cloud/site-management-3.png" alt="SitecoreAI Site configuration shared site" />
 
 <br/>
 
@@ -128,9 +128,9 @@ The following content and configuration items can be shared across sites within 
 
 When setting up multiple regional sites you will need to create links across these sites. This can always be done via absolute links, but when a page moves, that absolute link is no longer valid.
 
-This is where [cross-site linking](https://doc.sitecore.com/xmc/en/developers/xm-cloud/adjust-link-settings-to-enable-cross-site-linking.html) helps and within XM Cloud you can link across sites keeping the relative information and transferring that later into an absolute URL automatically.
+This is where [cross-site linking](https://doc.sitecore.com/xmc/en/developers/xm-cloud/adjust-link-settings-to-enable-cross-site-linking.html) helps and within SitecoreAI you can link across sites keeping the relative information and transferring that later into an absolute URL automatically.
 
-In XM Cloud you can mark sites as Linkable, so they potentially become visible for other sites as targets to be linked to.
+In SitecoreAI you can mark sites as Linkable, so they potentially become visible for other sites as targets to be linked to.
 
 And per site you can select if you want to see:
 
@@ -140,27 +140,27 @@ And per site you can select if you want to see:
 
 <br/>
 
-<img src="/images/learn/accelerate/xm-cloud/site-management-4.png" alt="XM Cloud cross site link settings" />
+<img src="/images/learn/accelerate/xm-cloud/site-management-4.png" alt="SitecoreAI cross site link settings" />
 
 ### Site manager
 
-When you create multiple sites you need a way to efficiently manage these sites within your XM Cloud instance. The [Site Manager](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-multiple-sites-with-the-sxa-site-manager.html) is a powerful tool that helps you manage multiple sites efficiently. It provides a comprehensive overview of all sites on your Sitecore instance, displaying a list of these sites along with icons indicating their accessibility status. If a site cannot be accessed, the "Hidden domains" column explains what is blocking the site, such as conflicts with host names or virtual folders.
+When you create multiple sites you need a way to efficiently manage these sites within your SitecoreAI instance. The [Site Manager](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-multiple-sites-with-the-sxa-site-manager.html) is a powerful tool that helps you manage multiple sites efficiently. It provides a comprehensive overview of all sites on your Sitecore instance, displaying a list of these sites along with icons indicating their accessibility status. If a site cannot be accessed, the "Hidden domains" column explains what is blocking the site, such as conflicts with host names or virtual folders.
 
-<img src="/images/learn/accelerate/xm-cloud/site-management-5.png" alt="XM Cloud cross SXA site manager" />
+<img src="/images/learn/accelerate/xm-cloud/site-management-5.png" alt="SitecoreAI cross SXA site manager" />
 
 ### Modules
 
-[Modules](https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html) in XM Cloud are predefined sets of configurations, templates, and components that can be used to build and customize sites. They include elements such as renderings, data folders, headless variants, and more. Modules ensure that all necessary scaffolding is in place when a new site is created, making the development process more efficient.
+[Modules](https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html) in SitecoreAI are predefined sets of configurations, templates, and components that can be used to build and customize sites. They include elements such as renderings, data folders, headless variants, and more. Modules ensure that all necessary scaffolding is in place when a new site is created, making the development process more efficient.
 
-By using modules with site templates in XM Cloud, organizations can efficiently create, manage, and customize multiple sites, ensuring consistency, scalability, and ease of maintenance.
+By using modules with site templates in SitecoreAI, organizations can efficiently create, manage, and customize multiple sites, ensuring consistency, scalability, and ease of maintenance.
 
-<img src="/images/learn/accelerate/xm-cloud/site-management-6.png" alt="XM Cloud cross SXA site manager" />
+<img src="/images/learn/accelerate/xm-cloud/site-management-6.png" alt="SitecoreAI cross SXA site manager" />
 
 ### Roles and rights management
 
-In XM Cloud, roles and rights management is essential for controlling access to functionality and content. XM Cloud allows you to create standard roles that grant access to specific sites. You can later fine-tune these roles or create entirely custom roles tailored to your specific needs. More information can be found [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/security.html) on setting up SXA security roles and setting up security for a site collection and site.
+In SitecoreAI, roles and rights management is essential for controlling access to functionality and content. SitecoreAI allows you to create standard roles that grant access to specific sites. You can later fine-tune these roles or create entirely custom roles tailored to your specific needs. More information can be found [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/security.html) on setting up SXA security roles and setting up security for a site collection and site.
 
-<img src="/images/learn/accelerate/xm-cloud/site-management-7.png" alt="XM Cloud SXA site security roles" />
+<img src="/images/learn/accelerate/xm-cloud/site-management-7.png" alt="SitecoreAI SXA site security roles" />
 
 ## Related Recipes
 

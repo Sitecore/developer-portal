@@ -4,16 +4,19 @@ description: 'General guidance on best practices when designing components and v
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-03-31'
+lastUpdated: '2026-10-08'
 created: '2023-12-22'
 audience: ['Architect','Project Manager','Technical Implementer']
 ---
 
 ## Context
 
-Developers face multiple ways to create components in XM Cloud, and may struggle to find the optimal way to implement components that are modular, reusable, and easily customizable by Content Authors, all while maintaining clean and scalable code.
+Developers face multiple ways to create components in SitecoreAI, and may struggle to find the optimal way to implement components that are modular, reusable, and easily customizable by Content Authors, all while maintaining clean and scalable code.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+<Alert type="info"><AlertIcon />The code provided is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.</Alert>
+
+
+<Alert type="info"><AlertIcon />XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.</Alert>
 
 ## Execution
 Starting with the basics, make sure that the appearance and functionality of components does not depend on components being nested/structured any particular way. Components need to be built in a way that keeps them independent, modular, and interchangeable, so that Content Authors remain free to move components around on a page however they want.
@@ -29,7 +32,7 @@ Components should be created by cloning an existing OOTB component. This approac
 
 ### Component Folder Structure
 
-Each rendering item in XM Cloud should correspond to a matching React/Next.js component located in `./src/<site collection name>/src/components/<folder>` . Only components that map directly to rendering items should be stored in this location, as this is where the component factory registers XM Cloud components for JSS.
+Each rendering item in SitecoreAI should correspond to a matching React/Next.js component located in `./src/<site collection name>/src/components/<folder>` . Only components that map directly to rendering items should be stored in this location, as this is where the component factory registers SitecoreAI components for JSS.
 
 For reusable, simpler components (atoms), store them in a separate `./src/<site collection name>/src/atoms/<folder>` folder. This keeps the component factory focused on rendering components, avoiding unnecessary clutter from components that aren't directly tied to rendering items. Components should be grouped by business functionality rather than technical similarities. For example, if you're building components related to product details, they should be placed in the "*Products*" folder, both in Sitecore `/sitecore/layout/renderings/project/<site collection name>/Products` and in the source code `./src/<site collection name>/src/components/Products`.
 
@@ -97,6 +100,7 @@ This approach offers several benefits, including:
 - With custom wrappers, you can ensure that components like images, links, or rich text always follow a consistent format, regardless of where they’re used in the project.
 - Ensures proper application of styles in both normal and empty-field editing states, especially important with CSS frameworks like Tailwind.
 - Creates a buffer that protects against breaking changes in JSS upgrades.
+- Content SDK 2.0 moved several modules between packages, for example from `@sitecore-content-sdk/core` to `@sitecore-content-sdk/content`, and replaced the `withSitecore` higher-order component with the `useSitecore` hook. With wrappers, import and API changes like these touch one file instead of every component.
 - Your page or component code becomes much cleaner, focusing solely on the layout and structure while delegating any special handling to the wrapper components
 
 ## Insights
@@ -214,6 +218,9 @@ This way, there won’t be JSS dependencies all over the codebase and we can use
 
 <figure><img src="/images/learn/accelerate/xm-cloud/tailwind-considerations.png" alt="Tailwind Considerations"/><figcaption></figcaption></figure>
 
+### Using a different framework or no Sitecore SDK
+The guidance on wrapping JSS dependencies applies when you use JSS or the Content SDK. Without an SDK there is no SDK dependency to wrap, but the same principle applies to your own integration code: keep it behind a thin layer of your own so that changes to Sitecore's APIs touch one place. See the [framework-agnostic documentation](https://doc.sitecore.com/sai/en/developers/sitecoreai/introduction-to-framework-agnostic-sitecore-development.html) for the APIs involved.
+
 ## Related Recipes
 
 <Row columns={2}>
@@ -225,5 +232,5 @@ This way, there won’t be JSS dependencies all over the codebase and we can use
 
 <Row columns={2}>
   <Link title="Deploy a project and environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html" />
-  <Link title="XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />  
+  <Link title="SitecoreAI development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />  
 </Row>

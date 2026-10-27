@@ -1,6 +1,6 @@
 ---
 title: 'Branching Strategy'
-description: 'Recommended Branching Strategy when setting up an XM Cloud project'
+description: 'Recommended Branching Strategy when setting up a SitecoreAI project'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -11,13 +11,13 @@ audience: ['Architect','Project Manager','Technical Implementer']
 
 ## Context
 
-What is the recommended Branching strategy when setting up an XM Cloud project?
+What is the recommended Branching strategy when setting up a SitecoreAI project?
 
 ## Execution
 
-While most recipes are very prescriptive, setting up a good branching strategy needs to be more flexible due to some clients having very strict rules around the developer workflow. This recipe will guide you on the best practice for scaling a team implementing an XM Cloud project with a Next.js front end.
+While most recipes are very prescriptive, setting up a good branching strategy needs to be more flexible due to some clients having very strict rules around the developer workflow. This recipe will guide you on the best practice for scaling a team implementing a SitecoreAI project with a Next.js front end.
 
-- A monorepo is the Accelerate recommended approach to store your XM Cloud backend code, item serialization files and front end application code (<a href="#monorepo-vs-polyrepo">See discussion point: Monorepo vs Polyrepo</a>). Other head applications, e.g. mobile apps, can live in their own repositories.
+- A monorepo is the Accelerate recommended approach to store your SitecoreAI backend code, item serialization files and front end application code (<a href="#monorepo-vs-polyrepo">See discussion point: Monorepo vs Polyrepo</a>). Other head applications, e.g. mobile apps, can live in their own repositories.
 - A branching strategy that allows continuous integration (<a href="#branching-strategy">See discussion point: Branching Strategy</a>)
 
 ### Developer Workflow
@@ -34,7 +34,7 @@ While most recipes are very prescriptive, setting up a good branching strategy n
   - Code will pass any required gates (Code reviews, Tests etc...) that are required by the project and then it is accepted into the `main` branch. The `origin` feature branch should be deleted as part of the PR completion.
 - When a Pull Request is created, this should trigger any Continuous Integration automated tests
 - The `main` branch should be locked down so that the only way to commit is via a Pull Request
-- Every commit to the `main` branch should trigger Continuous Integration automated tests and then a deployment to the lowest environment on the platform (XM Cloud) and the head application hosting.
+- Every commit to the `main` branch should trigger Continuous Integration automated tests and then a deployment to the lowest environment on the platform (SitecoreAI) and the head application hosting.
 - This deployment can then be promoted through environments until it is ready for production.
 
 ### Releasing Features
@@ -57,7 +57,7 @@ Reference: [GitLab Flow](https://docs.gitlab.cn/14.0/ee/topics/gitlab_flow.html)
 
 ### Monorepo vs Polyrepo
 
-A monorepo is a single repository for all the code in an XM Cloud project. It would include the platform code, serialized files, and the front end applications. There are several advantages to a monorepo including:
+A monorepo is a single repository for all the code in a SitecoreAI project. It would include the platform code, serialized files, and the front end applications. There are several advantages to a monorepo including:
 
 - **Code Sharing and Collaboration:** With a monorepo, sharing code between projects is easy. It encourages collaboration and promotes code reuse.
 - **Atomic Commits:** Monorepos allow for atomic commits and branches across multiple projects. This ensures that changes across projects are synchronized and reduces the risk of integration issues.
@@ -67,13 +67,13 @@ A polyrepo or multirepo involves using multiple repositories for the backend and
 
 A polyrepo can give you some challenges, e.g. sharing code between projects.
 
-The Sitecore Accelerate program currently recommends a monorepo approach, at the time of writing, the XM Cloud Deploy app requires all the code to be in the same folder for upload via the CLI, the repo integration requires a monorepo.
+The Sitecore Accelerate program currently recommends a monorepo approach, at the time of writing, the Deploy app requires all the code to be in the same folder for upload via the CLI, the repo integration requires a monorepo.
 
 Go with a monorepo strategy and focus on trunk-based deployments rather than gitflow.
 
 Deploy often, use feature toggles to prevent code from going live before it should and don't try to work in isolation.
 
-A final thing to note about the Monorepo approach is that currently in XM Cloud it is required for all heads contained within the Monorepo to be running the same version of Node if you want to use the inbuilt Editing Host functionality. If you want to use different Node versions for each head, then you will need to host your Editing Hosts externally by following this approach detailed in our Documentation Site: [Walkthrough: Configuring external editing hosts for XM Cloud instances](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--configuring-external-editing-hosts-for-xm-cloud-instances.html)
+A final thing to note about the Monorepo approach is that currently in SitecoreAI it is required for all heads contained within the Monorepo to be running the same version of Node if you want to use the inbuilt Editing Host functionality. If you want to use different Node versions for each head, then you will need to host your Editing Hosts externally by following this approach detailed in our Documentation Site: [Walkthrough: Configuring external editing hosts for SitecoreAI instances](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--configuring-external-editing-hosts-for-xm-cloud-instances.html)
 
 ### Branching vs Continuous Integration
 

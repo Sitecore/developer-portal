@@ -1,4 +1,4 @@
-import type { Option } from "@components/ui/dropdown";
+import type { Option } from "@src/components/ui/dropdown";
 import type { Product } from "@src/lib/changelog/types";
 
 export const mockedProducts: Product[] = [

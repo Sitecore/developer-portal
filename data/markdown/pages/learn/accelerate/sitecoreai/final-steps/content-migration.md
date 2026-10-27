@@ -10,12 +10,12 @@ audience: ['All']
 ---
 
 ## Context
-Migrating to XM Cloud is more than a lift-and-shift operation. It’s a chance to rethink how content is structured, managed, and delivered. Whether you're coming from Sitecore XP or another CMS/DXP, you need to consider your approach from a strategic, discovery-first perspective. Before writing code or exporting content, it’s critical to understand the current landscape, define the end state, and align stakeholders around what success looks like.
+Migrating to SitecoreAI is more than a lift-and-shift operation. It’s a chance to rethink how content is structured, managed, and delivered. Whether you're coming from Sitecore XP or another CMS/DXP, you need to consider your approach from a strategic, discovery-first perspective. Before writing code or exporting content, it’s critical to understand the current landscape, define the end state, and align stakeholders around what success looks like.
 
 ## Execution
 A content audit is most valuable to perform at the outset of any migration. It tells you what you are dealing with — what content exists, what is outdated, what can be reused, and what can be phased out. Without it, you run the danger of over-engineering, moving content that doesn't have to be moved, or passing up improvement opportunities.
 
-Begin by understanding how your current content supports your business. Who creates it? Who consumes it? How often is it updated? What makes a page or component effective today, and how might that change in XM Cloud? Partner closely with marketing and content teams to identify templates, renderings, and data in use. Review site analytics to see which content is still relevant and bringing value to your end user.
+Begin by understanding how your current content supports your business. Who creates it? Who consumes it? How often is it updated? What makes a page or component effective today, and how might that change in SitecoreAI? Partner closely with marketing and content teams to identify templates, renderings, and data in use. Review site analytics to see which content is still relevant and bringing value to your end user.
 
 Before any content migration is started, make sure you have:
 - Inventory of all content types, templates, components, and media
@@ -37,14 +37,14 @@ Review the [External Data Integrations](/learn/accelerate/xm-cloud/implementatio
 ### Media
 With content comes also media - images, videos, PDFs, icons etc. In a similar fashion start by reviewing what is actually being used and needs to be retained - this can also be an opportunity to optimize some of your media such as converting to modern formats, alt text/captains updated etc
 
-XM Cloud stores media in Sitecore Media Library (via Experience Edge), and then pushed to your application host to display on the website. Considerations need to be taken for the migration if your images are being uploaded in the [Media Library](https://doc.sitecore.com/xmc/en/users/xm-cloud/media-library.html) or you will be using a DAM such as Sitecore Content Hub - this will change how the actual migration process will look like.
+SitecoreAI stores media in Sitecore Media Library (via Experience Edge), and then pushed to your application host to display on the website. Considerations need to be taken for the migration if your images are being uploaded in the [Media Library](https://doc.sitecore.com/xmc/en/users/xm-cloud/media-library.html) or you will be using a DAM such as Sitecore Content Hub - this will change how the actual migration process will look like.
 
 As part of the assets migration, make sure you that have the relevant lifecycle rules in place between versioning, expiration and archival. Set up tagging, folder structures, and user permissions that align to the content workflow, including approvals and publication.
 
 ### Forms
 Auditing and reviewing forms migration from a traditional CMS, Sitecore XM/XP or custom-build forms, requires still a business alignment and technical validation.
 
-Consider that not all forms need to move to [XM Cloud Forms](https://doc.sitecore.com/xmc/en/users/xm-cloud/forms.html); it’s a good opportunity to take advantage of a more front-end approach to improve UX for example, which would mean these should be build externally to XM Cloud.
+Consider that not all forms need to move to [SitecoreAI Forms](https://doc.sitecore.com/xmc/en/users/xm-cloud/forms.html); it’s a good opportunity to take advantage of a more front-end approach to improve UX for example, which would mean these should be build externally to SitecoreAI.
 
 Make sure you have identified all forms currently in use including page location, submission actions and confirmation action. Review these with the business owner, including the usage analytics - clearly identifying high traffic and business critical forms.
 
@@ -74,7 +74,7 @@ The following topics are the key considerations that need to be answered while y
 
 #### Tooling
 - What are the tools required vs processes that need to be put in place to migrate the content?
-- If moving from Sitecore XM/XP, am I moving from MVC to XM Cloud directly, or do I have SXA in place? Will the [XM to XM Cloud Migration tool](https://developers.sitecore.com/downloads/xm-cloud) bridge gaps in the process?
+- If moving from Sitecore XM/XP, am I moving from MVC to SitecoreAI directly, or do I have SXA in place? Will the [XM to XM Cloud Migration tool](https://developers.sitecore.com/downloads/xm-cloud) bridge gaps in the process?
 
 #### Process
 - Is it clear what content will be created manually vs automated? The Home page might need to be moved across manually due to dependencies from other pages.
@@ -96,7 +96,7 @@ The following topics are the key considerations that need to be answered while y
 - How will content be validated for search results or personalized content? 
 
 ## Insights
-Operational readiness for content authoring is not an afterthought. During the move to XM Cloud, establish well-defined roles, or review existing ones based on the new setup: who will author, review, publish. Configure workflows that align with the organization and compliance requirements, and make sure that the whole team is equipped with the relevant training, both on the toolset but also on process. 
+Operational readiness for content authoring is not an afterthought. During the move to SitecoreAI, establish well-defined roles, or review existing ones based on the new setup: who will author, review, publish. Configure workflows that align with the organization and compliance requirements, and make sure that the whole team is equipped with the relevant training, both on the toolset but also on process. 
 
 It’s key that standards are setup including naming practices, folder structures, and template use. But these should be strengthened with planned review cycles and clean-up responsibilities. Apply what has been discovered from the audit to training writers and creating consistent standards.
 

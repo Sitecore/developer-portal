@@ -1,6 +1,13 @@
-import type { ManifestNavigationItem } from "@/src/lib/interfaces/page-info";
+import type { ManifestNavigationItem } from "@src/lib/interfaces/manifest";
 
-export const mockedManifestConfigRoutes: ManifestNavigationItem[] = [
+type MockManifestNavigationItem = Omit<
+	ManifestNavigationItem,
+	"children" | "parents" | "url"
+> & {
+	children: MockManifestNavigationItem[];
+};
+
+export const mockedManifestConfigRoutes: MockManifestNavigationItem[] = [
 	{
 		title: "Page 1",
 		path: "page-1",
