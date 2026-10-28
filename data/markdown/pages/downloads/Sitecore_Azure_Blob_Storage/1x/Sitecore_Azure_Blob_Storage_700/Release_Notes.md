@@ -14,6 +14,7 @@ origin:
 
 | Description                                                        | Reference  |
 | ------------------------------------------------------------------ | ---------- |
+| Use GPv2 (StorageV2) storage accounts in ABS 7 ARM templates       | PDXP-27837 |
 | Updated `Sitecore.Framework.Data.Blob` to v3.2.1.                  | PDXP-27837 |
 | Updated `Sitecore.Framework.Conditions` to v8.0.1.                 | PDXP-27837 |
 | Updated `System.Configuration.ConfigurationManager` to v9.0.4.     | PDXP-27837 |
