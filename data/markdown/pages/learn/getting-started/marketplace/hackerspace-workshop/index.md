@@ -38,7 +38,7 @@ This workshop works with any coding agent that can edit files, run terminal comm
 Whichever tool you choose:
 
 1. Sign in and confirm your subscription or trial gives you access to agent features.
-2. Use **agent mode**, not ask or chat-only mode. The workshop relies on the agent editing files and running commands for you.
+2. Use **agent mode**, not ask or chat-only mode. The workshop relies on the agent editing files and running commands for you. If your tool also has a **plan mode**, you can use it when the workshop asks the agent to propose a plan before writing code.
 3. Pick a current, capable model from your tool's model selector.
 
 ## Next

@@ -15,7 +15,7 @@ The app automatically detects the page that's open in Page Builder, suggests an 
 **Prerequisites:** Before starting this tutorial, ensure you have completed the [Pre-Requisites](index) and [Setup](setup):
 - ✅ Node.js 22 LTS or later installed
 - ✅ An AI coding agent in agent mode
-- ✅ Registered app in App Studio (choose **Page Context Panel** extension point)
+- ✅ Registered app in App Studio (choose **Page Context Panel** extension point, and enable the pop-up, clipboard and download file permissions)
 - ✅ App installed in your assigned environment
 - ✅ Blok and Docs MCP configured for your agent
 - ✅ `AGENTS.md` added to your project
@@ -46,8 +46,9 @@ The image generator calls the Hugging Face Inference API, which needs an access 
 2. Open [Settings > Access Tokens](https://huggingface.co/settings/tokens).
 3. Click **Create new token**.
 4. Choose the **Fine-grained** token type and give it a name, such as `sitecore-code-jam`.
-5. Under **Inference**, select **Make calls to Inference Providers**. You don't need any other permissions.
-6. Click **Create token**, then copy the token (it starts with `hf_`) and keep it somewhere safe. Hugging Face only shows it once.
+5. Under the permission presets, select **Custom** so the individual permissions are shown.
+6. Under **Inference**, select **Make calls to Inference Providers**. You don't need any other permissions.
+7. Click **Create token**, then copy the token (it starts with `hf_`) and keep it somewhere safe. Hugging Face only shows it once.
 
 You'll add the token to your app's `.env.local` file in the first step. Never commit it to source control or paste it into a prompt.
 

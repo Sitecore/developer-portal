@@ -31,9 +31,11 @@ Configure your App:
    > **Building the image generator?** Choose **Page Context Panel**. The app reads the page that's open in Page Builder, which isn't available from the other extension points.
 
 10. Enable API access for **SitecoreAI APIs**
-11. Grant permissions to allow pop-ups, and to read from and copy to the clipboard, as needed
+11. Grant the permissions your app needs, such as pop-ups, reading from and copying to the clipboard, and downloading files
+
+   > **Building the image generator?** Enable all four: **pop-ups**, **copy to clipboard**, **read from clipboard**, and **download files**. Without the download permission, the Download button won't work inside Page Builder.
 12. For deployment URL use: `http://localhost:3000` as you want to connect your local running app for now.
-13. For the App Logo, upload an image with square format, minimum 512x512pxl. You can use: https://cdn-icons-png.flaticon.com/512/13862/13862255.png
+13. For the App Logo, upload a square image file from your computer, at least 512x512px. Have one ready before you start - any square logo or icon will do. If you don't have one, download this icon and upload it: https://cdn-icons-png.flaticon.com/512/13862/13862255.png
 14. Hit the Activate button in the top right corner
 
 For sure there is more to explore here, but let's keep it to your needed steps for now.
@@ -55,9 +57,9 @@ For sure there is more to explore here, but let's keep it to your needed steps f
    `npx shadcn@latest add https://blok.sitecore.com/r/marketplace/next/quickstart-with-client-side-xmc.json`
 
 2. When asked to install the shadcn package, answer `y`
-3. When prompted to start a new project choose `Next.js`
-4. Provide a meaningful project name that describes your project. **Use only lowercase letters and no blanks** e.g.: `my-first-marketplace-app`
-5. When prompted to selected a component library select `Radix` (this is the newer and recommended one)
+3. When prompted to select a component library, select `Radix` (Blok components are built on Radix)
+4. When prompted to start a new project choose `Next.js`
+5. Provide a meaningful project name that describes your project. **Use only lowercase letters and no blanks** e.g.: `my-first-marketplace-app`
 6. When prompted, choose a preset. Any is fine. It's not relevant for Marketplace and Custom apps.
 
 Your app should be created.
@@ -112,14 +114,14 @@ The agent should call the MCP tools and come back with a real list of components
 
 Coding agents read an instructions file at the start of every session. Adding one means you don't have to repeat Marketplace-specific rules in every prompt, and the agent makes fewer of the common mistakes.
 
-Create a file called `AGENTS.md` in the root of your project with this content:
+The scaffolded project already includes an `AGENTS.md` file in its root with general Next.js guidance for agents. Keep that content, and add the following Marketplace rules to the end of the file:
 
 ````markdown
-# Sitecore Marketplace app
+## Sitecore Marketplace app
 
 This is a Next.js App Router app that runs inside SitecoreAI as a Sitecore Marketplace app, embedded in an iframe.
 
-## Marketplace SDK
+### Marketplace SDK
 
 - Packages: `@sitecore-marketplace-sdk/client` and `@sitecore-marketplace-sdk/xmc`.
 - Use the existing client from the scaffolded `useMarketplaceClient` hook. Don't create a second `ClientSDK` instance.
@@ -127,21 +129,21 @@ This is a Next.js App Router app that runs inside SitecoreAI as a Sitecore Marke
 - For live page context updates, use `client.query("pages.context", { subscribe: true, onSuccess })` and call the returned `unsubscribe` on cleanup. `client.subscribe()` is only for events such as `pages.content.fieldsUpdated`.
 - Check SDK usage against the Sitecore Docs MCP or the type definitions in `node_modules/@sitecore-marketplace-sdk` before writing code. Don't guess method names.
 
-## UI
+### UI
 
 - Use Blok components from the Blok registry (via the shadcn MCP) before writing custom UI.
 
-## Security
+### Security
 
 - Secrets go in `.env.local` and are only read in server code, such as route handlers. Never expose them to client components.
 
-## Working style
+### Working style
 
 - For larger changes, propose a plan and wait for approval before writing code.
 - After making changes, run `npx tsc --noEmit` and the lint script, and fix any errors before saying you're done.
 ````
 
-GitHub Copilot, Cursor and OpenAI Codex read `AGENTS.md` automatically. **Claude Code** reads `CLAUDE.md` instead, so also create a `CLAUDE.md` file containing this single line, which imports `AGENTS.md`:
+GitHub Copilot, Cursor and OpenAI Codex read `AGENTS.md` automatically. **Claude Code** reads `CLAUDE.md` instead. If your project doesn't already have a `CLAUDE.md` file, create one containing this single line, which imports `AGENTS.md`:
 
 ```
 @AGENTS.md
