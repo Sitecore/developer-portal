@@ -27,6 +27,19 @@ Key features built with AI assistance:
 - One-click JPEG download
 - Clean, minimal codebase built incrementally with AI
 
+## Before you start: Create your Hugging Face access token
+
+The image generator calls the Hugging Face Inference API, which needs an access token.
+
+1. Go to [huggingface.co/join](https://huggingface.co/join) and create a free account (or sign in if you already have one). Confirm your email address - unconfirmed accounts can't call the API.
+2. Open [Settings > Access Tokens](https://huggingface.co/settings/tokens).
+3. Click **Create new token**.
+4. Choose the **Fine-grained** token type and give it a name, such as `sitecore-code-jam`.
+5. Under **Inference**, select **Make calls to Inference Providers**. You don't need any other permissions.
+6. Click **Create token**, then copy the token (it starts with `hf_`) and keep it somewhere safe. Hugging Face only shows it once.
+
+You'll add the token to your app's `.env.local` file in a later step. Never commit it to source control or paste it into a prompt.
+
 ## Implementation Steps
 
 ### Step 1. Scaffold the Starter Kit

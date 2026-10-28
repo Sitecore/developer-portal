@@ -1,61 +1,46 @@
 # Welcome to the SitecoreAI Marketplace Code Jam – From Idea to App in One Session - Introduction
 
-Get ready to dive into the world of SitecoreAI extensibility and hands-on innovation. In this workshop, you’ll learn how to build custom extensions and explore composed architecture in a fast-paced, developer-focused environment.
-Before we jump into coding, here’s a quick overview of the base setup steps:
+Get ready to dive into the world of SitecoreAI extensibility and hands-on innovation. In this workshop, you’ll build a custom Marketplace app with an AI coding agent: you describe what you want, review the agent's plan, and let it write, run and verify the code while you stay in control.
 
+The workshop has three parts:
 
-1. [Pre-Requisites](hackerspace-workshop/index)
-2. [Setup Phase](hackerspace-workshop/setup)
-3. [Implementation](hackerspace-workshop/usecase-image-generator-ai)
+1. [Pre-Requisites](#pre-requisites) - get your machine and AI coding agent ready (ideally before the workshop)
+2. [Setup Phase](hackerspace-workshop/setup) - register, scaffold and run your app, and connect your agent to Sitecore's MCP servers
+3. [Implementation](hackerspace-workshop/usecase-image-generator-ai) - build an AI image generator for SitecoreAI Page Builder
 
-Ready? Let's go! 
+Ready? Let's go!
 
 ## Pre-Requisites
-- Bring your own Laptop
-- IDE: VS Code or Cursor installed
-- GitHub Copilot or other AI tooling installed to IDE
-- Check for your GitHub CoPilot Tokens in VS Code
-- node version 16 and above
-- npm version 10 and above
-- examples consider using VS Code and Co-Pilot
 
-### node installation
-First check if you have `node` installed and what version you are on. Therefore run in terminal: `node -v`
+- Your own laptop
+- Node.js 22 LTS or later (24 LTS recommended)
+- An AI coding agent (see [Choose your AI coding agent](#choose-your-ai-coding-agent))
 
-If you are below version 16 or have not installed node:
+### Node.js
 
-To update node: 
+Check whether Node.js is installed and which version you have by running this in a terminal:
 
-To install npm: go to https://nodejs.org/en/download/ and download and run the installer: https://nodejs.org/en/download/ 
+```bash
+node -v
+```
 
+If the command isn't found or the version is below 22, download and run the LTS installer from [nodejs.org](https://nodejs.org/en/download/). npm is included with Node.js, so there's nothing extra to install.
 
+### Choose your AI coding agent
 
-### npm installation
-First check if you have `npm` installed and what version you are on. Therefore run in terminal: `npm -v`
+This workshop works with any coding agent that can edit files, run terminal commands and connect to MCP servers. Use whichever you're most comfortable with, for example:
 
-If you are below version 10 or have not installed npm:
+- [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) - in the terminal, or as an extension for VS Code or JetBrains
+- [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) in VS Code - switch the chat to **Agent** mode
+- [Cursor](https://cursor.com/downloads) - use the **Agent** mode in chat
+- [OpenAI Codex](https://developers.openai.com/codex) - CLI or IDE extension
 
-To update npm to the latest version run in terminal: `npm install -g npm`
+Whichever tool you choose:
 
-To install npm: go to https://nodejs.org/en/download/ and download and run the installer: https://nodejs.org/en/download/ 
-
-
-### Install Visual Studio Code
-
-To follow this workshop you need an IDE such as VS Code or Cursor. No, Notepad is not enough. If you have non of the both, here's where you get VS Code: https://code.visualstudio.com/download
-
-### Sign in to VS Code and enable Copilot
-Signing in to VS Code enables the Copilot functionality.
-
-
-1. On the bottom left corner of VS Code click on the profile icon. 
-2. Click Sign in
-3. Ideally use your GitHub Login (if you do not have a GitHub Account you need to create one)
-
-4. On the bottom left corner click the Copilot icon (little head)
-5. Make sure to select Claude Sonnet 3.5 or above.
-
-
+1. Sign in and confirm your subscription or trial gives you access to agent features.
+2. Use **agent mode**, not ask or chat-only mode. The workshop relies on the agent editing files and running commands for you.
+3. Pick a current, capable model from your tool's model selector.
 
 ## Next
-[Go to local setup](hackerspace-workshop/setup)
+
+[Go to setup](hackerspace-workshop/setup)
