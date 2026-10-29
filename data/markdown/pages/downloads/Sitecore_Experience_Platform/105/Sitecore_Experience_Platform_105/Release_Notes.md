@@ -3,6 +3,7 @@ title: 'Release Notes'
 ---
 Publication history:<br/>
 **2026-08-05:** Released Sitecore Experience Platform 10.5.0.
+**2026-11-03:** Released a version of Container Support Package with support for Traefik as the ingress controller for Sitecore container deployments on Azure Kubernetes Service.
 
 Return to the [Sitecore Experience Platform 10.5](/downloads/Sitecore_Experience_Platform/105/Sitecore_Experience_Platform_105) release page.
 
