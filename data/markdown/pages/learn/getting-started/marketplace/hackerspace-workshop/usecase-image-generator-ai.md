@@ -1,6 +1,6 @@
 # Use case: AI Image Generator for Page Builder
 
-Build an AI-powered image generator that runs inside SitecoreAI Page Builder and creates images based on the page you're editing. Instead of writing the code yourself, you'll describe what you want in a short spec, review your AI coding agent's plan, and let the agent build and verify the app one milestone at a time. Images are generated with the **Hugging Face Inference API**, using a free Hugging Face account token.
+Build an AI-powered image generator that runs inside SitecoreAI Page Builder and creates images based on the page you're editing. Instead of writing the code yourself, you'll describe what you want in a short spec, review your AI coding agent's plan, and let the agent build and verify the app one milestone at a time. Images are generated with **Cloudflare Workers AI**, using the free daily allowance on a Cloudflare account.
 
 ![AI Image Generator in Action](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/9710ee95f7b44b4a8139d2fc011517e5?v=f8fb84d1)
 
@@ -10,7 +10,7 @@ Extension Point: **Page Context Panel**
 
 ## Summary
 
-The app automatically detects the page that's open in Page Builder, suggests an image prompt based on it, and generates an image with the FLUX.1-schnell model via the Hugging Face Inference API. Authors can edit the prompt, regenerate, and download the result.
+The app automatically detects the page that's open in Page Builder, suggests an image prompt based on it, and generates an image with the FLUX.1-schnell model via Cloudflare Workers AI. Authors can edit the prompt, regenerate, and download the result.
 
 **Prerequisites:** Before starting this tutorial, ensure you have completed the [Pre-Requisites](index) and [Setup](setup):
 - ✅ Node.js 22 LTS or later installed
@@ -24,7 +24,7 @@ The app automatically detects the page that's open in Page Builder, suggests an 
 What you'll build:
 - Auto-detects the page `displayName` from Sitecore context
 - Real-time prompt updates when navigating between pages
-- AI image generation via the Hugging Face Inference API
+- AI image generation via Cloudflare Workers AI
 - One-click image download
 
 ## How you'll work with your agent
@@ -38,28 +38,28 @@ For each step:
 3. Review what it changed and test it yourself where the step says so.
 4. If something isn't right, tell the agent what you saw and let it fix it before moving on.
 
-## Before you start: Create your Hugging Face access token
+## Before you start: Get your Cloudflare Workers AI credentials
 
-The image generator calls the Hugging Face Inference API, which needs an access token.
+The image generator calls the Cloudflare Workers AI REST API, which needs your Cloudflare Account ID and an API token. Every Cloudflare account includes a free daily allowance for Workers AI (10,000 Neurons per day, reset at 00:00 UTC), which is plenty for this workshop. On the free plan you can't be charged - requests simply fail once the daily allowance is used up.
 
-1. Go to [huggingface.co/join](https://huggingface.co/join) and create a free account (or sign in if you already have one). Confirm your email address - unconfirmed accounts can't call the API.
-2. Open [Settings > Access Tokens](https://huggingface.co/settings/tokens).
-3. Click **Create new token**.
-4. Choose the **Fine-grained** token type and give it a name, such as `sitecore-code-jam`.
-5. Under the permission presets, select **Custom** so the individual permissions are shown.
-6. Under **Inference**, select **Make calls to Inference Providers**. You don't need any other permissions.
-7. Click **Create token**, then copy the token (it starts with `hf_`) and keep it somewhere safe. Hugging Face only shows it once.
+1. Go to [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up) and create a free account (or sign in if you already have one). Verify your email address.
+2. In the Cloudflare dashboard, open **Workers AI** (under **AI** in the sidebar).
+3. Select **Use REST API**.
+4. Under **Get Account ID**, copy your **Account ID**.
+5. Select **Create a Workers AI API Token**, review the prefilled template, then select **Create API Token**.
+6. Select **Copy API Token** and keep it somewhere safe.
 
-You'll add the token to your app's `.env.local` file in the first step. Never commit it to source control or paste it into a prompt.
+You'll add both values to your app's `.env.local` file in the first step. Never commit them to source control or paste them into a prompt.
 
 ## Implementation Steps
 
-### Step 1. Add Your Hugging Face Token
+### Step 1. Add Your Cloudflare Credentials
 
-Create `.env.local` in your project root and paste in the token you created earlier:
+Create `.env.local` in your project root and paste in the Account ID and API token you copied earlier:
 
 ```
-HUGGINGFACE_API_TOKEN=hf_your_token_here
+CLOUDFLARE_ACCOUNT_ID=your_account_id_here
+CLOUDFLARE_API_TOKEN=your_api_token_here
 ```
 
 Restart `npm run dev` so Next.js picks up the new environment variable.
@@ -79,14 +79,15 @@ A Sitecore Marketplace app in the Page Builder **Page Context Panel** that gener
 - When the author navigates to a different page in Page Builder, the prompt updates automatically.
 - The author can edit the prompt and click **Generate**. A loading state shows while the image is generated.
 - The generated image is shown in the panel, with **Download** and **Generate new** actions.
-- Errors (missing or invalid token, no credits, rate limits, network failures) are shown as clear, friendly messages, and the UI stays usable.
+- Errors (missing or invalid credentials, daily free allowance used up, network failures) are shown as clear, friendly messages, and the UI stays usable.
 
 ## Technical constraints
 - Replace the example content on the home page (`app/page.tsx`) with the image generator. Keep the existing MarketplaceProvider setup.
 - Keep the page thin: put the UI in components under `components/image-generator/` and the page context logic in a reusable hook.
-- Generate images in a server-side API route using the `@huggingface/inference` package:
-  `textToImage({ model: "black-forest-labs/FLUX.1-schnell", inputs: prompt }, { outputType: "dataUrl" })`
-  with the token from `HUGGINGFACE_API_TOKEN`.
+- Generate images in a server-side API route by calling the Cloudflare Workers AI REST API directly with `fetch` (no SDK needed):
+  `POST https://api.cloudflare.com/client/v4/accounts/<CLOUDFLARE_ACCOUNT_ID>/ai/run/@cf/black-forest-labs/flux-1-schnell`
+  with the header `Authorization: Bearer <CLOUDFLARE_API_TOKEN>` and the JSON body `{ "prompt": "<prompt>" }`.
+- The API returns the image as a base64-encoded JPEG. Return it to the browser as a `data:image/jpeg;base64,...` URL.
 - Use Blok components for all UI. The panel is narrow, so the layout must work at around 400px wide.
 
 ## Done when
@@ -123,12 +124,12 @@ When you're done, run the typecheck and lint and fix any errors. Remember the pa
 ```
 Implement milestone 2 from the plan: the server-side image generation API route described in SPEC.md.
 
-Validate the request body, and return clear error messages with sensible status codes for a missing token, a rejected token, no credits left, and rate limits.
+Validate the request body, and return clear error messages with sensible status codes for missing credentials, rejected credentials, and the daily free allowance being used up.
 
 When you're done, run the typecheck and lint, then call the route with curl using a short test prompt and show me the shape of the response (don't print the full image data).
 ```
 
-**Test:** Check the agent's curl output. A successful response contains an `imageUrl` that starts with `data:image/`. If it reports a token or credits error, check your `.env.local` and your Hugging Face token permissions.
+**Test:** Check the agent's curl output. A successful response contains an `imageUrl` that starts with `data:image/`. If it reports a credentials error, check the Account ID and API token in your `.env.local`, and restart `npm run dev` after any change.
 
 ### Step 5. Milestone 3 - UI and Download
 
@@ -172,7 +173,8 @@ Essential links for AI-powered Sitecore marketplace development:
 - [Sitecore Marketplace SDK Documentation](https://doc.sitecore.com/mp/en/developers/sdk/latest/sitecore-marketplace-sdk/)
 - [Blok](https://blok.sitecore.com/) - Sitecore's design system and UI component registry
 - [Blok MCP](https://blok.sitecore.com/mcp) - Connect your AI coding agent to the Blok registry
-- [Hugging Face Inference Providers: Text to Image](https://huggingface.co/docs/inference-providers/tasks/text-to-image)
-- [Hugging Face Access Tokens](https://huggingface.co/settings/tokens)
+- [Cloudflare Workers AI: FLUX.1-schnell model](https://developers.cloudflare.com/workers-ai/models/flux-1-schnell/)
+- [Cloudflare Workers AI: Get started with the REST API](https://developers.cloudflare.com/workers-ai/get-started/rest-api/)
+- [Cloudflare Workers AI pricing and free allowance](https://developers.cloudflare.com/workers-ai/platform/pricing/)
 - [Next.js App Router Documentation](https://nextjs.org/docs/app)
 - [Sitecore Marketplace Developer Portal](https://developers.sitecore.com/marketplace)
