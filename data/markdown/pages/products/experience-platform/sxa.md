@@ -17,21 +17,19 @@ The Sitecore Experience Accelerator (SXA) is an addon for the Sitecore platform 
 
 In order to get started with SXA you will need a clean installation of Sitecore XM or Sitecore XP.
 
-- [SXA Installation](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1010)
+- [SXA Installation](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1050)
 
 ## Documentation
 
-- [Introducing Sitecore Experience Accelerator](https://doc.sitecore.com/en/users/sxa/latest/sitecore-experience-accelerator/introducing-sitecore-experience-accelerator.html)
+- [Introducing Sitecore Experience Accelerator](https://doc.sitecore.com/en/users/sxa/latest/sitecore-experience-accelerator/introduction-to-sitecore-experience-accelerator.html)
 - [Developer Documentation](https://doc.sitecore.com/xp/en/developers/sxa/latest/sitecore-experience-accelerator/index-en.html)
-- [JS Components documentation](https://doc.sitecore.com/xp/en/developers/sxa/components-theme-jsdoc/en/index.html)
-- [Search Components documentation](https://doc.sitecore.com/xp/en/developers/sxa/jsdoc-search-components/en/index.html)
+- [SXA Themes](https://doc.sitecore.com/xp/en/developers/sxa/latest/sitecore-experience-accelerator/the-sxa-themes.html)
 
 ## Learn
 
 - [SXA Tutorial YouTube series](https://www.youtube.com/watch?v=nMTUitaBMek&list=PL1jJVFm_lGnwKmalgi6sukqDhoYA73JDn&index=1)
 - [Unofficial SXA tutorials](https://www.youtube.com/c/SXA-Tutorials)
-- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore Experience Accelerator
-- [Official Sitecore course](https://learning.sitecore.com/course/sitecore-experience-accelerator-sxa-collection)
+- [Official Sitecore course](https://learning.sitecore.com/learn/learning-plans/13/sitecore-experience-accelerator-sxa-collection)
 
 ## Resources
 
