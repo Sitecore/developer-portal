@@ -1,10 +1,11 @@
 ---
-title: 'Sitecore Experience Accelerator 10.4.0'
+title: 'Sitecore Experience Accelerator 10.5.0'
 description: ''
 ---
 
-The Sitecore Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.\
-Sitecore Experience Accelerator 10.4.0 is compatible with Sitecore Experience Platform 10.4.
+Sitecore Experience Accelerator (SXA) 10.5 includes improvements to performance, security, accessibility, installation, and the content authoring experience across on-premises and Sitecore XP deployments, with selected fixes for XM and headless scenarios.
+
+Sitecore Experience Accelerator 10.5 is compatible with Sitecore Experience Platform 10.5.
 
 See [all available versions here](/downloads/Sitecore_Experience_Accelerator).
 
@@ -32,10 +33,10 @@ See [all available versions here](/downloads/Sitecore_Experience_Accelerator).
 
 | Resource                                                                                                                                                                                       | Description                                                                         |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| [Release Notes](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040/Release_Notes)                                                                             | List of features, improvements, and fixes implemented in this release.              |
-| [Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/SXA_10_4_0_installation_guide-pdf-en.pdf) | Installation procedures for the Sitecore Experience Accelerator.                    |
-| [Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/SXA_10_4_0_upgrade_guide-pdf-en.pdf)           | Instructions for upgrading from a previous Sitecore Experience Accelerator version. |
-| [Documentation](https://doc.sitecore.com/developers/sxa/104/sitecore-experience-accelerator/en/index-en.html)                                                                                  | Documentation for Sitecore Experience Accelerator.                                  |
+| [Release Notes](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1050/Release_Notes)                                                                             | List of features, improvements, and fixes implemented in this release.              |
+| [Installation Guide](https://doc.sitecore.com/xp/en/developers/105/guides/sxa-installation-guide/installing-and-configuring-sxa.html) | Installation procedures for the Sitecore Experience Accelerator.                    |
+| [Upgrade Guide](https://doc.sitecore.com/xp/en/developers/105/guides/sxa-upgrade-guide/introduction.html)           | Instructions for upgrading from a previous Sitecore Experience Accelerator version. |
+| [Documentation](https://doc.sitecore.com/developers/sxa/105/sitecore-experience-accelerator/en/index-en.html)                                                                                  | Documentation for Sitecore Experience Accelerator.                                  |
 
 ## Client translations
 
