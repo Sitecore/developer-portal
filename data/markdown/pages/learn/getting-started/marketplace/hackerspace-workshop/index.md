@@ -8,6 +8,13 @@ The workshop has three parts:
 2. [Setup Phase](hackerspace-workshop/setup) - register, scaffold and run your app, and connect your agent to Sitecore's MCP servers
 3. [Implementation](hackerspace-workshop/usecase-image-generator-ai) - build an AI image generator for SitecoreAI Page Builder
 
+### Two ways to run this workshop
+
+- **Let your agent drive:** point your agent at these workshop pages and ask it to work through them for you. It can do most of the setup and all of the implementation itself, but a few steps need you: registering and installing the app in the Cloud Portal, creating your Cloudflare account and API token, and signing in to the Sitecore Docs MCP.
+- **Go step by step:** follow the pages yourself and prompt your agent along the way at each step.
+
+Either way works - pick whichever suits you.
+
 Ready? Let's go!
 
 ## Pre-Requisites
@@ -25,6 +32,13 @@ node -v
 ```
 
 If the command isn't found or the version is below 22, download and run the LTS installer from [nodejs.org](https://nodejs.org/en/download/). npm is included with Node.js, so there's nothing extra to install.
+
+> **TLS errors on a company laptop?** If your company inspects network traffic, Node.js may fail with certificate errors such as `SELF_SIGNED_CERT_IN_CHAIN` when running `npx` commands or calling external APIs. Tell Node.js to trust your operating system's certificates by setting this in your terminal before running any commands:
+>
+> - macOS / Linux: `export NODE_OPTIONS=--use-system-ca`
+> - Windows (PowerShell): `$env:NODE_OPTIONS="--use-system-ca"`
+>
+> If Node.js doesn't recognise the option, update to the latest Node.js LTS release.
 
 ### Choose your AI coding agent
 
