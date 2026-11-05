@@ -52,17 +52,20 @@ For sure there is more to explore here, but let's keep it to your needed steps f
 
 ## 2. Scaffold Starter Kit
 
-1. Run the following command:
+Run the following command, replacing `my-first-marketplace-app` with a meaningful name for your project. **Use only lowercase letters and hyphens, with no spaces.**
 
-   `npx shadcn@latest add https://blok.sitecore.com/r/marketplace/next/quickstart-with-client-side-xmc.json`
+```bash
+npx shadcn@latest init https://blok.sitecore.com/r/marketplace/next/quickstart-with-client-side-xmc.json -t next -b radix -n my-first-marketplace-app --no-monorepo
+```
 
-2. When asked to install the shadcn package, answer `y`
-3. When prompted to select a component library, select `Radix` (Blok components are built on Radix)
-4. When prompted to start a new project choose `Next.js`
-5. Provide a meaningful project name that describes your project. **Use only lowercase letters and no blanks** e.g.: `my-first-marketplace-app`
-6. When prompted, choose a preset. Any is fine. It's not relevant for Marketplace and Custom apps.
+All the options are passed as parameters, so the command runs without any prompts (which also means your agent can run it for you):
 
-Your app should be created.
+- `-t next` - creates a Next.js project
+- `-b radix` - uses Radix as the component library (Blok components are built on Radix)
+- `-n` - sets the project name and folder
+- `--no-monorepo` - creates a single app rather than a monorepo
+
+Your app should be created in a new folder with the name you chose.
 
 Read more:
 https://doc.sitecore.com/mp/en/developers/sdk/latest/sitecore-marketplace-sdk/quick-start--cli-.html
@@ -88,6 +91,14 @@ In a terminal at the root of your project, run the command for your coding agent
 | Cursor | `npx shadcn@latest mcp init --client cursor` | `.cursor/mcp.json` |
 | OpenAI Codex | `npx shadcn@latest mcp init --client codex` | Follow the instructions in the output |
 
+Then add the Blok registry to the `components.json` file in the root of your project, so the MCP server and the shadcn CLI can find Blok components. The scaffold creates an empty `"registries": {}` entry - replace it with:
+
+```json
+"registries": {
+  "@blok": "https://blok.sitecore.com/r/{name}.json"
+}
+```
+
 Restart your agent (or reload the window) so it picks up the new MCP server, and approve it if prompted.
 
 Read more here: https://blok.sitecore.com/mcp
@@ -105,10 +116,10 @@ Read more here: https://blok.sitecore.com/mcp
 Ask your agent:
 
 ```
-Which Blok components are available for a Marketplace app? Then use the Sitecore docs to tell me how a Marketplace app reads the current page context.
+Which components are available in the @blok registry? Then use the Sitecore docs to tell me how a Marketplace app reads the current page context.
 ```
 
-The agent should call the MCP tools and come back with a real list of components and a docs-based answer, not a generic one. If it doesn't use the tools, check the MCP server is enabled in your agent's settings.
+The agent should call the MCP tools and come back with a real list of Blok components and a docs-based answer, not a generic one. If it doesn't use the tools, check the MCP server is enabled in your agent's settings. If it can't find the `@blok` registry, check the `registries` entry in `components.json`.
 
 ## 5. Add Agent Instructions
 
@@ -131,7 +142,7 @@ This is a Next.js App Router app that runs inside SitecoreAI as a Sitecore Marke
 
 ### UI
 
-- Use Blok components from the Blok registry (via the shadcn MCP) before writing custom UI.
+- Use Blok components from the `@blok` registry (via the shadcn MCP) before writing custom UI. Add them with the `@blok/` prefix, for example `npx shadcn@latest add @blok/button`.
 
 ### Security
 

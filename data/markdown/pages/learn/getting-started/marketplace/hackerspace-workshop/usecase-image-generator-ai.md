@@ -4,8 +4,6 @@ Build an AI-powered image generator that runs inside SitecoreAI Page Builder and
 
 ![AI Image Generator in Action](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/9710ee95f7b44b4a8139d2fc011517e5?v=f8fb84d1)
 
-[Reference Repository](https://github.com/Sitecore/hackerspace-workshop/tree/main/app/image-generator)
-
 Extension Point: **Page Context Panel**
 
 ## Summary
@@ -40,7 +38,7 @@ For each step:
 
 ## Before you start: Get your Cloudflare Workers AI credentials
 
-The image generator calls the Cloudflare Workers AI REST API, which needs your Cloudflare Account ID and an API token. Every Cloudflare account includes a free daily allowance for Workers AI (10,000 Neurons per day, reset at 00:00 UTC), which is plenty for this workshop. On the free plan you can't be charged - requests simply fail once the daily allowance is used up.
+The image generator calls the Cloudflare Workers AI REST API, which needs your Cloudflare Account ID and an API token. Every Cloudflare account includes a free daily allowance for Workers AI (10,000 Neurons per day, reset at 00:00 UTC). At the default settings each image uses around 58 Neurons, so that's enough for about 170 images a day. On the free plan you can't be charged - requests simply fail once the daily allowance is used up.
 
 1. Go to [dash.cloudflare.com/sign-up](https://dash.cloudflare.com/sign-up) and create a free account (or sign in if you already have one). Verify your email address.
 2. In the Cloudflare dashboard, open **Workers AI** (under **AI** in the sidebar).
@@ -61,8 +59,6 @@ Create `.env.local` in your project root and paste in the Account ID and API tok
 CLOUDFLARE_ACCOUNT_ID=your_account_id_here
 CLOUDFLARE_API_TOKEN=your_api_token_here
 ```
-
-Restart `npm run dev` so Next.js picks up the new environment variable.
 
 ### Step 2. Write the Spec and Review the Plan
 
@@ -113,7 +109,7 @@ If your agent has a plan mode, you can use that instead of asking it not to writ
 ```
 Implement milestone 1 from the plan: the page context hook, and a minimal version of the home page that shows the current page name.
 
-When you're done, run the typecheck and lint and fix any errors. Remember the page context is only available when the app runs inside SitecoreAI, so make sure the page still renders sensibly on plain localhost.
+When you're done, run the typecheck and lint and fix any errors. The page context is only available when the app runs inside SitecoreAI. On plain localhost, the scaffolded MarketplaceProvider shows a connecting message and then an error instead of the page - that's expected, so don't change the provider to work around it.
 ```
 
 **Test:** Open your app in the Page Context Panel in Page Builder. Navigate between a few pages and check the page name updates each time.
@@ -129,7 +125,7 @@ Validate the request body, and return clear error messages with sensible status 
 When you're done, run the typecheck and lint, then call the route with curl using a short test prompt and show me the shape of the response (don't print the full image data).
 ```
 
-**Test:** Check the agent's curl output. A successful response contains an `imageUrl` that starts with `data:image/`. If it reports a credentials error, check the Account ID and API token in your `.env.local`, and restart `npm run dev` after any change.
+**Test:** Check the agent's curl output. A successful response contains an `imageUrl` that starts with `data:image/`. If it reports a credentials error, check the Account ID and API token in your `.env.local`.
 
 ### Step 5. Milestone 3 - UI and Download
 
