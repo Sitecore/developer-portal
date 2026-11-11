@@ -4,6 +4,7 @@ description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1030/Release_Notes
 ---
 Publication history:<br/>
+**2026-11-11:** Added a breaking-change note about placeholder settings for existing headless partial designs.<br/>
 **2025-07-25:** Added SXA SIF templates for Sitecore 10.3.3, supporting the installation of artifacts compatible with Solr 9.8.1.<br/>
 **2022-12-15:** Released Sitecore Experience Accelerator 10.3.0.
 
@@ -56,6 +57,7 @@ Sitecore Experience Accelerator (SXA) enables parallel work streams (content, cr
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | The following Flash types have been removed:- `Sitecore.XA.Feature.Media.Repositories.FlashRepository`<br />- `Sitecore.XA.Feature.Media.Repositories.IFlashRepository`<br />- `Sitecore.XA.Feature.Media.Models.FlashRenderingModel`<br />- `Sitecore.XA.Feature.Media.Models.FlashWmode`<br />- `Sitecore.XA.Feature.Media.Controllers.FlashController` |         |
 | The following Publishing type has been removed:- `Sitecore.XA.Foundation.Publication.Pipelines.PublishEndResultBatch.CheckMediaItemPath`                                                                                                                                                                                                                  |         |
+| Existing headless partial designs are not backfilled with their corresponding Placeholder Settings items when you upgrade to SXA 10.3. SXA creates the item when a new Headless Partial Design is created, using the key `sxa-<signature>` (for example, `sxa-header`). For each existing Headless Partial Design, verify that a matching item exists under `<Tenant>/<Site>/Presentation/Placeholder Settings/Partial Design` and create it if missing.<br /><br />The partial-design signature is also used by the Next.js app to resolve and render components placed in that design. `PartialDesignDynamicPlaceholder.tsx` reads the signature from `props.rendering?.params?.sig`; if your app has a custom implementation, ensure it uses `sig` rather than `ph`. |         |
 
 ## Resolved issues
 
