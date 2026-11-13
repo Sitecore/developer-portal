@@ -1,27 +1,22 @@
-import { Alert, AlertTitle } from "@src/components/ui/alert";
-import { Button } from "@src/components/ui/button";
-import { Card, CardContent } from "@src/components/ui/card";
-import type { Option } from "@src/components/ui/dropdown";
-import { Skeleton } from "@src/components/ui/skeleton";
-import { entriesApiUrl } from "@src/lib/changelog/common/changelog";
-import { buildQuerystring } from "@src/lib/changelog/common/querystring";
-import type {
-  ChangelogEntry,
-  ChangelogEntryList,
-  ChangeType,
-  Product,
-} from "@src/lib/changelog/types";
-import { ChevronLeft } from "lucide-react";
-import NextLink from "next/link";
-import { useEffect, useRef, useState } from "react";
-import type { Fetcher } from "swr";
-import useSWR from "swr";
-import useSWRInfinite from "swr/infinite";
-import { Field, FieldLabel } from "../ui/field";
-import { Switch } from "../ui/switch";
-import ChangelogFilter from "./ChangelogFilter";
-import ChangelogResultsList from "./ChangelogResultsList";
-import { Hint } from "./Hint";
+import { Alert, AlertTitle } from '@src/components/ui/alert';
+import { Button } from '@src/components/ui/button';
+import { Card, CardContent } from '@src/components/ui/card';
+import type { Option } from '@src/components/ui/dropdown';
+import { Skeleton } from '@src/components/ui/skeleton';
+import { entriesApiUrl } from '@src/lib/changelog/common/changelog';
+import { buildQuerystring } from '@src/lib/changelog/common/querystring';
+import type { ChangelogEntry, ChangelogEntryList, ChangeType, Product } from '@src/lib/changelog/types';
+import { ChevronLeft } from 'lucide-react';
+import NextLink from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import type { Fetcher } from 'swr';
+import useSWR from 'swr';
+import useSWRInfinite from 'swr/infinite';
+import { Field, FieldLabel } from '../ui/field';
+import { Switch } from '../ui/switch';
+import ChangelogFilter from './ChangelogFilter';
+import ChangelogResultsList from './ChangelogResultsList';
+import { Hint } from './Hint';
 
 type ChangelogListProps = {
   initialProduct?: Product;
@@ -40,10 +35,7 @@ function useChangeTypeOptions(): Array<Option> {
     }
     return response.json();
   };
-  const { data: changeTypes, error } = useSWR(
-    `${entriesApiUrl}/types`,
-    fetcher,
-  );
+  const { data: changeTypes, error } = useSWR(`${entriesApiUrl}/types`, fetcher);
 
   if (error) {
     console.log(error);
@@ -70,10 +62,7 @@ function useProductOptions(): Array<Option> {
     }
     return response.json();
   };
-  const { data: products, error } = useSWR(
-    `${entriesApiUrl}/products?all=false`,
-    fetcher,
-  );
+  const { data: products, error } = useSWR(`${entriesApiUrl}/products?all=false`, fetcher);
 
   if (error) {
     console.log(error);
@@ -86,21 +75,14 @@ function useProductOptions(): Array<Option> {
   return [];
 }
 
-const ChangelogList = ({
-  initialProduct,
-  selectedProducts,
-  onProductsChange = () => {},
-}: ChangelogListProps) => {
+const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
   const [breaking, setBreaking] = useState<boolean>(false);
   const pendingLoadRef = useRef(false);
   const changeTypeOptions = useChangeTypeOptions();
   const productOptions = useProductOptions();
 
-  const fetcher: Fetcher<
-    ChangelogEntryList<Array<ChangelogEntry>>,
-    string
-  > = async (url: string) => {
+  const fetcher: Fetcher<ChangelogEntryList<Array<ChangelogEntry>>, string> = async (url: string) => {
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -108,30 +90,18 @@ const ChangelogList = ({
     return response.json();
   };
 
-  const getKey = (
-    _pageIndex: any,
-    previousPageData: ChangelogEntryList<Array<ChangelogEntry>>,
-  ) => {
+  const getKey = (_pageIndex: any, previousPageData: ChangelogEntryList<Array<ChangelogEntry>>) => {
     if (previousPageData && !previousPageData.hasNext) {
       return null;
     }
 
     const cursor = previousPageData ? previousPageData.endCursor : undefined;
-    const query = buildQuerystring(
-      selectedProducts != null ? selectedProducts : [],
-      selectedChange,
-      cursor,
-      initialProduct,
-      breaking,
-    );
+    const query = buildQuerystring(selectedProducts != null ? selectedProducts : [], selectedChange, cursor, initialProduct, breaking);
 
-    return [`${entriesApiUrl}?${query.join("&")}`];
+    return [`${entriesApiUrl}?${query.join('&')}`];
   };
 
-  const { data, error, setSize, isLoading, isValidating } = useSWRInfinite(
-    getKey,
-    fetcher,
-  );
+  const { data, error, setSize, isLoading, isValidating } = useSWRInfinite(getKey, fetcher);
   const hasNext = data ? data[data.length - 1].hasNext : false;
 
   useEffect(() => {
@@ -149,16 +119,14 @@ const ChangelogList = ({
     void setSize((currentSize) => currentSize + 1);
   };
 
-  const items = data
-    ? data.flatMap((data) => data.entries.map((entry) => entry))
-    : [];
+  const items = data ? data.flatMap((data) => data.entries.map((entry) => entry)) : [];
 
   return (
     <div>
       {initialProduct && (
         <div className="mb-4">
           <Button variant="ghost" className="w-full" asChild>
-            <NextLink href="/changelog">
+            <NextLink href="https://doc.sitecore.com/changelog">
               <ChevronLeft className="mr-2 h-6 w-6" />
               Go back to the changelog overview
             </NextLink>
@@ -191,21 +159,12 @@ const ChangelogList = ({
           />
 
           <Field orientation="horizontal">
-            <Switch
-              id="breakingChange"
-              checked={breaking}
-              onCheckedChange={(checked) => setBreaking(checked === true)}
-            />
-            <FieldLabel htmlFor="breakingChange">
-              Only show changes that might require action
-            </FieldLabel>
+            <Switch id="breakingChange" checked={breaking} onCheckedChange={(checked) => setBreaking(checked === true)} />
+            <FieldLabel htmlFor="breakingChange">Only show changes that might require action</FieldLabel>
           </Field>
         </CardContent>
       </Card>
-      <Hint
-        products={selectedProducts}
-        enabled={selectedProducts?.length === 1}
-      />
+      <Hint products={selectedProducts} enabled={selectedProducts?.length === 1} />
 
       {isLoading && (
         <div className="mt-12">
@@ -214,21 +173,11 @@ const ChangelogList = ({
         </div>
       )}
 
-      {!error && data && (
-        <ChangelogResultsList
-          entries={items}
-          isLoading={isLoading}
-          hasNext={hasNext}
-          onEndTriggered={handleEndTriggered}
-          className="mt-8"
-        />
-      )}
+      {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={hasNext} onEndTriggered={handleEndTriggered} className="mt-8" />}
 
       {data && !hasNext && (
         <Alert variant="default" className="mt-4">
-          <AlertTitle>
-            {items.length === 0 ? "No entries found" : "No other entries found"}
-          </AlertTitle>
+          <AlertTitle>{items.length === 0 ? 'No entries found' : 'No other entries found'}</AlertTitle>
         </Alert>
       )}
     </div>

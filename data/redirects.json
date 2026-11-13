@@ -147,12 +147,12 @@
   },
   {
     "source": "/changelog/xm-cloud/14112024/component-a%2fb%2fn-testing-is-now-live-in-xm-cloud",
-    "destination": "/changelog/xm-cloud/14112024/component-a-b-n-testing-is-now-live-in-xm-cloud",
+    "destination": "https://doc.sitecore.com/changelog/sitecoreai/14112024/component-a-b-n-testing-is-now-live-in-xm-cloud",
     "permanent": true
   },
   {
     "source": "/changelog/xm-cloud/13112024/component-a%2fb%2fn-testing-is-now-live-in-xm-cloud",
-    "destination": "/changelog/xm-cloud/14112024/component-a-b-n-testing-is-now-live-in-xm-cloud",
+    "destination": "https://doc.sitecore.com/changelog/sitecoreai/14112024/component-a-b-n-testing-is-now-live-in-xm-cloud",
     "permanent": true
   },
   {
@@ -337,7 +337,7 @@
   },
   {
     "source": "/changelog/xm-cloud/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages-personalize",
-    "destination": "/changelog/xm-cloud/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages",
+    "destination": "https://doc.sitecore.com/changelog/sitecoreai/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages",
     "permanent": true
   },
   {
@@ -366,8 +366,38 @@
     "permanent": true
   },
   {
+    "source": "/changelog/xm-cloud/rss.xml",
+    "destination": "https://doc.sitecore.com/changelog/sitecoreai/rss.xml",
+    "statusCode": 301
+  },
+  {
+    "source": "/changelog/xm-cloud/atom.xml",
+    "destination": "https://doc.sitecore.com/changelog/sitecoreai/atom.xml",
+    "statusCode": 301
+  },
+  {
+    "source": "/changelog/rss.xml",
+    "destination": "https://doc.sitecore.com/changelog/rss.xml",
+    "statusCode": 301
+  },
+  {
+    "source": "/changelog/atom.xml",
+    "destination": "https://doc.sitecore.com/changelog/atom.xml",
+    "statusCode": 301
+  },
+  {
+    "source": "/changelog/:product/rss.xml",
+    "destination": "https://doc.sitecore.com/changelog/:product/rss.xml",
+    "statusCode": 301
+  },
+  {
+    "source": "/changelog/:product/atom.xml",
+    "destination": "https://doc.sitecore.com/changelog/:product/atom.xml",
+    "statusCode": 301
+  },
+  {
     "source": "/changelog/xm-cloud/:path*",
-    "destination": "/changelog/sitecoreai/:path*",
+    "destination": "https://doc.sitecore.com/changelog/sitecoreai/:path*",
     "permanent": true
   },
   {
@@ -378,6 +408,11 @@
   {
   "source": "/sitecoreai/capabilities/unified-data-layer",
     "destination": "/sitecoreai/capabilities/audience-and-insights",
+    "permanent": true
+  },
+  {
+    "source": "/changelog/:path*",
+    "destination": "https://doc.sitecore.com/changelog/:path*",
     "permanent": true
   }
 ]

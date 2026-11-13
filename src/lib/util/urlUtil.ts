@@ -1,18 +1,11 @@
-import type {
-  ChangelogEntry,
-  ChangelogEntrySummary,
-} from "@src/lib/changelog/types";
+import type { ChangelogEntry, ChangelogEntrySummary } from '@src/lib/changelog/types';
 
-import { formatDate } from "./dateUtil";
-import { slugify } from "./stringUtil";
+import { formatDate } from './dateUtil';
+import { slugify } from './stringUtil';
 
-const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL
-  ? process.env.NEXT_PUBLIC_PUBLIC_URL
-  : "";
+const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
-export function getChangelogEntryUrlSegments(
-  entry: ChangelogEntry | ChangelogEntrySummary,
-): Array<string> {
+export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEntrySummary): Array<string> {
   const segments: Array<string> = [];
 
   segments.push(slugify(entry.productName ?? entry.title));
@@ -23,18 +16,15 @@ export function getChangelogEntryUrlSegments(
   return segments;
 }
 
-export function getChangelogEntryUrl(
-  entry: ChangelogEntry | ChangelogEntrySummary,
-  includeServerUrl?: boolean,
-): string {
+export function getChangelogEntryUrl(entry: ChangelogEntry | ChangelogEntrySummary, includeServerUrl?: boolean): string {
   const url: Array<string> = [];
 
-  url.push("/changelog");
+  url.push('https://doc.sitecore.com/changelog');
   url.push(...getChangelogEntryUrlSegments(entry));
 
   if (includeServerUrl) {
-    return `${publicUrl + url.join("/")}`;
+    return `${publicUrl + url.join('/')}`;
   }
 
-  return url.join("/");
+  return url.join('/');
 }

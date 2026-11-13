@@ -26,7 +26,7 @@ type ChangelogEntriesProps = {
   columns?: number;
 };
 
-const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/changelog', linkText = 'See all changes', hideProductIcon, columns }: ChangelogEntriesProps) => {
+const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = 'https://doc.sitecore.com/changelog', linkText = 'See all changes', hideProductIcon, columns }: ChangelogEntriesProps) => {
   const { theme } = useTheme();
 
   if (entries.length === 0) {
@@ -38,7 +38,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
       <CardHeader className="flex flex-col sm:flex-row justify-between sm:justify-between items-baseline">
         <h3 className="text-2xl font-medium font-heading flex items-center gap-2">
           {title}
-          <Link href="/changelog/rss.xml" className="ml-1">
+          <Link href="https://doc.sitecore.com/changelog/rss.xml" className="ml-1">
             <Button variant="ghost" size="sm" aria-label="RSS" className="h-6 w-6 p-0">
               <Icon path={mdiRss} size={0.8} />
             </Button>
@@ -79,7 +79,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                         <Popover>
                           <div className="flex items-center gap-1">
                             {entry.products != null && (
-                              <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} className="text-foreground hover:underline">
+                              <Link href={`https://doc.sitecore.com/changelog/${getSlug(entry.products[0].productName)}`} className="text-foreground hover:underline">
                                 {entry.products[0].productName}
                               </Link>
                             )}
@@ -96,7 +96,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                                 return (
                                   <div key={product.id || product.productName} className="flex items-center gap-2">
                                     <Image src={productIconSrc} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority />
-                                    <Link href={`/changelog/${getSlug(product.productName)}`} className="text-foreground hover:underline">
+                                    <Link href={`https://doc.sitecore.com/changelog/${getSlug(product.productName)}`} className="text-foreground hover:underline">
                                       {product.productName}
                                     </Link>
                                   </div>
@@ -108,7 +108,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                       </div>
                     ) : (
                       entry.products != null && (
-                        <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} key={entry.products[0].id || entry.products[0].productName} className="text-foreground hover:underline">
+                        <Link href={`https://doc.sitecore.com/changelog/${getSlug(entry.products[0].productName)}`} key={entry.products[0].id || entry.products[0].productName} className="text-foreground hover:underline">
                           {entry.products[0].productName}
                         </Link>
                       )

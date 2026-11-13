@@ -2,7 +2,6 @@
 
 import { cn } from '@/src/lib/util';
 import { getSlug } from '@/src/lib/util/stringUtil';
-import { getChangelogEntryUrl } from '@/src/lib/util/urlUtil';
 import { TextLink } from '@src/components/links/TextLink';
 import { Badge } from '@src/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@src/components/ui/card';
@@ -51,7 +50,7 @@ const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hidePr
                 )}
                 <div className="text-sm">
                   <h4 className="text-base font-heading">
-                    <Link href={getChangelogEntryUrl(entry)} title={entry.title} className="text-foreground hover:underline">
+                    <Link href={`{getChangelogEntryUrl(entry)}`} title={entry.title} className="text-foreground hover:underline">
                       {entry.title}
                     </Link>
                   </h4>
@@ -65,7 +64,7 @@ const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hidePr
 
                     {entry.products != null
                       ? entry.products.map((product) => (
-                          <Link href={`/changelog/${getSlug(product.productName)}`} key={product.id || product.productName} className="text-foreground hover:underline">
+                          <Link href={`https://doc.sitecore.com/changelog/${getSlug(product.productName)}`} key={product.id || product.productName} className="text-foreground hover:underline">
                             {product.productName}
                           </Link>
                         ))
