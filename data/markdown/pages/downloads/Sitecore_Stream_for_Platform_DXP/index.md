@@ -7,7 +7,7 @@ description: 'Sitecore Experience Platform artificial intelligence module.'
 
 Sitecore Stream for Platform DXP is introduced as a Sitecore Experience Platform module. The module interworks with Sitecore's **Sitecore Stream** AI service. It requires an active Sitecore Stream subscription to set it up and run. **Please contact your Sitecore account representative to get started.**
 
-This module includes software that you download and install on your existing Sitecore XP deployment. It is compatible with Sitecore XP 10.2, 10.3, and 10.4. The latest module version is downloadeded from the Stream app on the **Sitecore Portal** website. 
+This module includes software that you download and install on your existing Sitecore XP deployment. It is compatible with Sitecore XP 10.2 to 10.5. The latest module version is downloadeded from the Stream app on the **Sitecore Portal** website. 
 
 This page tracks release history including features added and other pertinent release information.
 
